@@ -11,6 +11,8 @@ name: Deploy
 #               AWS_ACCOUNT_ID     expected account (deploy aborts if it differs)
 #               S3_BUCKET_NAME     target bucket
 #               CF_DISTRO_ID       CloudFront distribution to invalidate
+#               PUBLIC_POSTHOG_PROJECT_TOKEN  PostHog project token (public, baked into the build)
+#               PUBLIC_POSTHOG_HOST           e.g. https://us.i.posthog.com
 
 on:
   workflow_dispatch:
@@ -44,6 +46,9 @@ jobs:
 
       - run: npm ci --no-audit --no-fund
       - run: npm run build
+        env:
+          PUBLIC_POSTHOG_PROJECT_TOKEN: ${{ vars.PUBLIC_POSTHOG_PROJECT_TOKEN }}
+          PUBLIC_POSTHOG_HOST: ${{ vars.PUBLIC_POSTHOG_HOST }}
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4

@@ -43,7 +43,7 @@ const specs = [
         <a href="#download" class="btn btn-primary">
           Download for Mac
         </a>
-        <a href={site.links.repo} class="btn btn-ghost">
+        <a href={site.links.repo} class="btn btn-ghost" data-source-repository-link>
           View source ↗
         </a>
       </div>
@@ -59,6 +59,16 @@ const specs = [
     </dl>
   </div>
 </header>
+
+<script is:inline>
+  document.querySelector('[data-source-repository-link]')?.addEventListener('click', () => {
+    window.posthog?.capture('source_repository_opened', { placement: 'hero' });
+    window.posthog?.logger?.info('source repository link opened', {
+      action: 'source_repository_opened',
+      placement: 'hero',
+    });
+  });
+</script>
 
 <style>
   .hero {

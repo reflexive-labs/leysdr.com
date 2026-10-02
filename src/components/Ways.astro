@@ -74,10 +74,20 @@ squelch -80 → -45 dBFS</pre>
     </div>
   </div>
 
-  <a href={site.links.docs} class="mono docs">
+  <a href={site.links.docs} class="mono docs" data-documentation-link>
     Read the docs for ley and MCP →
   </a>
 </section>
+
+<script is:inline>
+  document.querySelector('[data-documentation-link]')?.addEventListener('click', () => {
+    window.posthog?.capture('documentation_opened', { placement: 'ways_section' });
+    window.posthog?.logger?.info('documentation link opened', {
+      action: 'documentation_opened',
+      placement: 'ways_section',
+    });
+  });
+</script>
 
 <style>
   .ways {

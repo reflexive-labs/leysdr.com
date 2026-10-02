@@ -11,7 +11,7 @@ import { site } from '@/config/site';
         radio and open it.
       </p>
       <div class="actions">
-        <a href={site.links.download} class="btn btn-primary big">
+        <a href={site.links.download} class="btn btn-primary big" data-download-link>
           Download Leyline SDR
         </a>
         <span class="mono fine">
@@ -31,6 +31,16 @@ import { site } from '@/config/site';
     </div>
   </div>
 </section>
+
+<script is:inline>
+  document.querySelector('[data-download-link]')?.addEventListener('click', () => {
+    window.posthog?.capture('download_clicked', { placement: 'download_section' });
+    window.posthog?.logger?.info('download link opened', {
+      action: 'download_clicked',
+      placement: 'download_section',
+    });
+  });
+</script>
 
 <style>
   .download {
