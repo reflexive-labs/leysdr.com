@@ -1,0 +1,250 @@
+---
+import Mark from './Mark.astro';
+import { site } from '@/config/site';
+
+const specs = [
+  ['Radios', 'RTL-SDR, HackRF, rtl_tcp'],
+  ['Modes', 'NFM WFM AM USB LSB CW'],
+  ['Tones', 'CTCSS and DCS'],
+  ['Decoders', 'APRS, SAME, AIS'],
+  ['Imports', 'CHIRP CSV'],
+];
+---
+
+<header id="top" class="hero" data-hero>
+  <canvas class="field" data-field aria-hidden="true"></canvas>
+  <div class="veil" aria-hidden="true"></div>
+
+  <nav class="nav wrap" aria-label="Primary">
+    <a href="#top" class="brand">
+      <Mark size={13} stroke={2.4} />
+      <span>leyline</span>
+    </a>
+    <div class="links mono">
+      <a href="#features">features</a>
+      <a href="#ways">app · terminal · agents</a>
+      <a href="#need">what you need</a>
+      <a href={site.links.docs}>docs</a>
+      <a href="#download" class="cta">
+        download
+      </a>
+    </div>
+  </nav>
+
+  <div class="body wrap">
+    <div class="intro">
+      <div class="eyebrow mono">
+        <span class="rule"></span>
+        <span>Leyline SDR for macOS</span>
+      </div>
+      <h1>Software defined radio, made for the Mac.</h1>
+      <p>{site.description}</p>
+      <div class="actions">
+        <a href="#download" class="btn btn-primary">
+          Download for Mac
+        </a>
+        <a href={site.links.repo} class="btn btn-ghost">
+          View source ↗
+        </a>
+      </div>
+      <span class="fine mono">Free · {site.minOS} · signed and notarized · receive only</span>
+    </div>
+    <dl class="specs">
+      {specs.map(([k, v]) => (
+        <>
+          <dt class="mono">{k}</dt>
+          <dd>{v}</dd>
+        </>
+      ))}
+    </dl>
+  </div>
+</header>
+
+<style>
+  .hero {
+    position: relative;
+    overflow: hidden;
+    cursor: crosshair;
+    touch-action: pan-y;
+    user-select: none;
+    border-bottom: 1px solid var(--line);
+    min-height: min(88vh, 840px);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .field {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .veil {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      180deg,
+      rgb(11 13 15 / 35%) 0%,
+      rgb(11 13 15 / 0%) 22%,
+      rgb(11 13 15 / 0%) 40%,
+      rgb(11 13 15 / 92%) 82%
+    );
+  }
+
+  .nav {
+    position: relative;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    flex-wrap: wrap;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent);
+    margin-right: auto;
+  }
+
+  .brand span {
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+
+  .links {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 12px;
+  }
+
+  .links a {
+    color: var(--muted);
+  }
+
+  .links a:hover {
+    color: var(--text);
+  }
+
+  .links .cta {
+    padding: 8px 14px;
+    border-radius: 7px;
+    background: var(--accent);
+    color: var(--bg);
+    font-weight: 700;
+  }
+
+  .links .cta:hover {
+    background: var(--accent-hover);
+    color: var(--bg);
+  }
+
+  .body {
+    position: relative;
+    flex: 1;
+    width: 100%;
+    padding-top: 96px;
+    padding-bottom: 84px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 56px 64px;
+    align-items: flex-end;
+    align-content: flex-end;
+  }
+
+  .intro {
+    flex: 1 1 580px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 11px;
+    letter-spacing: 4.6px;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+
+  .rule {
+    width: 40px;
+    height: 1px;
+    background: var(--line-4);
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(44px, 6.6vw, 88px);
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    line-height: 0.98;
+    text-wrap: balance;
+    max-width: 12ch;
+  }
+
+  p {
+    margin: 0;
+    max-width: 54ch;
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--text-3);
+    text-wrap: pretty;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px 18px;
+  }
+
+  .fine {
+    font-size: 12px;
+    color: var(--dim);
+  }
+
+  .specs {
+    flex: 0 1 330px;
+    margin: 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    font-size: 14px;
+    border-top: 1px solid var(--line-3);
+  }
+
+  dt {
+    padding: 11px 18px 11px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 11px;
+    color: var(--dim);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  dd {
+    margin: 0;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--line);
+    color: var(--text-2);
+  }
+
+  @media (max-width: 640px) {
+    .links a:not(.cta) {
+      display: none;
+    }
+  }
+</style>

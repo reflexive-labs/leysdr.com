@@ -1,0 +1,77 @@
+---
+// One feature row: copy on one side, an illustration on the other.
+// `flip` puts the illustration first on wide screens; on narrow screens the
+// copy always comes first.
+interface Props {
+  eyebrow: string;
+  title: string;
+  flip?: boolean;
+  visualBasis?: number;
+}
+
+const { eyebrow, title, flip = false, visualBasis = 440 } = Astro.props;
+---
+
+<div class:list={['feature', { flip }]}>
+  <div class="copy">
+    <span class="eyebrow mono">{eyebrow}</span>
+    <h3>{title}</h3>
+    <p>
+      <slot />
+    </p>
+  </div>
+  <div class="visual" style={`flex-basis:${visualBasis}px`}>
+    <slot name="visual" />
+  </div>
+</div>
+
+<style>
+  .feature {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px 72px;
+    align-items: center;
+  }
+
+  .feature.flip {
+    flex-direction: row-reverse;
+  }
+
+  .copy {
+    flex: 1 1 380px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .visual {
+    flex: 1 1 440px;
+    min-width: 0;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--teal);
+  }
+
+  h3 {
+    margin: 0;
+    font-size: clamp(26px, 3vw, 38px);
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    text-wrap: balance;
+  }
+
+  p {
+    margin: 0;
+    max-width: 50ch;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--muted);
+    text-wrap: pretty;
+  }
+</style>

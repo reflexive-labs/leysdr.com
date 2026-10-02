@@ -1,0 +1,78 @@
+---
+const needs = [
+  {
+    label: 'A Mac',
+    title: 'macOS 26 or later',
+    body: 'The radio drivers are inside the app. Nothing else to install.',
+  },
+  {
+    label: 'A radio',
+    title: 'RTL-SDR or HackRF',
+    body: 'RTL2832U dongles such as the Nooelec NESDR, the HackRF One and the HackRF Pro.',
+  },
+  {
+    label: 'Or a radio elsewhere',
+    title: 'rtl_tcp on a Pi',
+    body: 'Leave the dongle by the antenna in the attic. Leyline remembers it once attached.',
+  },
+  {
+    label: 'No radio yet',
+    title: 'An IQ recording',
+    body: 'Recordings play through the same pipeline as a live radio.',
+  },
+];
+---
+
+<section id="need" class="wrap need">
+  <h2 class="h2">What you need</h2>
+  <div class="grid">
+    {needs.map((n) => (
+      <div class="item">
+        <span class="label mono">{n.label}</span>
+        <span class="title">{n.title}</span>
+        <span class="body">{n.body}</span>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .need {
+    padding-top: 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+    border-top: 1px solid var(--line-3);
+  }
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 24px 28px 24px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .label {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .body {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--muted);
+    text-wrap: pretty;
+  }
+</style>

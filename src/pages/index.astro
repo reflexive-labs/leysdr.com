@@ -1,0 +1,49 @@
+---
+import Base from '@/layouts/Base.astro';
+import Hero from '@/components/Hero.astro';
+import AppWindow from '@/components/AppWindow.astro';
+import Features from '@/components/Features.astro';
+import Ways from '@/components/Ways.astro';
+import Need from '@/components/Need.astro';
+import Download from '@/components/Download.astro';
+import Footer from '@/components/Footer.astro';
+---
+
+<Base>
+  <Hero />
+  <main>
+    <section id="app" class="app">
+      <div class="wrap section-head intro">
+        <h2 class="h2" style="max-width:16ch">
+          Launch it, click a signal, hear it.
+        </h2>
+        <p class="lede">
+          The spectrum and waterfall appear as soon as a radio is connected. Click to tune; mode,
+          bandwidth and squelch come from the band you’re in. The inspector shows level, tuning
+          error, deviation and the tone, and the Library holds everything you’ve recorded.
+        </p>
+      </div>
+      <AppWindow />
+    </section>
+    <Features />
+    <Ways />
+    <Need />
+    <Download />
+  </main>
+  <Footer />
+</Base>
+
+<script>
+  import { initRadio } from '@/scripts/radio';
+  initRadio();
+</script>
+
+<style>
+  .app {
+    padding-top: 120px;
+  }
+
+  .intro {
+    padding-bottom: 36px;
+  }
+</style>

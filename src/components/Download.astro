@@ -1,0 +1,126 @@
+---
+import { site } from '@/config/site';
+---
+
+<section id="download" class="wrap download">
+  <div class="box">
+    <div class="main">
+      <h2>Free for Mac.</h2>
+      <p>
+        Signed and notarized by Apple, and it updates itself. Drag it to Applications, plug in a
+        radio and open it.
+      </p>
+      <div class="actions">
+        <a href={site.links.download} class="btn btn-primary big">
+          Download Leyline SDR
+        </a>
+        <span class="mono fine">
+          Version {site.version} · {site.minOS}
+        </span>
+      </div>
+    </div>
+    <div class="side">
+      <span class="side-title">Build it yourself</span>
+      <span class="side-body">
+        All of Leyline is open source. The engine is GPL-3.0-or-later; the app,{' '}
+        <span class="mono code">ley</span> and the contract are Apache-2.0.
+      </span>
+      <a href={site.links.repo} class="mono repo">
+        {site.links.repoLabel} ↗
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .download {
+    padding-top: 160px;
+  }
+
+  .box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px 64px;
+    padding: 56px;
+    border: 1px solid var(--line-3);
+    border-radius: 16px;
+    background: var(--surface);
+    align-items: flex-end;
+  }
+
+  .main {
+    flex: 1 1 440px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: clamp(36px, 4.6vw, 60px);
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+
+  p {
+    margin: 0;
+    max-width: 46ch;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--muted);
+    text-wrap: pretty;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px 20px;
+  }
+
+  .big {
+    padding: 15px 24px;
+  }
+
+  .fine {
+    font-size: 12px;
+    color: var(--dim);
+  }
+
+  .side {
+    flex: 1 1 300px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line-3);
+  }
+
+  .side-title {
+    font-size: 16px;
+  }
+
+  .side-body {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--muted);
+    text-wrap: pretty;
+  }
+
+  .code {
+    font-size: 13px;
+  }
+
+  .repo {
+    font-size: 12px;
+  }
+
+  @media (max-width: 640px) {
+    .box {
+      padding: 32px 24px;
+    }
+  }
+</style>
