@@ -8,10 +8,10 @@ import { site } from '@/config/site';
       One engine. Drive it from the app, the terminal or an assistant.
     </h2>
     <p class="lede">
-      A background engine runs the radio and keeps listening when the window is closed. The Mac app,
-      the <span class="mono ley">ley</span> command and MCP clients all talk to it, so a squelch
-      change in the terminal shows up in the window, and an assistant can scan a band while you
-      listen.
+      A background engine runs the radio, and decoders and watches keep going after the window
+      closes. The Mac app, the <span class="mono ley">ley</span> command and MCP clients all talk to
+      it, so a squelch change in the terminal shows up in the window, and an assistant can sweep a
+      band and tell you what’s on it.
     </p>
   </div>
 
@@ -43,8 +43,8 @@ import { site } from '@/config/site';
       <div class="card-head">
         <span class="label mono">The terminal</span>
         <span class="desc">
-          <span class="mono code">ley</span> for scripts, cron jobs and SSH. Every command has{' '}
-          <span class="mono code">--json</span>.
+          <span class="mono code">ley</span> for scripts, cron jobs and SSH. Every command that
+          reports something has <span class="mono code">--json</span>.
         </span>
       </div>
       <pre class="term shell"><span class="cmd">$ ley tune 146.52</span>
@@ -60,7 +60,8 @@ squelch -80 → -45 dBFS</pre>
       <div class="card-head">
         <span class="label mono">An assistant</span>
         <span class="desc">
-          <span class="mono code">ley mcp</span> gives an AI assistant the same tools, over MCP.
+          <span class="mono code">ley mcp</span> lets an AI assistant tune, scan, decode and record,
+          over MCP.
         </span>
       </div>
       <div class="chat">

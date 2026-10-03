@@ -80,8 +80,8 @@ const clips = clipSeeds.map(([t, d], k) => {
 
   <Feature eyebrow="Tone discovery" title="Hear a repeater, learn its tone." flip visualBasis={420}>
     On an NFM channel Leyline listens under the voice for a CTCSS tone or a DCS code and shows it
-    the way your radio’s menu would: PL 100.0, or DCS 023 in octal. An inverted code is named by its
-    normal reading. Save it to the bookmark, then program your handheld.
+    the way your radio’s menu would: PL 100.0, or DCS 023 in octal. Add it to the bookmark, then
+    program your handheld.
     <div slot="visual" class="tone-stack">
       <div class="panel mac tone">
         <div class="tone-head">
@@ -141,10 +141,9 @@ sweeping 144.000 MHz to 148.000 MHz
   </Feature>
 
   <Feature eyebrow="Auto-recording" title="Every over, its own clip." flip visualBasis={420}>
-    With the squelch as the gate, Leyline writes a file only while someone is transmitting. Half a
-    second before each key-up is kept and the pauses inside an exchange stay in, so every clip plays
-    back whole. Leave a net running and come back to a list of transmissions instead of an hour of
-    hiss.
+    With the squelch as the gate, Leyline records only while someone is on the air, and keeps half a
+    second before each transmission so no clip starts mid-word. Leave a net running and come back to
+    a list of transmissions instead of an hour of hiss.
     <div slot="visual" class="panel mac clips">
       <div class="clips-head">
         <span class="title">NERT net</span>
@@ -173,9 +172,10 @@ sweeping 144.000 MHz to 148.000 MHz
   </Feature>
 
   <Feature eyebrow="Decoding" title="APRS, weather alerts and AIS, decoded.">
-    Decoders run beside what you’re listening to. Follow APRS stations as they beacon, see vessels
-    on AIS, and get a macOS notification when a SAME alert names your county. Alerts can also go to
-    a webhook or a shell command.
+    Decoders share the radio with you when their channel is in range, or run on a second radio.
+    Follow APRS stations as they beacon, see vessels on AIS, and set a watch that sends a macOS
+    notification when a SAME alert names your county. Alerts can also go to a webhook or a shell
+    command.
     <div slot="visual" class="decode">
       <div class="notif mac">
         <span class="notif-icon">
