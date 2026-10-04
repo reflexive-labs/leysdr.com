@@ -1,10 +1,12 @@
 ---
+import Shot from './Shot.astro';
 import { site } from '@/config/site';
 ---
 
 <section id="download" class="wrap download">
   <div class="box">
     <div class="main">
+      <Shot name="app-icon-1024" frame="none" alt="" class="icon" />
       <h2>Free for Mac.</h2>
       <p>
         Signed and notarized by Apple, and it updates itself. Drag it to Applications, plug in a
@@ -43,6 +45,11 @@ import { site } from '@/config/site';
 </script>
 
 <style>
+  .main :global(.icon) {
+    width: 96px;
+    margin: -12px 0 0 -10px;
+  }
+
   .download {
     padding-top: 160px;
   }

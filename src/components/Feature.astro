@@ -1,18 +1,20 @@
 ---
 // One feature row: copy on one side, an illustration on the other.
 // `flip` puts the illustration first on wide screens; on narrow screens the
-// copy always comes first.
+// copy always comes first. `stacked` puts the illustration full width under the
+// copy, for terminal captures that are unreadable at half width.
 interface Props {
   eyebrow: string;
   title: string;
   flip?: boolean;
+  stacked?: boolean;
   visualBasis?: number;
 }
 
-const { eyebrow, title, flip = false, visualBasis = 440 } = Astro.props;
+const { eyebrow, title, flip = false, stacked = false, visualBasis = 440 } = Astro.props;
 ---
 
-<div class:list={['feature', { flip }]}>
+<div class:list={['feature', { flip, stacked }]}>
   <div class="copy">
     <span class="eyebrow mono">{eyebrow}</span>
     <h3>{title}</h3>
@@ -20,13 +22,14 @@ const { eyebrow, title, flip = false, visualBasis = 440 } = Astro.props;
       <slot />
     </p>
   </div>
-  <div class="visual" style={`flex-basis:${visualBasis}px`}>
+  <div class="visual" style={stacked ? undefined : `flex-basis:${visualBasis}px`}>
     <slot name="visual" />
   </div>
 </div>
 
 <style>
   .feature {
+    min-width: 0;
     display: flex;
     flex-wrap: wrap;
     gap: 40px 72px;
@@ -35,6 +38,17 @@ const { eyebrow, title, flip = false, visualBasis = 440 } = Astro.props;
 
   .feature.flip {
     flex-direction: row-reverse;
+  }
+
+  .feature.stacked {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+  }
+
+  .stacked .copy,
+  .stacked .visual {
+    flex: none;
   }
 
   .copy {

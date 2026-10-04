@@ -1,182 +1,60 @@
 ---
 import Feature from './Feature.astro';
 import Mark from './Mark.astro';
-
-const mems = [
-  { name: 'Calling', f: '146.520', off: '', tone: '' },
-  { name: 'Hilltop rptr', f: '146.940', off: '−0.6', tone: 'PL 100.0' },
-  { name: 'NERT net', f: '147.555', off: '+0.6', tone: 'PL 103.5' },
-  { name: 'Club rptr', f: '145.230', off: '−0.6', tone: 'DCS 023' },
-];
-
-const bandRows = [
-  { n: 'Marine VHF', c: '16, 22A, 87B …' },
-  { n: 'NOAA weather', c: 'WX1–WX7' },
-  { n: 'MURS', c: '1–5' },
-  { n: '70 cm amateur', c: '52' },
-  { n: 'GMRS', c: '1–22 · 27 yours' },
-];
-
-const clipSeeds = [
-  ['19:30:04', '18.2 s'],
-  ['19:30:31', '6.4 s'],
-  ['19:30:52', '41.0 s'],
-  ['19:32:10', '3.1 s'],
-  ['19:33:47', '27.5 s'],
-  ['19:35:02', '12.9 s'],
-  ['19:36:20', '9.7 s'],
-];
-const clips = clipSeeds.map(([t, d], k) => {
-  const len = Math.max(8, Math.min(56, Math.round(parseFloat(d) * 1.6)));
-  const wave = Array.from({ length: len }, (_, i) =>
-    (3 + Math.abs(Math.sin(i * 0.9 + k * 2.1) * Math.sin(i * 0.37 + k)) * 17).toFixed(1)
-  );
-  return { t, d, wave, on: k === 2 };
-});
+import Shot from './Shot.astro';
 ---
 
 <section id="features" class="wrap features">
   <Feature
     eyebrow="Memories by band"
     title="Bring your CHIRP file. Every memory lands under its band."
-    visualBasis={420}
+    visualBasis={560}
   >
     Export from CHIRP, import into Leyline, and your memories become named bookmarks with their
     tones, offsets and comments, filed under 2 m, 70 cm and GMRS instead of one long list. Channel
     plans for NOAA weather, GMRS, MURS and marine VHF are built in, so WX3 or GMRS 17 is one click
     with nothing to program.
-    <div slot="visual" class="panel mac mems">
-      <div class="mems-head">
-        <span class="dot"></span>
-        <span>Imported 120 from memories.csv</span>
-        <span class="grow"></span>
-        <span class="mac-mono tiny faint">118 added · 2 updated</span>
-      </div>
-      <div class="mems-body">
-        <div class="band-row open">
-          <span class="caret">▾</span>
-          <span class="grow">2 m amateur</span>
-          <span class="mac-mono tiny">41</span>
-        </div>
-        {mems.map((m) => (
-          <div class="mem">
-            <span class="name">{m.name}</span>
-            <span class="mac-mono tiny f">{m.f}</span>
-            <span class="mac-mono tiny faint">{m.off}</span>
-            <span class="mac-mono tiny teal">{m.tone}</span>
-          </div>
-        ))}
-        <div class="more">37 more</div>
-        {bandRows.map((b) => (
-          <div class="band-row">
-            <span class="caret">▸</span>
-            <span class="grow">{b.n}</span>
-            <span class="mac-mono tiny faint">{b.c}</span>
-          </div>
-        ))}
-      </div>
+    <div slot="visual" class="chirp">
+      <Shot name="chirp-csv-before" frame="terminal" class="csv" />
+      <Shot name="sidebar-chirp-import" class="after" />
     </div>
   </Feature>
 
-  <Feature eyebrow="Tone discovery" title="Hear a repeater, learn its tone." flip visualBasis={420}>
+  <Feature eyebrow="Tone discovery" title="Hear a repeater, learn its tone." flip visualBasis={480}>
     On an NFM channel Leyline listens under the voice for a CTCSS tone or a DCS code and shows it
-    the way your radio’s menu would: PL 100.0, or DCS 023 in octal. Add it to the bookmark, then
-    program your handheld.
-    <div slot="visual" class="tone-stack">
-      <div class="panel mac tone">
-        <div class="tone-head">
-          <span>Hilltop repeater · 146.940 MHz</span>
-          <span class="found">
-            <span class="dot"></span>tone found
-          </span>
-        </div>
-        <div class="tone-big">
-          <span class="pl">PL 100.0</span>
-          <span class="mac-mono hz">Hz</span>
-        </div>
-        <div class="tone-stats">
-          <div>
-            <span>Deviation</span>
-            <span class="mac-mono">620 Hz</span>
-          </div>
-          <div>
-            <span>Tone to band</span>
-            <span class="mac-mono">18 dB</span>
-          </div>
-          <div>
-            <span>Offset</span>
-            <span class="mac-mono">−600 kHz</span>
-          </div>
-        </div>
-        <div class="tone-actions">
-          <span class="chip on">Save to bookmark</span>
-          <span class="chip">Copy for CHIRP</span>
-        </div>
-      </div>
-      <pre class="term tone-term"><span class="teal">PL  100.0 Hz</span>  dev 620 Hz  tone/band 18 dB
-<span class="teal">DCS 023</span>       dev 550 Hz</pre>
+    beside the bookmark’s tone, the way your radio’s menu would: PL 127.3, or DCS 023 in octal. Add
+    it to the bookmark, then program your handheld.
+    <div slot="visual" class="pair">
+      <Shot name="inspector-tone" />
+      <Shot name="inspector-dcs" />
     </div>
   </Feature>
 
-  <Feature eyebrow="Scanning" title="Sweep a band and see what’s on it.">
+  <Feature eyebrow="Scanning" title="Sweep a band and see what’s on it." stacked>
     A scan lists each carrier with its frequency, width, signal-to-noise and how often it was seen,
     so a single burst reads differently from a repeater that is always up. It reports what it
-    measured and doesn’t guess the mode. If someone is already listening on the radio, it says so
-    instead of taking over.
-    <div slot="visual" class="panel deep">
-      <div class="term-bar" aria-hidden="true">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <pre class="term scan"><span class="cmd">$ ley scan 144M..148M</span>
-sweeping 144.000 MHz to 148.000 MHz
-<span class="dim">FREQUENCY    WIDTH            SNR (dB)  SEEN  BAND</span>
-<span class="hi">145.230 MHz</span>  11.400 kHz             21   8/8  2 m amateur
-<span class="hi">146.520 MHz</span>  11.900 kHz             <span class="teal">34</span>   8/8  2 m amateur (calling)
-<span class="hi">146.940 MHz</span>  under 2.344 kHz         9   <span class="warn">1/8</span>  2 m amateur
-3 signals, floor -88 dBFS per 2.344 kHz bin
-<span class="dim">  ley listen 146.520</span></pre>
+    measured and doesn’t guess the mode. In the app, Scan band lists the hits under the band and
+    marks them on the band rail. If someone is already listening on the radio, it says so instead of
+    taking over.
+    <div slot="visual" class="stack">
+      <Shot name="scan-2m" frame="terminal" />
+      <Shot name="scan-app" />
     </div>
   </Feature>
 
-  <Feature eyebrow="Auto-recording" title="Every over, its own clip." flip visualBasis={420}>
+  <Feature eyebrow="Auto-recording" title="Every over, its own clip." flip visualBasis={560}>
     With the squelch as the gate, Leyline records only while someone is on the air, and keeps half a
     second before each transmission so no clip starts mid-word. Leave a net running and come back to
     a list of transmissions instead of an hour of hiss.
-    <div slot="visual" class="panel mac clips">
-      <div class="clips-head">
-        <span class="title">NERT net</span>
-        <span class="mac-mono meta">147.555 MHz · NFM · Tue 19:30</span>
-        <span class="grow"></span>
-        <span class="count">7 transmissions</span>
-      </div>
-      <div>
-        {clips.map((c) => (
-          <div class:list={['clip', { on: c.on }]}>
-            <span class="play" aria-hidden="true">
-              ▶
-            </span>
-            <span class="mac-mono t">{c.t}</span>
-            <div class="wave" aria-hidden="true">
-              {c.wave.map((h) => (
-                <span style={`height:${h}px`} />
-              ))}
-            </div>
-            <span class="mac-mono d">{c.d}</span>
-          </div>
-        ))}
-      </div>
-      <div class="clips-foot">4 min 12 s of audio from 32 min on the air</div>
-    </div>
+    <Shot slot="visual" name="library-net" />
   </Feature>
 
-  <Feature eyebrow="Decoding" title="APRS, weather alerts and AIS, decoded.">
+  <Feature eyebrow="Decoding" title="APRS, weather alerts and AIS, decoded." stacked>
     Decoders share the radio with you when their channel is in range, or run on a second radio.
     Follow APRS stations as they beacon, see vessels on AIS, and set a watch that sends a macOS
     notification when a SAME alert names your county. Alerts can also go to a webhook or a shell
     command.
-    <div slot="visual" class="decode">
+    <div slot="visual" class="stack">
       <div class="notif mac">
         <span class="notif-icon">
           <Mark size={20} />
@@ -190,11 +68,8 @@ sweeping 144.000 MHz to 148.000 MHz
           <span class="src">SAME on NOAA WX2 · 162.400 MHz</span>
         </div>
       </div>
-      <pre class="term panel deep aprs"><span class="cmd">$ ley track aprs</span>
-<span class="dim">STATION    LAST HEARD  SEEN  POSITION            LAST</span>
-<span class="hi">N0CALL-9</span>   now         6     38.8462N 77.3064W   /> mobile
-<span class="hi">N0CALL-13</span>  2 m         3     -                   21.0 °C wind 12 km/h
-<span class="hi">N0CALL-1</span>   4 m         2     38.8816N 77.1710W   digipeater</pre>
+      <Shot name="aprs-track" frame="terminal" />
+      <Shot name="ais-track" frame="terminal" />
     </div>
   </Feature>
 </section>
@@ -211,335 +86,38 @@ sweeping 144.000 MHz to 148.000 MHz
     font-family: var(--font-mac);
   }
 
-  .panel {
-    border: 1px solid var(--line-3);
-    border-radius: 11px;
-    background: var(--surface);
-    overflow: hidden;
-  }
-
-  .panel.deep {
-    background: var(--bg-deep);
-  }
-
-  pre {
-    margin: 0;
-  }
-
-  .grow {
-    flex: 1;
-  }
-
-  .tiny {
-    font-size: 11px;
-  }
-
-  .faint {
-    color: var(--faint);
-  }
-
-  .dot {
-    width: 6px;
-    height: 6px;
-    flex: none;
-    border-radius: 50%;
-    background: var(--teal);
-  }
-
-  /* Memories */
-  .mems {
-    font-size: 13px;
-  }
-
-  .mems-head {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 16px;
-    border-bottom: 1px solid var(--line-2);
-    background: var(--surface-2);
-    font-size: 12px;
-    color: var(--text-4);
-  }
-
-  .mems-body {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-
-  .band-row {
-    padding: 7px 10px;
-    border-top: 1px solid var(--line-faint);
-    display: flex;
-    gap: 10px;
-    align-items: baseline;
-    color: var(--text-4);
-  }
-
-  .band-row.open {
-    border-top: 0;
-    border-radius: 6px;
-    background: var(--surface-hi);
-    color: var(--text-bright);
-  }
-
-  .band-row.open .tiny {
-    color: var(--muted-2);
-  }
-
-  .caret {
-    font-size: 10px;
-    color: var(--faint);
-  }
-
-  .band-row.open .caret {
-    color: var(--muted-2);
-  }
-
-  .mem {
-    padding: 6px 10px 6px 30px;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 64px 44px 66px;
-    gap: 10px;
-    align-items: baseline;
-    font-size: 12.5px;
-  }
-
-  .mem span {
-    text-align: right;
-  }
-
-  .mem .name {
-    text-align: left;
-    color: #c9cdd0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .mem .f {
-    color: var(--text-4);
-  }
-
-  .more {
-    padding: 5px 10px 8px 30px;
-    font-size: 12px;
-    color: var(--faint);
-  }
-
-  /* Tone */
-  .tone-stack {
+  .stack {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 14px;
   }
 
-  .tone {
-    padding: 26px 26px 22px;
+  /* The CHIRP export, then the sidebar it became, overlapping it. */
+  .chirp {
     display: flex;
     flex-direction: column;
-    gap: 20px;
   }
 
-  .tone-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 12px;
-    font-size: 12px;
-    color: var(--muted-2);
+  .chirp :global(.csv) {
+    width: 90%;
   }
 
-  .found {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    color: var(--teal);
+  .chirp :global(.after) {
+    width: 72%;
+    margin: -96px 0 0 auto;
+    box-shadow: 0 30px 60px -20px rgb(0 0 0 / 90%);
   }
 
-  .tone-big {
-    display: flex;
-    align-items: baseline;
-    gap: 14px;
-    flex-wrap: wrap;
-  }
-
-  .pl {
-    font-family: var(--font-sans);
-    font-size: 64px;
-    font-weight: 500;
-    letter-spacing: -0.04em;
-    line-height: 1;
-    color: var(--text-bright);
-  }
-
-  .hz {
-    font-size: 14px;
-    color: var(--muted-2);
-  }
-
-  .tone-stats {
-    display: flex;
-    gap: 28px;
-    flex-wrap: wrap;
-    font-size: 12.5px;
-  }
-
-  .tone-stats div {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .tone-stats span:first-child {
-    color: var(--faint);
-  }
-
-  .tone-stats span:last-child {
-    color: #c9cdd0;
-  }
-
-  .tone-actions {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-
-  .chip {
-    padding: 7px 13px;
-    border-radius: 7px;
-    border: 1px solid var(--line-4);
-    color: var(--text-4);
-    font-size: 12.5px;
-  }
-
-  .chip.on {
-    border-color: transparent;
-    background: var(--surface-sel);
-    color: var(--text-bright);
-  }
-
-  .tone-term {
-    border: 1px solid var(--line-2);
-    border-radius: 9px;
-    background: var(--bg-deep);
-    padding: 14px 18px;
-    font-size: 12px;
-    line-height: 1.8;
-  }
-
-  /* Scan */
-  .term-bar {
-    display: flex;
-    gap: 7px;
-    padding: 12px 16px;
-    border-bottom: 1px solid var(--line);
-    background: var(--surface);
-  }
-
-  .term-bar span {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--line-4);
-  }
-
-  .scan {
-    padding: 20px 20px 22px;
-    font-size: 12px;
-    line-height: 1.85;
-  }
-
-  /* Clips */
-  .clips-head {
-    padding: 16px 18px;
-    border-bottom: 1px solid var(--line-2);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px 14px;
-    align-items: baseline;
-  }
-
-  .clips-head .title {
-    font-size: 14px;
-    color: var(--text-bright);
-  }
-
-  .clips-head .meta {
-    font-size: 11.5px;
-    color: var(--muted-2);
-  }
-
-  .clips-head .count,
-  .clips-foot {
-    font-size: 12px;
-    color: var(--faint);
-  }
-
-  .clips-foot {
-    padding: 11px 18px;
-  }
-
-  .clip {
+  .pair {
     display: grid;
-    grid-template-columns: 18px 64px minmax(0, 1fr) 48px;
-    gap: 12px;
-    align-items: center;
-    padding: 9px 18px;
-    border-bottom: 1px solid var(--line-faint);
-    --ink: #3b4448;
-  }
-
-  .clip.on {
-    background: #151b1d;
-    --ink: var(--teal);
-  }
-
-  .clip .play {
-    font-size: 10px;
-    color: var(--faint);
-  }
-
-  .clip.on .play {
-    color: var(--teal);
-  }
-
-  .clip .t {
-    font-size: 11.5px;
-    color: var(--text-4);
-  }
-
-  .clip .d {
-    font-size: 11.5px;
-    color: var(--muted-2);
-    text-align: right;
-  }
-
-  .wave {
-    height: 22px;
-    display: flex;
-    align-items: center;
-    gap: 2px;
-    min-width: 0;
-    overflow: hidden;
-  }
-
-  .wave span {
-    flex: none;
-    width: 2px;
-    border-radius: 1px;
-    background: var(--ink);
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
   }
 
   /* Decoding */
-  .decode {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-
   .notif {
     align-self: flex-end;
     width: min(100%, 370px);
@@ -596,11 +174,5 @@ sweeping 144.000 MHz to 148.000 MHz
   .src {
     color: var(--muted-2);
     font-size: 12px;
-  }
-
-  .aprs {
-    padding: 16px 18px;
-    font-size: 11.5px;
-    line-height: 1.85;
   }
 </style>

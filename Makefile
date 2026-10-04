@@ -1,7 +1,7 @@
 # leysdr.com — developer + CI entrypoints. `make help` lists targets.
 
 .DEFAULT_GOAL := help
-.PHONY: help install dev build preview check fmt fmt-check verify ci clean
+.PHONY: help install dev build preview check fmt fmt-check verify ci clean shots
 
 help: ## List targets
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | \
@@ -31,6 +31,9 @@ fmt-check: ## Verify formatting
 verify: check fmt-check ## Fast pre-commit checks
 
 ci: verify build ## Full CI pipeline
+
+shots: ## Fetch app screenshots from the pinned leysdr release
+	scripts/fetch-shots.sh
 
 clean: ## Remove build artifacts
 	rm -rf dist .astro

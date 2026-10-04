@@ -1,0 +1,2708 @@
+{
+  "shots": [
+    {
+      "asset": "ais-track.png",
+      "width": 1832,
+      "height": 352,
+      "scale": 2,
+      "alt": "ley track ais in a terminal: five vessels heard on AIS channel 1, 161.975 MHz, with their positions. Simulated signals.",
+      "scene": "ais-track",
+      "fixtures": {
+        "scene_ais": {
+          "noise_dbfs": -40,
+          "seed": 1,
+          "signals": [
+            {
+              "baud": 9600,
+              "carrier_hz": -25000,
+              "dbfs": -20,
+              "deviation_hz": 2400,
+              "period_s": 20,
+              "type": "ais_packet",
+              "vessels": "366999101,366999102,538999103,366999104,477999105"
+            }
+          ],
+          "tool": "leyfix",
+          "version": "0.1.0"
+        }
+      },
+      "commit": "f0979f6",
+      "tag": "shots-2026-10-03",
+      "png_sha256": "7de96b3925c2252e4e0e40d7fb4ea4edbae49544c213ea93d7fde9b5c94caf2c"
+    },
+    {
+      "asset": "app-icon-1024.png",
+      "width": 1024,
+      "height": 1024,
+      "scale": 2,
+      "alt": "The Leyline app icon. Simulated signals.",
+      "scene": "app-icon-1024",
+      "commit": "f0979f6",
+      "tag": "shots-2026-10-03",
+      "png_sha256": "6598abb4ba150549efa9bb30d5bda470b6a5fff0c21f5f19026eb75bd5308106"
+    },
+    {
+      "asset": "app-radio-2m.png",
+      "width": 2880,
+      "height": 1640,
+      "scale": 2,
+      "alt": "The Leyline window on the 2 m band: a voice transmission on 146.520 MHz with PL 100.0 in the inspector, the stations around it on the waterfall from 146.430 to 146.640 MHz, and the 2 m bookmarks in the sidebar. Simulated signals.",
+      "scene": "app-radio-2m",
+      "fixtures": {
+        "scene_2m": {
+          "noise_dbfs": -40,
+          "seed": 1,
+          "signals": [
+            {
+              "carrier": {
+                "carrier_hz": 120000,
+                "dbfs": -12,
+                "deviation_hz": 3000,
+                "sub_deviation_hz": 700,
+                "sub_tone_hz": 100,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 21
+              },
+              "segments": [
+                {
+                  "end_s": 7.21,
+                  "start_s": 0.6
+                },
+                {
+                  "end_s": 17.85,
+                  "start_s": 10.86
+                },
+                {
+                  "end_s": 29.78,
+                  "start_s": 21.85
+                },
+                {
+                  "end_s": 41.56,
+                  "start_s": 32.72
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 540000,
+                "dbfs": -20,
+                "deviation_hz": 3000,
+                "sub_deviation_hz": 700,
+                "sub_tone_hz": 127.3,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 22
+              },
+              "segments": [
+                {
+                  "end_s": 10.02,
+                  "start_s": 2
+                },
+                {
+                  "end_s": 23.6,
+                  "start_s": 15.64
+                },
+                {
+                  "end_s": 33.98,
+                  "start_s": 28.7
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "bit_rate": 134.4,
+                "carrier_hz": 780000,
+                "dbfs": -24,
+                "dcs_code": "023",
+                "dcs_inverted": false,
+                "deviation_hz": 3000,
+                "low_pass_hz": 300,
+                "sub_deviation_hz": 550,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 23
+              },
+              "segments": [
+                {
+                  "end_s": 9.12,
+                  "start_s": 1.2
+                },
+                {
+                  "end_s": 17.82,
+                  "start_s": 12.57
+                },
+                {
+                  "end_s": 26.95,
+                  "start_s": 22.56
+                },
+                {
+                  "end_s": 36.18,
+                  "start_s": 31.71
+                },
+                {
+                  "end_s": 46.47,
+                  "start_s": 41.8
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": -1170000,
+                "dbfs": -28,
+                "deviation_hz": 3000,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 24
+              },
+              "segments": [
+                {
+                  "end_s": 4.23,
+                  "start_s": 3
+                },
+                {
+                  "end_s": 15.45,
+                  "start_s": 13.07
+                },
+                {
+                  "end_s": 28.48,
+                  "start_s": 26.81
+                },
+                {
+                  "end_s": 41.3,
+                  "start_s": 39.77
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 930000,
+                "dbfs": -30,
+                "deviation_hz": 3000,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 25
+              },
+              "segments": [
+                {
+                  "end_s": 7.04,
+                  "start_s": 6
+                },
+                {
+                  "end_s": 21.45,
+                  "start_s": 20.04
+                },
+                {
+                  "end_s": 32.71,
+                  "start_s": 31.32
+                },
+                {
+                  "end_s": 43.06,
+                  "start_s": 41.77
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 30000,
+                "dbfs": -34,
+                "deviation_hz": 3000,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 26
+              },
+              "segments": [
+                {
+                  "end_s": 6.96,
+                  "start_s": 4
+                },
+                {
+                  "end_s": 17.29,
+                  "start_s": 15.63
+                },
+                {
+                  "end_s": 29.14,
+                  "start_s": 25.95
+                },
+                {
+                  "end_s": 36.83,
+                  "start_s": 34.93
+                },
+                {
+                  "end_s": 45.89,
+                  "start_s": 42.79
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 60000,
+                "dbfs": -24,
+                "deviation_hz": 3000,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 27
+              },
+              "segments": [
+                {
+                  "end_s": 6.55,
+                  "start_s": 1.5
+                },
+                {
+                  "end_s": 17.35,
+                  "start_s": 11.84
+                },
+                {
+                  "end_s": 31.9,
+                  "start_s": 25.46
+                },
+                {
+                  "end_s": 40.75,
+                  "start_s": 37.59
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier": {
+                  "carrier_hz": 150000,
+                  "dbfs": -10,
+                  "deviation_hz": 5000,
+                  "type": "nfm_voice",
+                  "voice_band_hz": [300, 3000],
+                  "voice_seed": 28
+                },
+                "carrier_hz": 150000,
+                "dbc": -37,
+                "dbfs": -47,
+                "filter": "4th-order Butterworth",
+                "half_width_hz": 15000,
+                "seed": 28,
+                "type": "splatter"
+              },
+              "segments": [
+                {
+                  "end_s": 9.89,
+                  "start_s": 2
+                },
+                {
+                  "end_s": 22.53,
+                  "start_s": 15.52
+                },
+                {
+                  "end_s": 34.1,
+                  "start_s": 26.12
+                },
+                {
+                  "end_s": 45.08,
+                  "start_s": 39.81
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 180000,
+                "dbfs": -20,
+                "deviations_hz": [-1800, -600, 600, 1800],
+                "seed": 29,
+                "shaping": "raised-cosine over the first half symbol",
+                "symbol_rate": 4800,
+                "type": "fsk4"
+              },
+              "segments": [
+                {
+                  "end_s": 8.34,
+                  "start_s": 5
+                },
+                {
+                  "end_s": 18.29,
+                  "start_s": 12.03
+                },
+                {
+                  "end_s": 29.53,
+                  "start_s": 26
+                },
+                {
+                  "end_s": 41.36,
+                  "start_s": 34.07
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 240000,
+                "courtesy_tail": {
+                  "beep_at_s": 0.6,
+                  "beep_deviation_hz": 1500,
+                  "beep_hz": 1000,
+                  "beep_s": 0.15,
+                  "tail_s": 1.5
+                },
+                "dbfs": -18,
+                "deviation_hz": 3000,
+                "sub_deviation_hz": 700,
+                "sub_tone_hz": 146.2,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 30
+              },
+              "segments": [
+                {
+                  "end_s": 10.01,
+                  "start_s": 0.8
+                },
+                {
+                  "end_s": 22,
+                  "start_s": 14.74
+                },
+                {
+                  "end_s": 34.82,
+                  "start_s": 25.94
+                },
+                {
+                  "end_s": 44.43,
+                  "start_s": 38.41
+                }
+              ],
+              "type": "keyed"
+            }
+          ],
+          "tool": "leyfix",
+          "version": "0.1.0"
+        }
+      },
+      "commit": "f0979f6",
+      "tag": "shots-2026-10-03",
+      "png_sha256": "d28913fa8c4b445301b8619787c70308ba39a16d322f221f69d8b8b16feda935"
+    },
+    {
+      "asset": "aprs-track.png",
+      "width": 1832,
+      "height": 416,
+      "scale": 2,
+      "alt": "ley track aprs in a terminal: seven stations heard on 144.390 MHz with their positions, symbols and comments. Simulated signals.",
+      "scene": "aprs-track",
+      "fixtures": {
+        "scene_aprs": {
+          "noise_dbfs": -40,
+          "seed": 1,
+          "signals": [
+            {
+              "baud": 1200,
+              "carrier_hz": 0,
+              "dbfs": -20,
+              "deviation_hz": 3500,
+              "period_s": 21,
+              "stations": "N0CALL-1,N0CALL-2,N0CALL-3,N0CALL-4,N0CALL-5,N0CALL-6,N0CALL-7",
+              "type": "afsk_packet"
+            }
+          ],
+          "tool": "leyfix",
+          "version": "0.1.0"
+        }
+      },
+      "commit": "f0979f6",
+      "tag": "shots-2026-10-03",
+      "png_sha256": "0a1e9da015a4a8bd9df3cfc41e830d334e6872dda36633c48770e04419e96cbb"
+    },
+    {
+      "asset": "chirp-csv-before.png",
+      "width": 2012,
+      "height": 1106,
+      "scale": 2,
+      "alt": "The first rows of a CHIRP CSV export: memories across 2 m, 70 cm, GMRS, NOAA weather, MURS and marine, with their offsets and tones. Simulated signals.",
+      "scene": "chirp-csv-before",
+      "commit": "f0979f6",
+      "tag": "shots-2026-10-03",
+      "png_sha256": "713d6fd7e6d8f2c4988014b392cab3a060c711b2eaf6c4aa9a8980ddb3806a34"
+    },
+    {
+      "asset": "inspector-dcs.png",
+      "width": 624,
+      "height": 1358,
+      "scale": 2,
+      "alt": "The Leyline inspector on a net on 147.180 MHz: the heard DCS code, 023, beside the bookmark's tone. Simulated signals.",
+      "scene": "inspector-dcs",
+      "fixtures": {
+        "scene_2m": {
+          "noise_dbfs": -40,
+          "seed": 1,
+          "signals": [
+            {
+              "carrier": {
+                "carrier_hz": 120000,
+                "dbfs": -12,
+                "deviation_hz": 3000,
+                "sub_deviation_hz": 700,
+                "sub_tone_hz": 100,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 21
+              },
+              "segments": [
+                {
+                  "end_s": 7.21,
+                  "start_s": 0.6
+                },
+                {
+                  "end_s": 17.85,
+                  "start_s": 10.86
+                },
+                {
+                  "end_s": 29.78,
+                  "start_s": 21.85
+                },
+                {
+                  "end_s": 41.56,
+                  "start_s": 32.72
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 540000,
+                "dbfs": -20,
+                "deviation_hz": 3000,
+                "sub_deviation_hz": 700,
+                "sub_tone_hz": 127.3,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 22
+              },
+              "segments": [
+                {
+                  "end_s": 10.02,
+                  "start_s": 2
+                },
+                {
+                  "end_s": 23.6,
+                  "start_s": 15.64
+                },
+                {
+                  "end_s": 33.98,
+                  "start_s": 28.7
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "bit_rate": 134.4,
+                "carrier_hz": 780000,
+                "dbfs": -24,
+                "dcs_code": "023",
+                "dcs_inverted": false,
+                "deviation_hz": 3000,
+                "low_pass_hz": 300,
+                "sub_deviation_hz": 550,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 23
+              },
+              "segments": [
+                {
+                  "end_s": 9.12,
+                  "start_s": 1.2
+                },
+                {
+                  "end_s": 17.82,
+                  "start_s": 12.57
+                },
+                {
+                  "end_s": 26.95,
+                  "start_s": 22.56
+                },
+                {
+                  "end_s": 36.18,
+                  "start_s": 31.71
+                },
+                {
+                  "end_s": 46.47,
+                  "start_s": 41.8
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": -1170000,
+                "dbfs": -28,
+                "deviation_hz": 3000,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 24
+              },
+              "segments": [
+                {
+                  "end_s": 4.23,
+                  "start_s": 3
+                },
+                {
+                  "end_s": 15.45,
+                  "start_s": 13.07
+                },
+                {
+                  "end_s": 28.48,
+                  "start_s": 26.81
+                },
+                {
+                  "end_s": 41.3,
+                  "start_s": 39.77
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 930000,
+                "dbfs": -30,
+                "deviation_hz": 3000,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 25
+              },
+              "segments": [
+                {
+                  "end_s": 7.04,
+                  "start_s": 6
+                },
+                {
+                  "end_s": 21.45,
+                  "start_s": 20.04
+                },
+                {
+                  "end_s": 32.71,
+                  "start_s": 31.32
+                },
+                {
+                  "end_s": 43.06,
+                  "start_s": 41.77
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 30000,
+                "dbfs": -34,
+                "deviation_hz": 3000,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 26
+              },
+              "segments": [
+                {
+                  "end_s": 6.96,
+                  "start_s": 4
+                },
+                {
+                  "end_s": 17.29,
+                  "start_s": 15.63
+                },
+                {
+                  "end_s": 29.14,
+                  "start_s": 25.95
+                },
+                {
+                  "end_s": 36.83,
+                  "start_s": 34.93
+                },
+                {
+                  "end_s": 45.89,
+                  "start_s": 42.79
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 60000,
+                "dbfs": -24,
+                "deviation_hz": 3000,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 27
+              },
+              "segments": [
+                {
+                  "end_s": 6.55,
+                  "start_s": 1.5
+                },
+                {
+                  "end_s": 17.35,
+                  "start_s": 11.84
+                },
+                {
+                  "end_s": 31.9,
+                  "start_s": 25.46
+                },
+                {
+                  "end_s": 40.75,
+                  "start_s": 37.59
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier": {
+                  "carrier_hz": 150000,
+                  "dbfs": -10,
+                  "deviation_hz": 5000,
+                  "type": "nfm_voice",
+                  "voice_band_hz": [300, 3000],
+                  "voice_seed": 28
+                },
+                "carrier_hz": 150000,
+                "dbc": -37,
+                "dbfs": -47,
+                "filter": "4th-order Butterworth",
+                "half_width_hz": 15000,
+                "seed": 28,
+                "type": "splatter"
+              },
+              "segments": [
+                {
+                  "end_s": 9.89,
+                  "start_s": 2
+                },
+                {
+                  "end_s": 22.53,
+                  "start_s": 15.52
+                },
+                {
+                  "end_s": 34.1,
+                  "start_s": 26.12
+                },
+                {
+                  "end_s": 45.08,
+                  "start_s": 39.81
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 180000,
+                "dbfs": -20,
+                "deviations_hz": [-1800, -600, 600, 1800],
+                "seed": 29,
+                "shaping": "raised-cosine over the first half symbol",
+                "symbol_rate": 4800,
+                "type": "fsk4"
+              },
+              "segments": [
+                {
+                  "end_s": 8.34,
+                  "start_s": 5
+                },
+                {
+                  "end_s": 18.29,
+                  "start_s": 12.03
+                },
+                {
+                  "end_s": 29.53,
+                  "start_s": 26
+                },
+                {
+                  "end_s": 41.36,
+                  "start_s": 34.07
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 240000,
+                "courtesy_tail": {
+                  "beep_at_s": 0.6,
+                  "beep_deviation_hz": 1500,
+                  "beep_hz": 1000,
+                  "beep_s": 0.15,
+                  "tail_s": 1.5
+                },
+                "dbfs": -18,
+                "deviation_hz": 3000,
+                "sub_deviation_hz": 700,
+                "sub_tone_hz": 146.2,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 30
+              },
+              "segments": [
+                {
+                  "end_s": 10.01,
+                  "start_s": 0.8
+                },
+                {
+                  "end_s": 22,
+                  "start_s": 14.74
+                },
+                {
+                  "end_s": 34.82,
+                  "start_s": 25.94
+                },
+                {
+                  "end_s": 44.43,
+                  "start_s": 38.41
+                }
+              ],
+              "type": "keyed"
+            }
+          ],
+          "tool": "leyfix",
+          "version": "0.1.0"
+        }
+      },
+      "commit": "f0979f6",
+      "tag": "shots-2026-10-03",
+      "png_sha256": "801e90c0ded3448a86ae5d55120cc9c4c6a64093dba4db5b7752f06c4e0de764"
+    },
+    {
+      "asset": "inspector-tone.png",
+      "width": 624,
+      "height": 1358,
+      "scale": 2,
+      "alt": "The Leyline inspector on the 146.940 MHz repeater output: the heard CTCSS tone, 127.3 Hz, beside the bookmark's offset of -0.6 MHz and its tone. Simulated signals.",
+      "scene": "inspector-tone",
+      "fixtures": {
+        "scene_2m": {
+          "noise_dbfs": -40,
+          "seed": 1,
+          "signals": [
+            {
+              "carrier": {
+                "carrier_hz": 120000,
+                "dbfs": -12,
+                "deviation_hz": 3000,
+                "sub_deviation_hz": 700,
+                "sub_tone_hz": 100,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 21
+              },
+              "segments": [
+                {
+                  "end_s": 7.21,
+                  "start_s": 0.6
+                },
+                {
+                  "end_s": 17.85,
+                  "start_s": 10.86
+                },
+                {
+                  "end_s": 29.78,
+                  "start_s": 21.85
+                },
+                {
+                  "end_s": 41.56,
+                  "start_s": 32.72
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 540000,
+                "dbfs": -20,
+                "deviation_hz": 3000,
+                "sub_deviation_hz": 700,
+                "sub_tone_hz": 127.3,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 22
+              },
+              "segments": [
+                {
+                  "end_s": 10.02,
+                  "start_s": 2
+                },
+                {
+                  "end_s": 23.6,
+                  "start_s": 15.64
+                },
+                {
+                  "end_s": 33.98,
+                  "start_s": 28.7
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "bit_rate": 134.4,
+                "carrier_hz": 780000,
+                "dbfs": -24,
+                "dcs_code": "023",
+                "dcs_inverted": false,
+                "deviation_hz": 3000,
+                "low_pass_hz": 300,
+                "sub_deviation_hz": 550,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 23
+              },
+              "segments": [
+                {
+                  "end_s": 9.12,
+                  "start_s": 1.2
+                },
+                {
+                  "end_s": 17.82,
+                  "start_s": 12.57
+                },
+                {
+                  "end_s": 26.95,
+                  "start_s": 22.56
+                },
+                {
+                  "end_s": 36.18,
+                  "start_s": 31.71
+                },
+                {
+                  "end_s": 46.47,
+                  "start_s": 41.8
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": -1170000,
+                "dbfs": -28,
+                "deviation_hz": 3000,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 24
+              },
+              "segments": [
+                {
+                  "end_s": 4.23,
+                  "start_s": 3
+                },
+                {
+                  "end_s": 15.45,
+                  "start_s": 13.07
+                },
+                {
+                  "end_s": 28.48,
+                  "start_s": 26.81
+                },
+                {
+                  "end_s": 41.3,
+                  "start_s": 39.77
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 930000,
+                "dbfs": -30,
+                "deviation_hz": 3000,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 25
+              },
+              "segments": [
+                {
+                  "end_s": 7.04,
+                  "start_s": 6
+                },
+                {
+                  "end_s": 21.45,
+                  "start_s": 20.04
+                },
+                {
+                  "end_s": 32.71,
+                  "start_s": 31.32
+                },
+                {
+                  "end_s": 43.06,
+                  "start_s": 41.77
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 30000,
+                "dbfs": -34,
+                "deviation_hz": 3000,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 26
+              },
+              "segments": [
+                {
+                  "end_s": 6.96,
+                  "start_s": 4
+                },
+                {
+                  "end_s": 17.29,
+                  "start_s": 15.63
+                },
+                {
+                  "end_s": 29.14,
+                  "start_s": 25.95
+                },
+                {
+                  "end_s": 36.83,
+                  "start_s": 34.93
+                },
+                {
+                  "end_s": 45.89,
+                  "start_s": 42.79
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 60000,
+                "dbfs": -24,
+                "deviation_hz": 3000,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 27
+              },
+              "segments": [
+                {
+                  "end_s": 6.55,
+                  "start_s": 1.5
+                },
+                {
+                  "end_s": 17.35,
+                  "start_s": 11.84
+                },
+                {
+                  "end_s": 31.9,
+                  "start_s": 25.46
+                },
+                {
+                  "end_s": 40.75,
+                  "start_s": 37.59
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier": {
+                  "carrier_hz": 150000,
+                  "dbfs": -10,
+                  "deviation_hz": 5000,
+                  "type": "nfm_voice",
+                  "voice_band_hz": [300, 3000],
+                  "voice_seed": 28
+                },
+                "carrier_hz": 150000,
+                "dbc": -37,
+                "dbfs": -47,
+                "filter": "4th-order Butterworth",
+                "half_width_hz": 15000,
+                "seed": 28,
+                "type": "splatter"
+              },
+              "segments": [
+                {
+                  "end_s": 9.89,
+                  "start_s": 2
+                },
+                {
+                  "end_s": 22.53,
+                  "start_s": 15.52
+                },
+                {
+                  "end_s": 34.1,
+                  "start_s": 26.12
+                },
+                {
+                  "end_s": 45.08,
+                  "start_s": 39.81
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 180000,
+                "dbfs": -20,
+                "deviations_hz": [-1800, -600, 600, 1800],
+                "seed": 29,
+                "shaping": "raised-cosine over the first half symbol",
+                "symbol_rate": 4800,
+                "type": "fsk4"
+              },
+              "segments": [
+                {
+                  "end_s": 8.34,
+                  "start_s": 5
+                },
+                {
+                  "end_s": 18.29,
+                  "start_s": 12.03
+                },
+                {
+                  "end_s": 29.53,
+                  "start_s": 26
+                },
+                {
+                  "end_s": 41.36,
+                  "start_s": 34.07
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 240000,
+                "courtesy_tail": {
+                  "beep_at_s": 0.6,
+                  "beep_deviation_hz": 1500,
+                  "beep_hz": 1000,
+                  "beep_s": 0.15,
+                  "tail_s": 1.5
+                },
+                "dbfs": -18,
+                "deviation_hz": 3000,
+                "sub_deviation_hz": 700,
+                "sub_tone_hz": 146.2,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 30
+              },
+              "segments": [
+                {
+                  "end_s": 10.01,
+                  "start_s": 0.8
+                },
+                {
+                  "end_s": 22,
+                  "start_s": 14.74
+                },
+                {
+                  "end_s": 34.82,
+                  "start_s": 25.94
+                },
+                {
+                  "end_s": 44.43,
+                  "start_s": 38.41
+                }
+              ],
+              "type": "keyed"
+            }
+          ],
+          "tool": "leyfix",
+          "version": "0.1.0"
+        }
+      },
+      "commit": "f0979f6",
+      "tag": "shots-2026-10-03",
+      "png_sha256": "ee4f73092060655cd33763faeeb28bff5eb7c66254df7d23d2447fba60ca7011"
+    },
+    {
+      "asset": "library-net.png",
+      "width": 1780,
+      "height": 920,
+      "scale": 2,
+      "alt": "The Leyline Library on a net recorded on 147.180 MHz: one part per over, with a level graph for each, and one part selected. Simulated signals.",
+      "scene": "library-net",
+      "fixtures": {
+        "scene_net": {
+          "noise_dbfs": -40,
+          "seed": 1,
+          "signals": [
+            {
+              "carrier": {
+                "bit_rate": 134.4,
+                "carrier_hz": 0,
+                "dbfs": -18,
+                "dcs_code": "023",
+                "dcs_inverted": false,
+                "deviation_hz": 3000,
+                "low_pass_hz": 300,
+                "sub_deviation_hz": 550,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 31
+              },
+              "segments": [
+                {
+                  "end_s": 15,
+                  "start_s": 3
+                },
+                {
+                  "end_s": 26,
+                  "start_s": 22
+                },
+                {
+                  "end_s": 54,
+                  "start_s": 32
+                },
+                {
+                  "end_s": 70,
+                  "start_s": 62
+                },
+                {
+                  "end_s": 106.5,
+                  "start_s": 76.5
+                },
+                {
+                  "end_s": 120,
+                  "start_s": 114
+                },
+                {
+                  "end_s": 142,
+                  "start_s": 126
+                },
+                {
+                  "end_s": 159,
+                  "start_s": 149
+                }
+              ],
+              "type": "keyed"
+            }
+          ],
+          "tool": "leyfix",
+          "version": "0.1.0"
+        }
+      },
+      "commit": "f0979f6",
+      "tag": "shots-2026-10-03",
+      "png_sha256": "7ebef17d4ddff3e55b9e0fb7fd5cba7cbc757929fc24734de8d9d1de11a8bb1e"
+    },
+    {
+      "asset": "scan-2m.png",
+      "width": 1992,
+      "height": 448,
+      "scale": 2,
+      "alt": "ley scan 144M..148M in a terminal: a table of the carriers found on the 2 m band with their frequency, width, level over the floor, and how many looks saw each one. Simulated signals.",
+      "scene": "scan-2m",
+      "fixtures": {
+        "scene_scan": {
+          "noise_dbfs": -40,
+          "seed": 1,
+          "signals": [
+            {
+              "carrier_hz": 520000,
+              "dbfs": -18,
+              "deviation_hz": 3000,
+              "sub_deviation_hz": 700,
+              "sub_tone_hz": 100,
+              "type": "nfm_voice",
+              "voice_band_hz": [300, 3000],
+              "voice_seed": 41
+            },
+            {
+              "carrier_hz": 940000,
+              "dbfs": -22,
+              "deviation_hz": 3000,
+              "sub_deviation_hz": 700,
+              "sub_tone_hz": 127.3,
+              "type": "nfm_voice",
+              "voice_band_hz": [300, 3000],
+              "voice_seed": 42
+            },
+            {
+              "bit_rate": 134.4,
+              "carrier_hz": 1180000,
+              "dbfs": -26,
+              "dcs_code": "023",
+              "dcs_inverted": false,
+              "deviation_hz": 3000,
+              "low_pass_hz": 300,
+              "sub_deviation_hz": 550,
+              "type": "nfm_voice",
+              "voice_band_hz": [300, 3000],
+              "voice_seed": 43
+            },
+            {
+              "carrier_hz": -770000,
+              "dbfs": -30,
+              "deviation_hz": 3000,
+              "type": "nfm_voice",
+              "voice_band_hz": [300, 3000],
+              "voice_seed": 44
+            },
+            {
+              "carrier": {
+                "carrier_hz": -1610000,
+                "dbfs": -20,
+                "deviation_hz": 3000,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 45
+              },
+              "period_s": 0.21,
+              "type": "pulsed",
+              "width_s": 0.015
+            }
+          ],
+          "tool": "leyfix",
+          "version": "0.1.0"
+        }
+      },
+      "commit": "f0979f6",
+      "tag": "shots-2026-10-03",
+      "png_sha256": "d05df0b13cb76dac61125f2c12985056faa2746488542f1b9d7fad0ae435ec7c"
+    },
+    {
+      "asset": "scan-app.png",
+      "width": 2000,
+      "height": 600,
+      "scale": 2,
+      "alt": "The Leyline sidebar's 2 m band row after a scan, with the carriers it found marked on the band rail. Simulated signals.",
+      "scene": "scan-app",
+      "fixtures": {
+        "scene_scan": {
+          "noise_dbfs": -40,
+          "seed": 1,
+          "signals": [
+            {
+              "carrier_hz": 520000,
+              "dbfs": -18,
+              "deviation_hz": 3000,
+              "sub_deviation_hz": 700,
+              "sub_tone_hz": 100,
+              "type": "nfm_voice",
+              "voice_band_hz": [300, 3000],
+              "voice_seed": 41
+            },
+            {
+              "carrier_hz": 940000,
+              "dbfs": -22,
+              "deviation_hz": 3000,
+              "sub_deviation_hz": 700,
+              "sub_tone_hz": 127.3,
+              "type": "nfm_voice",
+              "voice_band_hz": [300, 3000],
+              "voice_seed": 42
+            },
+            {
+              "bit_rate": 134.4,
+              "carrier_hz": 1180000,
+              "dbfs": -26,
+              "dcs_code": "023",
+              "dcs_inverted": false,
+              "deviation_hz": 3000,
+              "low_pass_hz": 300,
+              "sub_deviation_hz": 550,
+              "type": "nfm_voice",
+              "voice_band_hz": [300, 3000],
+              "voice_seed": 43
+            },
+            {
+              "carrier_hz": -770000,
+              "dbfs": -30,
+              "deviation_hz": 3000,
+              "type": "nfm_voice",
+              "voice_band_hz": [300, 3000],
+              "voice_seed": 44
+            },
+            {
+              "carrier": {
+                "carrier_hz": -1610000,
+                "dbfs": -20,
+                "deviation_hz": 3000,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 45
+              },
+              "period_s": 0.21,
+              "type": "pulsed",
+              "width_s": 0.015
+            }
+          ],
+          "tool": "leyfix",
+          "version": "0.1.0"
+        }
+      },
+      "commit": "f0979f6",
+      "tag": "shots-2026-10-03",
+      "png_sha256": "9da05574ec9f0126485ee4d0f75be9925439e94a556d6ff8d25107b9e83efabf"
+    },
+    {
+      "asset": "sidebar-chirp-import.png",
+      "width": 1520,
+      "height": 1358,
+      "scale": 2,
+      "alt": "The Leyline sidebar after importing a CHIRP export of 100 memories: the 2 m band open with its five bookmarks, the other bands closed, and the import's counts in the notice over the waterfall. Simulated signals.",
+      "scene": "sidebar-chirp-import",
+      "fixtures": {
+        "scene_2m": {
+          "noise_dbfs": -40,
+          "seed": 1,
+          "signals": [
+            {
+              "carrier": {
+                "carrier_hz": 120000,
+                "dbfs": -12,
+                "deviation_hz": 3000,
+                "sub_deviation_hz": 700,
+                "sub_tone_hz": 100,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 21
+              },
+              "segments": [
+                {
+                  "end_s": 7.21,
+                  "start_s": 0.6
+                },
+                {
+                  "end_s": 17.85,
+                  "start_s": 10.86
+                },
+                {
+                  "end_s": 29.78,
+                  "start_s": 21.85
+                },
+                {
+                  "end_s": 41.56,
+                  "start_s": 32.72
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 540000,
+                "dbfs": -20,
+                "deviation_hz": 3000,
+                "sub_deviation_hz": 700,
+                "sub_tone_hz": 127.3,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 22
+              },
+              "segments": [
+                {
+                  "end_s": 10.02,
+                  "start_s": 2
+                },
+                {
+                  "end_s": 23.6,
+                  "start_s": 15.64
+                },
+                {
+                  "end_s": 33.98,
+                  "start_s": 28.7
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "bit_rate": 134.4,
+                "carrier_hz": 780000,
+                "dbfs": -24,
+                "dcs_code": "023",
+                "dcs_inverted": false,
+                "deviation_hz": 3000,
+                "low_pass_hz": 300,
+                "sub_deviation_hz": 550,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 23
+              },
+              "segments": [
+                {
+                  "end_s": 9.12,
+                  "start_s": 1.2
+                },
+                {
+                  "end_s": 17.82,
+                  "start_s": 12.57
+                },
+                {
+                  "end_s": 26.95,
+                  "start_s": 22.56
+                },
+                {
+                  "end_s": 36.18,
+                  "start_s": 31.71
+                },
+                {
+                  "end_s": 46.47,
+                  "start_s": 41.8
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": -1170000,
+                "dbfs": -28,
+                "deviation_hz": 3000,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 24
+              },
+              "segments": [
+                {
+                  "end_s": 4.23,
+                  "start_s": 3
+                },
+                {
+                  "end_s": 15.45,
+                  "start_s": 13.07
+                },
+                {
+                  "end_s": 28.48,
+                  "start_s": 26.81
+                },
+                {
+                  "end_s": 41.3,
+                  "start_s": 39.77
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 930000,
+                "dbfs": -30,
+                "deviation_hz": 3000,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 25
+              },
+              "segments": [
+                {
+                  "end_s": 7.04,
+                  "start_s": 6
+                },
+                {
+                  "end_s": 21.45,
+                  "start_s": 20.04
+                },
+                {
+                  "end_s": 32.71,
+                  "start_s": 31.32
+                },
+                {
+                  "end_s": 43.06,
+                  "start_s": 41.77
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 30000,
+                "dbfs": -34,
+                "deviation_hz": 3000,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 26
+              },
+              "segments": [
+                {
+                  "end_s": 6.96,
+                  "start_s": 4
+                },
+                {
+                  "end_s": 17.29,
+                  "start_s": 15.63
+                },
+                {
+                  "end_s": 29.14,
+                  "start_s": 25.95
+                },
+                {
+                  "end_s": 36.83,
+                  "start_s": 34.93
+                },
+                {
+                  "end_s": 45.89,
+                  "start_s": 42.79
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 60000,
+                "dbfs": -24,
+                "deviation_hz": 3000,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 27
+              },
+              "segments": [
+                {
+                  "end_s": 6.55,
+                  "start_s": 1.5
+                },
+                {
+                  "end_s": 17.35,
+                  "start_s": 11.84
+                },
+                {
+                  "end_s": 31.9,
+                  "start_s": 25.46
+                },
+                {
+                  "end_s": 40.75,
+                  "start_s": 37.59
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier": {
+                  "carrier_hz": 150000,
+                  "dbfs": -10,
+                  "deviation_hz": 5000,
+                  "type": "nfm_voice",
+                  "voice_band_hz": [300, 3000],
+                  "voice_seed": 28
+                },
+                "carrier_hz": 150000,
+                "dbc": -37,
+                "dbfs": -47,
+                "filter": "4th-order Butterworth",
+                "half_width_hz": 15000,
+                "seed": 28,
+                "type": "splatter"
+              },
+              "segments": [
+                {
+                  "end_s": 9.89,
+                  "start_s": 2
+                },
+                {
+                  "end_s": 22.53,
+                  "start_s": 15.52
+                },
+                {
+                  "end_s": 34.1,
+                  "start_s": 26.12
+                },
+                {
+                  "end_s": 45.08,
+                  "start_s": 39.81
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 180000,
+                "dbfs": -20,
+                "deviations_hz": [-1800, -600, 600, 1800],
+                "seed": 29,
+                "shaping": "raised-cosine over the first half symbol",
+                "symbol_rate": 4800,
+                "type": "fsk4"
+              },
+              "segments": [
+                {
+                  "end_s": 8.34,
+                  "start_s": 5
+                },
+                {
+                  "end_s": 18.29,
+                  "start_s": 12.03
+                },
+                {
+                  "end_s": 29.53,
+                  "start_s": 26
+                },
+                {
+                  "end_s": 41.36,
+                  "start_s": 34.07
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 240000,
+                "courtesy_tail": {
+                  "beep_at_s": 0.6,
+                  "beep_deviation_hz": 1500,
+                  "beep_hz": 1000,
+                  "beep_s": 0.15,
+                  "tail_s": 1.5
+                },
+                "dbfs": -18,
+                "deviation_hz": 3000,
+                "sub_deviation_hz": 700,
+                "sub_tone_hz": 146.2,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 30
+              },
+              "segments": [
+                {
+                  "end_s": 10.01,
+                  "start_s": 0.8
+                },
+                {
+                  "end_s": 22,
+                  "start_s": 14.74
+                },
+                {
+                  "end_s": 34.82,
+                  "start_s": 25.94
+                },
+                {
+                  "end_s": 44.43,
+                  "start_s": 38.41
+                }
+              ],
+              "type": "keyed"
+            }
+          ],
+          "tool": "leyfix",
+          "version": "0.1.0"
+        }
+      },
+      "commit": "f0979f6",
+      "tag": "shots-2026-10-03",
+      "png_sha256": "35c906b3174c8f7a7ea5dfe07dc707def1a891b76462836a92914e079a90dc28"
+    },
+    {
+      "asset": "ways-app.png",
+      "width": 1520,
+      "height": 950,
+      "scale": 2,
+      "alt": "Part of the Leyline window: the waterfall of a voice transmission on 146.520 MHz among the stations either side of it, beside the inspector's squelch and level. Simulated signals.",
+      "scene": "ways-app",
+      "fixtures": {
+        "scene_2m": {
+          "noise_dbfs": -40,
+          "seed": 1,
+          "signals": [
+            {
+              "carrier": {
+                "carrier_hz": 120000,
+                "dbfs": -12,
+                "deviation_hz": 3000,
+                "sub_deviation_hz": 700,
+                "sub_tone_hz": 100,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 21
+              },
+              "segments": [
+                {
+                  "end_s": 7.21,
+                  "start_s": 0.6
+                },
+                {
+                  "end_s": 17.85,
+                  "start_s": 10.86
+                },
+                {
+                  "end_s": 29.78,
+                  "start_s": 21.85
+                },
+                {
+                  "end_s": 41.56,
+                  "start_s": 32.72
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 540000,
+                "dbfs": -20,
+                "deviation_hz": 3000,
+                "sub_deviation_hz": 700,
+                "sub_tone_hz": 127.3,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 22
+              },
+              "segments": [
+                {
+                  "end_s": 10.02,
+                  "start_s": 2
+                },
+                {
+                  "end_s": 23.6,
+                  "start_s": 15.64
+                },
+                {
+                  "end_s": 33.98,
+                  "start_s": 28.7
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "bit_rate": 134.4,
+                "carrier_hz": 780000,
+                "dbfs": -24,
+                "dcs_code": "023",
+                "dcs_inverted": false,
+                "deviation_hz": 3000,
+                "low_pass_hz": 300,
+                "sub_deviation_hz": 550,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 23
+              },
+              "segments": [
+                {
+                  "end_s": 9.12,
+                  "start_s": 1.2
+                },
+                {
+                  "end_s": 17.82,
+                  "start_s": 12.57
+                },
+                {
+                  "end_s": 26.95,
+                  "start_s": 22.56
+                },
+                {
+                  "end_s": 36.18,
+                  "start_s": 31.71
+                },
+                {
+                  "end_s": 46.47,
+                  "start_s": 41.8
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": -1170000,
+                "dbfs": -28,
+                "deviation_hz": 3000,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 24
+              },
+              "segments": [
+                {
+                  "end_s": 4.23,
+                  "start_s": 3
+                },
+                {
+                  "end_s": 15.45,
+                  "start_s": 13.07
+                },
+                {
+                  "end_s": 28.48,
+                  "start_s": 26.81
+                },
+                {
+                  "end_s": 41.3,
+                  "start_s": 39.77
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 930000,
+                "dbfs": -30,
+                "deviation_hz": 3000,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 25
+              },
+              "segments": [
+                {
+                  "end_s": 7.04,
+                  "start_s": 6
+                },
+                {
+                  "end_s": 21.45,
+                  "start_s": 20.04
+                },
+                {
+                  "end_s": 32.71,
+                  "start_s": 31.32
+                },
+                {
+                  "end_s": 43.06,
+                  "start_s": 41.77
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 30000,
+                "dbfs": -34,
+                "deviation_hz": 3000,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 26
+              },
+              "segments": [
+                {
+                  "end_s": 6.96,
+                  "start_s": 4
+                },
+                {
+                  "end_s": 17.29,
+                  "start_s": 15.63
+                },
+                {
+                  "end_s": 29.14,
+                  "start_s": 25.95
+                },
+                {
+                  "end_s": 36.83,
+                  "start_s": 34.93
+                },
+                {
+                  "end_s": 45.89,
+                  "start_s": 42.79
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 60000,
+                "dbfs": -24,
+                "deviation_hz": 3000,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 27
+              },
+              "segments": [
+                {
+                  "end_s": 6.55,
+                  "start_s": 1.5
+                },
+                {
+                  "end_s": 17.35,
+                  "start_s": 11.84
+                },
+                {
+                  "end_s": 31.9,
+                  "start_s": 25.46
+                },
+                {
+                  "end_s": 40.75,
+                  "start_s": 37.59
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier": {
+                  "carrier_hz": 150000,
+                  "dbfs": -10,
+                  "deviation_hz": 5000,
+                  "type": "nfm_voice",
+                  "voice_band_hz": [300, 3000],
+                  "voice_seed": 28
+                },
+                "carrier_hz": 150000,
+                "dbc": -37,
+                "dbfs": -47,
+                "filter": "4th-order Butterworth",
+                "half_width_hz": 15000,
+                "seed": 28,
+                "type": "splatter"
+              },
+              "segments": [
+                {
+                  "end_s": 9.89,
+                  "start_s": 2
+                },
+                {
+                  "end_s": 22.53,
+                  "start_s": 15.52
+                },
+                {
+                  "end_s": 34.1,
+                  "start_s": 26.12
+                },
+                {
+                  "end_s": 45.08,
+                  "start_s": 39.81
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 180000,
+                "dbfs": -20,
+                "deviations_hz": [-1800, -600, 600, 1800],
+                "seed": 29,
+                "shaping": "raised-cosine over the first half symbol",
+                "symbol_rate": 4800,
+                "type": "fsk4"
+              },
+              "segments": [
+                {
+                  "end_s": 8.34,
+                  "start_s": 5
+                },
+                {
+                  "end_s": 18.29,
+                  "start_s": 12.03
+                },
+                {
+                  "end_s": 29.53,
+                  "start_s": 26
+                },
+                {
+                  "end_s": 41.36,
+                  "start_s": 34.07
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 240000,
+                "courtesy_tail": {
+                  "beep_at_s": 0.6,
+                  "beep_deviation_hz": 1500,
+                  "beep_hz": 1000,
+                  "beep_s": 0.15,
+                  "tail_s": 1.5
+                },
+                "dbfs": -18,
+                "deviation_hz": 3000,
+                "sub_deviation_hz": 700,
+                "sub_tone_hz": 146.2,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 30
+              },
+              "segments": [
+                {
+                  "end_s": 10.01,
+                  "start_s": 0.8
+                },
+                {
+                  "end_s": 22,
+                  "start_s": 14.74
+                },
+                {
+                  "end_s": 34.82,
+                  "start_s": 25.94
+                },
+                {
+                  "end_s": 44.43,
+                  "start_s": 38.41
+                }
+              ],
+              "type": "keyed"
+            }
+          ],
+          "tool": "leyfix",
+          "version": "0.1.0"
+        }
+      },
+      "commit": "f0979f6",
+      "tag": "shots-2026-10-03",
+      "png_sha256": "e7b08424695109d8d55d8a662d4c1d2735b551b6a94821296a2e9abde1d358d0"
+    },
+    {
+      "asset": "ways-sync.png",
+      "width": 3806,
+      "height": 1464,
+      "scale": 2,
+      "alt": "The Leyline window and a terminal side by side on one daemon: the squelch set from ley shows in the app's inspector. Simulated signals.",
+      "scene": "ways-sync",
+      "fixtures": {
+        "scene_2m": {
+          "noise_dbfs": -40,
+          "seed": 1,
+          "signals": [
+            {
+              "carrier": {
+                "carrier_hz": 120000,
+                "dbfs": -12,
+                "deviation_hz": 3000,
+                "sub_deviation_hz": 700,
+                "sub_tone_hz": 100,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 21
+              },
+              "segments": [
+                {
+                  "end_s": 7.21,
+                  "start_s": 0.6
+                },
+                {
+                  "end_s": 17.85,
+                  "start_s": 10.86
+                },
+                {
+                  "end_s": 29.78,
+                  "start_s": 21.85
+                },
+                {
+                  "end_s": 41.56,
+                  "start_s": 32.72
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 540000,
+                "dbfs": -20,
+                "deviation_hz": 3000,
+                "sub_deviation_hz": 700,
+                "sub_tone_hz": 127.3,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 22
+              },
+              "segments": [
+                {
+                  "end_s": 10.02,
+                  "start_s": 2
+                },
+                {
+                  "end_s": 23.6,
+                  "start_s": 15.64
+                },
+                {
+                  "end_s": 33.98,
+                  "start_s": 28.7
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "bit_rate": 134.4,
+                "carrier_hz": 780000,
+                "dbfs": -24,
+                "dcs_code": "023",
+                "dcs_inverted": false,
+                "deviation_hz": 3000,
+                "low_pass_hz": 300,
+                "sub_deviation_hz": 550,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 23
+              },
+              "segments": [
+                {
+                  "end_s": 9.12,
+                  "start_s": 1.2
+                },
+                {
+                  "end_s": 17.82,
+                  "start_s": 12.57
+                },
+                {
+                  "end_s": 26.95,
+                  "start_s": 22.56
+                },
+                {
+                  "end_s": 36.18,
+                  "start_s": 31.71
+                },
+                {
+                  "end_s": 46.47,
+                  "start_s": 41.8
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": -1170000,
+                "dbfs": -28,
+                "deviation_hz": 3000,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 24
+              },
+              "segments": [
+                {
+                  "end_s": 4.23,
+                  "start_s": 3
+                },
+                {
+                  "end_s": 15.45,
+                  "start_s": 13.07
+                },
+                {
+                  "end_s": 28.48,
+                  "start_s": 26.81
+                },
+                {
+                  "end_s": 41.3,
+                  "start_s": 39.77
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 930000,
+                "dbfs": -30,
+                "deviation_hz": 3000,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 25
+              },
+              "segments": [
+                {
+                  "end_s": 7.04,
+                  "start_s": 6
+                },
+                {
+                  "end_s": 21.45,
+                  "start_s": 20.04
+                },
+                {
+                  "end_s": 32.71,
+                  "start_s": 31.32
+                },
+                {
+                  "end_s": 43.06,
+                  "start_s": 41.77
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 30000,
+                "dbfs": -34,
+                "deviation_hz": 3000,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 26
+              },
+              "segments": [
+                {
+                  "end_s": 6.96,
+                  "start_s": 4
+                },
+                {
+                  "end_s": 17.29,
+                  "start_s": 15.63
+                },
+                {
+                  "end_s": 29.14,
+                  "start_s": 25.95
+                },
+                {
+                  "end_s": 36.83,
+                  "start_s": 34.93
+                },
+                {
+                  "end_s": 45.89,
+                  "start_s": 42.79
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 60000,
+                "dbfs": -24,
+                "deviation_hz": 3000,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 27
+              },
+              "segments": [
+                {
+                  "end_s": 6.55,
+                  "start_s": 1.5
+                },
+                {
+                  "end_s": 17.35,
+                  "start_s": 11.84
+                },
+                {
+                  "end_s": 31.9,
+                  "start_s": 25.46
+                },
+                {
+                  "end_s": 40.75,
+                  "start_s": 37.59
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier": {
+                  "carrier_hz": 150000,
+                  "dbfs": -10,
+                  "deviation_hz": 5000,
+                  "type": "nfm_voice",
+                  "voice_band_hz": [300, 3000],
+                  "voice_seed": 28
+                },
+                "carrier_hz": 150000,
+                "dbc": -37,
+                "dbfs": -47,
+                "filter": "4th-order Butterworth",
+                "half_width_hz": 15000,
+                "seed": 28,
+                "type": "splatter"
+              },
+              "segments": [
+                {
+                  "end_s": 9.89,
+                  "start_s": 2
+                },
+                {
+                  "end_s": 22.53,
+                  "start_s": 15.52
+                },
+                {
+                  "end_s": 34.1,
+                  "start_s": 26.12
+                },
+                {
+                  "end_s": 45.08,
+                  "start_s": 39.81
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 180000,
+                "dbfs": -20,
+                "deviations_hz": [-1800, -600, 600, 1800],
+                "seed": 29,
+                "shaping": "raised-cosine over the first half symbol",
+                "symbol_rate": 4800,
+                "type": "fsk4"
+              },
+              "segments": [
+                {
+                  "end_s": 8.34,
+                  "start_s": 5
+                },
+                {
+                  "end_s": 18.29,
+                  "start_s": 12.03
+                },
+                {
+                  "end_s": 29.53,
+                  "start_s": 26
+                },
+                {
+                  "end_s": 41.36,
+                  "start_s": 34.07
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 240000,
+                "courtesy_tail": {
+                  "beep_at_s": 0.6,
+                  "beep_deviation_hz": 1500,
+                  "beep_hz": 1000,
+                  "beep_s": 0.15,
+                  "tail_s": 1.5
+                },
+                "dbfs": -18,
+                "deviation_hz": 3000,
+                "sub_deviation_hz": 700,
+                "sub_tone_hz": 146.2,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 30
+              },
+              "segments": [
+                {
+                  "end_s": 10.01,
+                  "start_s": 0.8
+                },
+                {
+                  "end_s": 22,
+                  "start_s": 14.74
+                },
+                {
+                  "end_s": 34.82,
+                  "start_s": 25.94
+                },
+                {
+                  "end_s": 44.43,
+                  "start_s": 38.41
+                }
+              ],
+              "type": "keyed"
+            }
+          ],
+          "tool": "leyfix",
+          "version": "0.1.0"
+        }
+      },
+      "commit": "f0979f6",
+      "tag": "shots-2026-10-03",
+      "png_sha256": "2017f9e4628b10bca141d285b07ed8a3b9ee1f5e4261967fb4d9ea9276af8aea"
+    },
+    {
+      "asset": "ways-terminal.png",
+      "width": 1510,
+      "height": 1152,
+      "scale": 2,
+      "alt": "Two terminal panes: ley tune 146.52 showing the channel's meter, above ley set squelch -45 changing the squelch on the same channel. Simulated signals.",
+      "scene": "ways-terminal",
+      "fixtures": {
+        "scene_2m": {
+          "noise_dbfs": -40,
+          "seed": 1,
+          "signals": [
+            {
+              "carrier": {
+                "carrier_hz": 120000,
+                "dbfs": -12,
+                "deviation_hz": 3000,
+                "sub_deviation_hz": 700,
+                "sub_tone_hz": 100,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 21
+              },
+              "segments": [
+                {
+                  "end_s": 7.21,
+                  "start_s": 0.6
+                },
+                {
+                  "end_s": 17.85,
+                  "start_s": 10.86
+                },
+                {
+                  "end_s": 29.78,
+                  "start_s": 21.85
+                },
+                {
+                  "end_s": 41.56,
+                  "start_s": 32.72
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 540000,
+                "dbfs": -20,
+                "deviation_hz": 3000,
+                "sub_deviation_hz": 700,
+                "sub_tone_hz": 127.3,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 22
+              },
+              "segments": [
+                {
+                  "end_s": 10.02,
+                  "start_s": 2
+                },
+                {
+                  "end_s": 23.6,
+                  "start_s": 15.64
+                },
+                {
+                  "end_s": 33.98,
+                  "start_s": 28.7
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "bit_rate": 134.4,
+                "carrier_hz": 780000,
+                "dbfs": -24,
+                "dcs_code": "023",
+                "dcs_inverted": false,
+                "deviation_hz": 3000,
+                "low_pass_hz": 300,
+                "sub_deviation_hz": 550,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 23
+              },
+              "segments": [
+                {
+                  "end_s": 9.12,
+                  "start_s": 1.2
+                },
+                {
+                  "end_s": 17.82,
+                  "start_s": 12.57
+                },
+                {
+                  "end_s": 26.95,
+                  "start_s": 22.56
+                },
+                {
+                  "end_s": 36.18,
+                  "start_s": 31.71
+                },
+                {
+                  "end_s": 46.47,
+                  "start_s": 41.8
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": -1170000,
+                "dbfs": -28,
+                "deviation_hz": 3000,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 24
+              },
+              "segments": [
+                {
+                  "end_s": 4.23,
+                  "start_s": 3
+                },
+                {
+                  "end_s": 15.45,
+                  "start_s": 13.07
+                },
+                {
+                  "end_s": 28.48,
+                  "start_s": 26.81
+                },
+                {
+                  "end_s": 41.3,
+                  "start_s": 39.77
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 930000,
+                "dbfs": -30,
+                "deviation_hz": 3000,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 25
+              },
+              "segments": [
+                {
+                  "end_s": 7.04,
+                  "start_s": 6
+                },
+                {
+                  "end_s": 21.45,
+                  "start_s": 20.04
+                },
+                {
+                  "end_s": 32.71,
+                  "start_s": 31.32
+                },
+                {
+                  "end_s": 43.06,
+                  "start_s": 41.77
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 30000,
+                "dbfs": -34,
+                "deviation_hz": 3000,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 26
+              },
+              "segments": [
+                {
+                  "end_s": 6.96,
+                  "start_s": 4
+                },
+                {
+                  "end_s": 17.29,
+                  "start_s": 15.63
+                },
+                {
+                  "end_s": 29.14,
+                  "start_s": 25.95
+                },
+                {
+                  "end_s": 36.83,
+                  "start_s": 34.93
+                },
+                {
+                  "end_s": 45.89,
+                  "start_s": 42.79
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 60000,
+                "dbfs": -24,
+                "deviation_hz": 3000,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 27
+              },
+              "segments": [
+                {
+                  "end_s": 6.55,
+                  "start_s": 1.5
+                },
+                {
+                  "end_s": 17.35,
+                  "start_s": 11.84
+                },
+                {
+                  "end_s": 31.9,
+                  "start_s": 25.46
+                },
+                {
+                  "end_s": 40.75,
+                  "start_s": 37.59
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier": {
+                  "carrier_hz": 150000,
+                  "dbfs": -10,
+                  "deviation_hz": 5000,
+                  "type": "nfm_voice",
+                  "voice_band_hz": [300, 3000],
+                  "voice_seed": 28
+                },
+                "carrier_hz": 150000,
+                "dbc": -37,
+                "dbfs": -47,
+                "filter": "4th-order Butterworth",
+                "half_width_hz": 15000,
+                "seed": 28,
+                "type": "splatter"
+              },
+              "segments": [
+                {
+                  "end_s": 9.89,
+                  "start_s": 2
+                },
+                {
+                  "end_s": 22.53,
+                  "start_s": 15.52
+                },
+                {
+                  "end_s": 34.1,
+                  "start_s": 26.12
+                },
+                {
+                  "end_s": 45.08,
+                  "start_s": 39.81
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 180000,
+                "dbfs": -20,
+                "deviations_hz": [-1800, -600, 600, 1800],
+                "seed": 29,
+                "shaping": "raised-cosine over the first half symbol",
+                "symbol_rate": 4800,
+                "type": "fsk4"
+              },
+              "segments": [
+                {
+                  "end_s": 8.34,
+                  "start_s": 5
+                },
+                {
+                  "end_s": 18.29,
+                  "start_s": 12.03
+                },
+                {
+                  "end_s": 29.53,
+                  "start_s": 26
+                },
+                {
+                  "end_s": 41.36,
+                  "start_s": 34.07
+                }
+              ],
+              "type": "keyed"
+            },
+            {
+              "carrier": {
+                "carrier_hz": 240000,
+                "courtesy_tail": {
+                  "beep_at_s": 0.6,
+                  "beep_deviation_hz": 1500,
+                  "beep_hz": 1000,
+                  "beep_s": 0.15,
+                  "tail_s": 1.5
+                },
+                "dbfs": -18,
+                "deviation_hz": 3000,
+                "sub_deviation_hz": 700,
+                "sub_tone_hz": 146.2,
+                "type": "nfm_voice",
+                "voice_band_hz": [300, 3000],
+                "voice_seed": 30
+              },
+              "segments": [
+                {
+                  "end_s": 10.01,
+                  "start_s": 0.8
+                },
+                {
+                  "end_s": 22,
+                  "start_s": 14.74
+                },
+                {
+                  "end_s": 34.82,
+                  "start_s": 25.94
+                },
+                {
+                  "end_s": 44.43,
+                  "start_s": 38.41
+                }
+              ],
+              "type": "keyed"
+            }
+          ],
+          "tool": "leyfix",
+          "version": "0.1.0"
+        }
+      },
+      "commit": "f0979f6",
+      "tag": "shots-2026-10-03",
+      "png_sha256": "9d99c80672940c257b38e2fd4abc66586c1e5be17682b8f1b8a00e42098702c3"
+    }
+  ]
+}

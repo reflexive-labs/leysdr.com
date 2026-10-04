@@ -1,0 +1,89 @@
+---
+// A screenshot from src/assets/shots, served as WebP at 1x and 2x.
+// `frame="terminal"` adds the window chrome the terminal captures leave out.
+import { Image } from 'astro:assets';
+import { shot } from '@/lib/shots';
+
+interface Props {
+  name: string;
+  frame?: 'none' | 'panel' | 'terminal';
+  /** Overrides the manifest alt, e.g. "" for a decorative image. */
+  alt?: string;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+}
+
+const { name, frame = 'panel', alt, class: className, loading = 'lazy' } = Astro.props;
+const s = shot(name);
+---
+
+<figure class:list={['shot', frame, className]} style={`--w:${s.width}px`}>
+  {frame === 'terminal' && (
+    <div class="bar" aria-hidden="true">
+      <span />
+      <span />
+      <span />
+    </div>
+  )}
+  <div class="scroll">
+    <Image
+      src={s.src}
+      alt={alt ?? s.alt}
+      width={s.width}
+      height={s.height}
+      densities={[1, 2]}
+      format="webp"
+      loading={loading}
+    />
+  </div>
+</figure>
+
+<style>
+  .shot {
+    margin: 0 auto;
+    min-width: 0;
+    width: 100%;
+    max-width: var(--w);
+  }
+
+  .shot :global(img) {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Terminal text is unreadable shrunk to a phone's width, so scroll it instead. */
+  .terminal .scroll {
+    overflow-x: auto;
+  }
+
+  .terminal :global(img) {
+    min-width: min(var(--w), 600px);
+  }
+
+  .panel,
+  .terminal {
+    border: 1px solid var(--line-3);
+    border-radius: 11px;
+    overflow: hidden;
+  }
+
+  .terminal {
+    background: var(--bg-deep);
+  }
+
+  .bar {
+    display: flex;
+    gap: 7px;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--line);
+    background: var(--surface);
+  }
+
+  .bar span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--line-4);
+  }
+</style>

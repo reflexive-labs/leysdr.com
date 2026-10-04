@@ -1,7 +1,7 @@
 ---
 import Base from '@/layouts/Base.astro';
 import Hero from '@/components/Hero.astro';
-import AppWindow from '@/components/AppWindow.astro';
+import Shot from '@/components/Shot.astro';
 import Features from '@/components/Features.astro';
 import Ways from '@/components/Ways.astro';
 import Need from '@/components/Need.astro';
@@ -19,11 +19,13 @@ import Footer from '@/components/Footer.astro';
         </h2>
         <p class="lede">
           The spectrum and waterfall appear as soon as a radio is connected. Click to tune; mode,
-          bandwidth and squelch come from the band you’re in. The inspector shows level, tuning
-          error, deviation and the tone, and the Library holds everything you’ve recorded.
+          bandwidth and squelch come from the band you’re in. The inspector shows the signal,
+          tuning, deviation and the tone it hears, and the Library holds everything you’ve recorded.
         </p>
       </div>
-      <AppWindow />
+      <div class="wrap">
+        <Shot name="app-radio-2m" frame="none" class="window" />
+      </div>
     </section>
     <Features />
     <Ways />
@@ -45,5 +47,10 @@ import Footer from '@/components/Footer.astro';
 
   .intro {
     padding-bottom: 36px;
+  }
+
+  .app :global(.window) {
+    margin: 0 auto;
+    filter: drop-shadow(0 40px 60px rgb(0 0 0 / 60%));
   }
 </style>

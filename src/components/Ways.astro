@@ -1,4 +1,5 @@
 ---
+import Shot from './Shot.astro';
 import { site } from '@/config/site';
 ---
 
@@ -15,28 +16,15 @@ import { site } from '@/config/site';
     </p>
   </div>
 
+  <Shot name="ways-sync" />
+
   <div class="cards">
     <div class="card">
       <div class="card-head">
         <span class="label mono">The app</span>
         <span class="desc">Waterfall, bands, inspector and Library. For listening.</span>
       </div>
-      <div class="mini" aria-hidden="true">
-        <div class="mini-bar">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="mini-main">
-          <div class="mini-side">
-            <span style="width:80%;background:var(--line-4)"></span>
-            <span style="width:65%"></span>
-            <span style="width:72%"></span>
-            <span style="width:58%"></span>
-          </div>
-          <canvas data-waterfall-mini width="240" height="140"></canvas>
-        </div>
-      </div>
+      <Shot name="ways-app" class="card-shot" />
     </div>
 
     <div class="card">
@@ -49,11 +37,10 @@ import { site } from '@/config/site';
       </div>
       <pre class="term shell"><span class="cmd">$ ley tune 146.52</span>
 using NFM: 2 m amateur band default
-Squelch auto → -80 dBFS
-<span class="hi">146.520 MHz NFM  -39 dBFS  <span class="teal">audio</span></span>
-
+Listening to 146.520 MHz (NFM, 2 m amateur)
+<span class="hi">146.520 MHz NFM  signal -12 dBFS  <span class="teal">on air 2 s</span></span>
 <span class="cmd">$ ley set squelch -45</span>
-squelch -80 → -45 dBFS</pre>
+squelch -53 dBFS → -45 dBFS on 146.520 MHz NFM (channel 1)</pre>
     </div>
 
     <div class="card">
@@ -68,8 +55,8 @@ squelch -80 → -45 dBFS</pre>
         <div class="bubble me">Scan 2 m and tell me what’s active.</div>
         <div class="tool mono">scan 144M..148M</div>
         <div class="bubble them">
-          Three carriers. 146.520 (calling) and 145.230 were up for the whole sweep; 146.940 showed
-          once.
+          Five carriers. 146.520 (calling), 146.940, 147.180 and 145.230 were up for the whole
+          sweep; 144.390 (APRS) showed once.
         </div>
       </div>
     </div>
@@ -141,76 +128,14 @@ squelch -80 → -45 dBFS</pre>
 
   .code {
     font-size: 13px;
+    white-space: nowrap;
   }
 
-  .mini {
-    flex: 1;
-    min-height: 170px;
+  .card :global(.card-shot) {
     margin: 0 22px 22px;
-    border: 1px solid var(--line-2);
+    width: auto;
+    border-color: var(--line-2);
     border-radius: 8px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    background: var(--bg);
-  }
-
-  .mini-bar {
-    height: 22px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    padding: 0 9px;
-    background: var(--surface-2);
-    border-bottom: 1px solid var(--line-2);
-  }
-
-  .mini-bar span {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-  }
-
-  .mini-bar span:nth-child(1) {
-    background: #ff5f57;
-  }
-
-  .mini-bar span:nth-child(2) {
-    background: #febc2e;
-  }
-
-  .mini-bar span:nth-child(3) {
-    background: #28c840;
-  }
-
-  .mini-main {
-    flex: 1;
-    display: flex;
-    min-height: 0;
-  }
-
-  .mini-side {
-    width: 26%;
-    background: var(--surface);
-    border-right: 1px solid var(--line-2);
-    padding: 8px 6px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-
-  .mini-side span {
-    height: 5px;
-    border-radius: 2px;
-    background: var(--surface-hi);
-  }
-
-  .mini canvas {
-    display: block;
-    flex: 1;
-    min-width: 0;
-    width: 100%;
-    height: 100%;
   }
 
   .shell {
