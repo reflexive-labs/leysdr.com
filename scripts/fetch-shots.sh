@@ -4,7 +4,7 @@
 # To update the site, change TAG and run `make shots`.
 set -eu
 
-TAG=shots-2026-10-03
+TAG=shots-2026-10-05-2
 REPO=reflexive-labs/leysdr
 DIR=src/assets/shots
 
