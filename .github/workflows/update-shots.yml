@@ -1,0 +1,92 @@
+name: Update screenshots
+
+# Opens a PR when reflexive-labs/leysdr publishes a newer shots-* release than
+# the one pinned in scripts/fetch-shots.sh. Review the PR against the copy
+# beside each shot before merging; merging deploys.
+#
+# Needs:
+#   Secret   LEYSDR_READ_TOKEN  fine-grained token with Contents: read on
+#                               reflexive-labs/leysdr (drop once it's public)
+#   Setting  Actions → General → "Allow GitHub Actions to create and approve
+#            pull requests"
+
+on:
+  schedule:
+    - cron: '0 14 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write
+
+concurrency:
+  group: update-shots
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Find the newest shots release
+        id: latest
+        env:
+          GH_TOKEN: ${{ secrets.LEYSDR_READ_TOKEN || github.token }}
+        run: |
+          latest=$(gh release list --repo reflexive-labs/leysdr --limit 100 \
+            --json tagName,publishedAt \
+            --jq '[.[] | select(.tagName | startswith("shots-"))] | sort_by(.publishedAt) | last | .tagName // ""')
+          current=$(cat src/assets/shots/TAG)
+          echo "pinned $current, newest ${latest:-none}"
+          if [ -z "$latest" ] || [ "$latest" = "$current" ]; then
+            exit 0
+          fi
+          branch="shots/$latest"
+          if git ls-remote --exit-code --heads origin "$branch" >/dev/null; then
+            echo "$branch already exists; leaving its PR alone"
+            exit 0
+          fi
+          echo "tag=$latest" >> "$GITHUB_OUTPUT"
+          echo "current=$current" >> "$GITHUB_OUTPUT"
+          echo "branch=$branch" >> "$GITHUB_OUTPUT"
+
+      - name: Fetch the new shots
+        if: steps.latest.outputs.tag
+        env:
+          GH_TOKEN: ${{ secrets.LEYSDR_READ_TOKEN || github.token }}
+          TAG: ${{ steps.latest.outputs.tag }}
+        run: |
+          sed -i "s/^TAG=.*/TAG=$TAG/" scripts/fetch-shots.sh
+          scripts/fetch-shots.sh
+
+      - name: Open a pull request
+        if: steps.latest.outputs.tag
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.latest.outputs.tag }}
+          CURRENT: ${{ steps.latest.outputs.current }}
+          BRANCH: ${{ steps.latest.outputs.branch }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898+github-actions[bot]@users.noreply.github.com'
+          git switch -c "$BRANCH"
+          git add scripts/fetch-shots.sh src/assets/shots
+          changes=$(git diff --cached --name-status -- src/assets/shots | sed 's#src/assets/shots/##')
+          git commit -q -m "Update screenshots to $TAG"
+          git push -q origin "$BRANCH"
+
+          gh pr create --head "$BRANCH" --title "Update screenshots to $TAG" --body "$(cat <<EOF
+          Moves the pinned screenshots from \`$CURRENT\` to \`$TAG\` on reflexive-labs/leysdr.
+
+          Before merging, check that the copy beside each changed shot still describes it. A removed or renamed shot fails the build.
+
+          \`\`\`
+          $changes
+          \`\`\`
+          EOF
+          )"
+
+          # Pushes made with GITHUB_TOKEN don't trigger CI, but a dispatch does,
+          # and its result shows on the PR's commit.
+          gh workflow run ci.yml --ref "$BRANCH"

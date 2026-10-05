@@ -25,6 +25,12 @@ Set under **Settings → Secrets and variables → Actions**. Only the keys are 
 
 The deploy aborts if the authenticated account differs from `AWS_ACCOUNT_ID`.
 
+The **Update screenshots** workflow (`.github/workflows/update-shots.yml`) also needs:
+
+- Secret `LEYSDR_READ_TOKEN`: a fine-grained token with Contents: read on
+  `reflexive-labs/leysdr`, until that repo is public.
+- **Settings → Actions → General → Allow GitHub Actions to create and approve pull requests.**
+
 ## CloudFront expectations
 
 Infra is provisioned separately (Terraform). The site assumes:
