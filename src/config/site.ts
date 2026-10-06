@@ -10,13 +10,12 @@ export const site = {
     'Plug in an RTL-SDR or HackRF and listen. Leyline records every transmission and decodes APRS, weather alerts and AIS.',
   intro:
     'Plug in an RTL-SDR or HackRF, click a signal on the waterfall and listen. Leyline files your memories by band, finds a repeater’s tone, records every transmission and decodes APRS, weather alerts and AIS.',
-  version: '1.0',
   minOS: 'macOS 26 or later',
   links: {
     repo: REPO,
     repoLabel: 'reflexive-labs/leysdr',
     docs: `${REPO}/tree/main/docs`,
-    // The signed, notarized build is attached to each GitHub release.
-    download: `${REPO}/releases/latest`,
+    // The pinned release's DMG, notes and sources (src/updates/).
+    download: '/download',
   },
 } as const;

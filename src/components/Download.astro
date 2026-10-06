@@ -1,6 +1,7 @@
 ---
 import Shot from './Shot.astro';
 import { site } from '@/config/site';
+import release from '@/updates/release.json';
 ---
 
 <section id="download" class="wrap download">
@@ -17,7 +18,7 @@ import { site } from '@/config/site';
           Download Leyline SDR
         </a>
         <span class="mono fine">
-          Version {site.version} · {site.minOS}
+          Version {release.version} · {site.minOS}
         </span>
       </div>
     </div>
