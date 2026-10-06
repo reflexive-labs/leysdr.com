@@ -29,7 +29,8 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      filter: (page) => !page.includes('/404'),
+      // /download is unlisted: testers get the link directly.
+      filter: (page) => !page.includes('/404') && !page.includes('/download'),
     }),
     emit403,
   ],

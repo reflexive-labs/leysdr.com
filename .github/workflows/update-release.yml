@@ -1,0 +1,92 @@
+name: Update app release
+
+# Opens a PR when reflexive-labs/leysdr has a v* release newer than the one
+# pinned in src/updates/TAG. Merging that PR ships the update to every
+# installed copy of Leyline (the deploy publishes its appcast), so this only
+# ever opens a PR; never merge it automatically.
+#
+# Needs the LEYSDR_READ_TOKEN secret (until leysdr is public) and Actions
+# allowed to create pull requests, as update-shots.yml does.
+
+on:
+  schedule:
+    - cron: '30 14 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write
+
+concurrency:
+  group: update-release
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+
+      - name: Find the newest app release
+        id: latest
+        env:
+          GH_TOKEN: ${{ secrets.LEYSDR_READ_TOKEN || github.token }}
+        run: |
+          # Greatest vX.Y.Z by version, not "Latest": that flag stays on the shots releases.
+          latest=$(gh release list --repo reflexive-labs/leysdr --limit 200 \
+            --json tagName,isDraft --jq '.[] | select(.isDraft | not) | .tagName' \
+            | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' | sort -V | tail -n1 || true)
+          current=$(cat src/updates/TAG)
+          echo "pinned $current, newest ${latest:-none}"
+          newest=$(printf '%s\n%s\n' "$current" "$latest" | sort -V | tail -n1)
+          if [ -z "$latest" ] || [ "$latest" = "$current" ] || [ "$newest" != "$latest" ]; then
+            exit 0
+          fi
+          branch="release/$latest"
+          if git ls-remote --exit-code --heads origin "$branch" >/dev/null; then
+            echo "$branch already exists; leaving its PR alone"
+            exit 0
+          fi
+          echo "tag=$latest" >> "$GITHUB_OUTPUT"
+          echo "current=$current" >> "$GITHUB_OUTPUT"
+          echo "branch=$branch" >> "$GITHUB_OUTPUT"
+
+      - name: Pin the new release
+        if: steps.latest.outputs.tag
+        env:
+          GH_TOKEN: ${{ secrets.LEYSDR_READ_TOKEN || github.token }}
+        run: node scripts/fetch-release.mjs "${{ steps.latest.outputs.tag }}"
+
+      - name: Open a pull request
+        if: steps.latest.outputs.tag
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.latest.outputs.tag }}
+          CURRENT: ${{ steps.latest.outputs.current }}
+          BRANCH: ${{ steps.latest.outputs.branch }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898+github-actions[bot]@users.noreply.github.com'
+          git switch -c "$BRANCH"
+          git add src/updates
+          git commit -q -m "Ship Leyline ${TAG#v}"
+          git push -q origin "$BRANCH"
+
+          {
+            echo "Moves leysdr.com/updates/ from \`$CURRENT\` to \`$TAG\`."
+            echo
+            echo "**Merging ships this release to every installed copy of Leyline:** the deploy publishes its appcast at https://leysdr.com/updates/appcast.xml, and the download page offers its DMG."
+            echo
+            echo "## Release notes"
+            echo
+            cat src/updates/notes.md
+          } > "$RUNNER_TEMP/body.md"
+          gh pr create --head "$BRANCH" --title "Ship Leyline ${TAG#v}" --body-file "$RUNNER_TEMP/body.md"
+
+          # Pushes made with GITHUB_TOKEN don't trigger CI, but a dispatch does,
+          # and its result shows on the PR's commit.
+          gh workflow run ci.yml --ref "$BRANCH"

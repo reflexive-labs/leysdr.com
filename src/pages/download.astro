@@ -1,0 +1,211 @@
+---
+// Unlisted download page for testers. The DMG and sources are served from
+// /updates/, fetched from the pinned release at deploy (scripts/fetch-release.mjs).
+// No analytics here: nothing should sit between the button and the file.
+import Base from '@/layouts/Base.astro';
+import Mark from '@/components/Mark.astro';
+import { site } from '@/config/site';
+import release from '@/updates/release.json';
+import appcast from '@/updates/appcast.xml?raw';
+import { Content as Notes } from '@/updates/notes.md';
+
+const dmg = `Leyline-${release.version}.dmg`;
+const dmgAsset = release.assets.find((a) => a.name === dmg);
+const enclosure = appcast.match(
+  new RegExp(`<enclosure url="https://leysdr\\.com/updates/${dmg}" length="(\\d+)"`)
+);
+// Sparkle checks the length; a mismatch would break every installed copy's update.
+if (!dmgAsset || !enclosure || Number(enclosure[1]) !== dmgAsset.size) {
+  throw new Error(`src/updates: the appcast's enclosure for ${dmg} doesn't match release.json`);
+}
+
+// Everything but the DMG and the feed files is source: the GPL/LGPL offer.
+// Leyline's own source first, then the drivers'.
+const sources = release.assets
+  .filter((a) => a.name !== dmg && a.name !== 'appcast.xml' && a.name !== 'drivers.json')
+  .sort((a, b) => Number(!a.name.startsWith('leysdr-')) - Number(!b.name.startsWith('leysdr-')));
+
+const mb = (bytes: number) => `${(bytes / 1e6).toFixed(bytes < 1e6 ? 2 : 1)} MB`;
+const released = new Date(release.publishedAt).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  timeZone: 'UTC',
+});
+---
+
+<Base
+  title={`Download Leyline ${release.version}`}
+  description={`Leyline ${release.version} for Apple silicon Macs.`}
+  noindex
+  analytics={false}
+>
+  <main class="wrap page">
+    <a href="/" class="brand">
+      <Mark size={22} stroke={1.5} />
+      <span>leyline</span>
+    </a>
+
+    <header class="head">
+      <span class="eyebrow mono">Released {released}</span>
+      <h1>Leyline {release.version}</h1>
+      <div class="actions">
+        <a href={`/updates/${dmg}`} class="btn btn-primary">
+          Download Leyline {release.version}
+        </a>
+        <span class="fine mono">
+          {mb(dmgAsset.size)} · Apple silicon · {site.minOS}
+        </span>
+      </div>
+    </header>
+
+    <section class="notes">
+      <h2 class="label mono">Release notes</h2>
+      <div class="prose">
+        <Notes />
+      </div>
+    </section>
+
+    <section class="source">
+      <h2 class="label mono">Source</h2>
+      <p>
+        Leyline’s engine is GPL-3.0-or-later, and the app bundles the RTL-SDR, HackRF and libusb
+        driver libraries under the GPL and LGPL. The source for this release:
+      </p>
+      <ul>
+        {sources.map((a) => (
+          <li>
+            <a href={`/updates/${a.name}`} class="mono">
+              {a.name}
+            </a>
+            <span class="mono size">{mb(a.size)}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </main>
+</Base>
+
+<style>
+  .page {
+    max-width: 760px;
+    padding-top: 56px;
+    padding-bottom: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--accent);
+  }
+
+  .brand span {
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    color: var(--text);
+  }
+
+  .head {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .eyebrow,
+  .label {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--teal);
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(40px, 6vw, 64px);
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px 22px;
+    margin-top: 10px;
+  }
+
+  .fine {
+    font-size: 12px;
+    color: var(--faint);
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line-3);
+  }
+
+  .prose,
+  .source p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+
+  .source p {
+    margin: 0;
+  }
+
+  .prose :global(p),
+  .prose :global(ul) {
+    margin: 0 0 1em;
+  }
+
+  .prose :global(ul) {
+    padding-left: 1.2em;
+  }
+
+  .prose :global(li) {
+    margin-bottom: 0.5em;
+  }
+
+  .prose :global(strong) {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .prose :global(code) {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--text-2);
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .source li {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 13px;
+  }
+
+  .size {
+    color: var(--faint);
+  }
+</style>

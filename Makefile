@@ -1,7 +1,7 @@
 # leysdr.com — developer + CI entrypoints. `make help` lists targets.
 
 .DEFAULT_GOAL := help
-.PHONY: help install dev build preview check fmt fmt-check verify ci clean shots
+.PHONY: help install dev build preview check fmt fmt-check verify ci clean shots release
 
 help: ## List targets
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | \
@@ -34,6 +34,9 @@ ci: verify build ## Full CI pipeline
 
 shots: ## Fetch app screenshots from the pinned leysdr release
 	scripts/fetch-shots.sh
+
+release: ## Pin the app release served from /updates/ (TAG=vX.Y.Z moves it)
+	node scripts/fetch-release.mjs $(TAG)
 
 clean: ## Remove build artifacts
 	rm -rf dist .astro

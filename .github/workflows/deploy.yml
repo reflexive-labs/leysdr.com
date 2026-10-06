@@ -7,6 +7,7 @@ name: Deploy
 # Configure under Settings → Secrets and variables → Actions
 # (matches the dpup/ersn.net convention: only the keys are secret):
 #   Secrets:    AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
+#               LEYSDR_READ_TOKEN  reads the pinned app release (until leysdr is public)
 #   Variables:  AWS_REGION         e.g. us-west-2
 #               AWS_ACCOUNT_ID     expected account (deploy aborts if it differs)
 #               S3_BUCKET_NAME     target bucket
@@ -49,6 +50,14 @@ jobs:
         env:
           PUBLIC_POSTHOG_PROJECT_TOKEN: ${{ vars.PUBLIC_POSTHOG_PROJECT_TOKEN }}
           PUBLIC_POSTHOG_HOST: ${{ vars.PUBLIC_POSTHOG_HOST }}
+
+      # The app release pinned in src/updates/TAG: the signed appcast, DMG and
+      # sources installed copies fetch from /updates/. Too big for git, so it's
+      # fetched on every deploy; the sync's --delete would remove it otherwise.
+      - name: Fetch the pinned app release
+        env:
+          GH_TOKEN: ${{ secrets.LEYSDR_READ_TOKEN || github.token }}
+        run: node scripts/fetch-release.mjs --dist dist/updates
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v6

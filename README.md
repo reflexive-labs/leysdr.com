@@ -19,6 +19,8 @@ make ci        # type-check, formatting, build
 | `src/components/`       | One component per page section                                     |
 | `src/scripts/radio.ts`  | Canvas animation: the hero wave field                              |
 | `src/assets/shots/`     | App screenshots from a pinned leysdr release (`make shots`)        |
+| `src/updates/`          | The pinned app release: appcast, notes and asset list              |
+| `src/pages/download`    | Unlisted download page for testers                                 |
 | `src/pages/`            | `index` and `404` (the build also copies `404.html` to `403.html`) |
 
 The design source is the "Leyline Site v3" file in the Leyline project on claude.ai/design.
@@ -34,6 +36,21 @@ one tag and copies it into `src/assets/shots/`; sizes and alt text come from its
 The **Update screenshots** workflow checks daily for a newer release and opens a PR that bumps
 the tag. Before merging, check that the copy beside each changed shot still describes it. To
 update by hand, change `TAG` in the script, run `make shots` and commit.
+
+## App releases
+
+Installed copies of Leyline poll `https://leysdr.com/updates/appcast.xml` and download
+`/updates/Leyline-<version>.dmg`. `src/updates/TAG` pins the `vX.Y.Z` release the site serves;
+its appcast, release notes and asset list are committed beside it, and the deploy fetches the
+DMG and source tarballs into `dist/updates/`, checking each appcast enclosure's file and length.
+The appcast is signed on the release Mac: never edit it here.
+
+The **Update app release** workflow checks daily for a newer `v*` release and opens a PR with
+its release notes. **Merging that PR ships the update to every installed copy.** To move the pin
+by hand, run `make release TAG=vX.Y.Z` and commit `src/updates/`.
+
+The unlisted download page at `/download` shows the pinned release, with its notes and the
+source tarballs (the GPL source offer, which must stay reachable while the DMG is offered).
 
 ## Deploying
 

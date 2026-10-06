@@ -1,0 +1,7 @@
+{
+  "drivers": [
+    {"library": "librtlsdr.0.dylib", "formula": "librtlsdr", "version": "2.0.3", "source_url": "https://github.com/steve-m/librtlsdr/archive/refs/tags/v2.0.3.tar.gz", "sha256": "851b87a62e548470c287c26669b83abb665d83bccb8d8492d07a697c7b9c4e37"},
+    {"library": "libhackrf.0.dylib", "formula": "hackrf", "version": "2026.01.3", "source_url": "https://github.com/greatscottgadgets/hackrf/releases/download/v2026.01.3/hackrf-2026.01.3.tar.xz", "sha256": "d2b76a1115d9b4df648c29efb2f3c8e80009b7cf9a8adf37abbfdba72101b086"},
+    {"library": "libusb-1.0.0.dylib", "formula": "libusb", "version": "1.0.30", "source_url": "https://github.com/libusb/libusb/releases/download/v1.0.30/libusb-1.0.30.tar.bz2", "sha256": "fea36f34f9156400209595e300840767ab1a385ede1dc7ee893015aea9c6dbaf"}
+  ]
+}
