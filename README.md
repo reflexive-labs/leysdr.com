@@ -20,7 +20,7 @@ make ci        # type-check, formatting, build
 | `src/scripts/radio.ts`  | Canvas animation: the hero wave field                              |
 | `src/assets/shots/`     | App screenshots from a pinned leysdr release (`make shots`)        |
 | `src/updates/`          | The pinned app release: appcast, notes and asset list              |
-| `src/pages/download`    | Unlisted download page for testers                                 |
+| `src/pages/download`    | Download page: the pinned release, its notes and sources           |
 | `src/pages/`            | `index` and `404` (the build also copies `404.html` to `403.html`) |
 
 The design source is the "Leyline Site v3" file in the Leyline project on claude.ai/design.
@@ -49,7 +49,7 @@ The **Update app release** workflow checks daily for a newer `v*` release and op
 its release notes. **Merging that PR ships the update to every installed copy.** To move the pin
 by hand, run `make release TAG=vX.Y.Z` and commit `src/updates/`.
 
-The unlisted download page at `/download` shows the pinned release, with its notes and the
+The download page at `/download` shows the pinned release, with its notes and the
 source tarballs (the GPL source offer, which must stay reachable while the DMG is offered).
 
 ## Deploying

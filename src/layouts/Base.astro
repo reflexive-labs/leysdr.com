@@ -6,18 +6,11 @@ import { site } from '@/config/site';
 interface Props {
   title?: string;
   description?: string;
-  /** Keep the page out of search results, e.g. the unlisted download page. */
-  noindex?: boolean;
   /** Load PostHog. Off where no script should sit between a link and its file. */
   analytics?: boolean;
 }
 
-const {
-  title = site.title,
-  description = site.description,
-  noindex = false,
-  analytics = true,
-} = Astro.props;
+const { title = site.title, description = site.description, analytics = true } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const ogImage = new URL('/og.jpg', Astro.site);
 ---
@@ -29,7 +22,6 @@ const ogImage = new URL('/og.jpg', Astro.site);
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    {noindex && <meta name="robots" content="noindex" />}
     <link rel="canonical" href={canonical} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="sitemap" href="/sitemap-index.xml" />

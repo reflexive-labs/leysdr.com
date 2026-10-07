@@ -1,5 +1,5 @@
 ---
-// Unlisted download page for testers. The DMG and sources are served from
+// The download page. The DMG and sources are served from
 // /updates/, fetched from the pinned release at deploy (scripts/fetch-release.mjs).
 // No analytics here: nothing should sit between the button and the file.
 import Base from '@/layouts/Base.astro';
@@ -37,7 +37,6 @@ const released = new Date(release.publishedAt).toLocaleDateString('en-US', {
 <Base
   title={`Download Leyline ${release.version}`}
   description={`Leyline ${release.version} for Apple silicon Macs.`}
-  noindex
   analytics={false}
 >
   <main class="wrap page">
