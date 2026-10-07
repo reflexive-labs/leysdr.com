@@ -1,11 +1,11 @@
 {
-  "tag": "v0.1.0",
-  "version": "0.1.0",
-  "publishedAt": "2026-10-06T15:16:20Z",
+  "tag": "v0.1.1",
+  "version": "0.1.1",
+  "publishedAt": "2026-10-07T02:58:47Z",
   "assets": [
     {
       "name": "appcast.xml",
-      "size": 2601
+      "size": 3459
     },
     {
       "name": "drivers.json",
@@ -16,12 +16,12 @@
       "size": 25945024
     },
     {
-      "name": "Leyline-0.1.0.dmg",
-      "size": 76866420
+      "name": "Leyline-0.1.1.dmg",
+      "size": 76896015
     },
     {
-      "name": "leysdr-0.1.0-source.tar.gz",
-      "size": 2628989
+      "name": "leysdr-0.1.1-source.tar.gz",
+      "size": 2636195
     },
     {
       "name": "librtlsdr-2.0.3-source.tar.gz",
