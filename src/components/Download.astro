@@ -14,7 +14,12 @@ import release from '@/updates/release.json';
         radio and open it.
       </p>
       <div class="actions">
-        <a href={site.links.download} class="btn btn-primary big" data-download-link>
+        <a
+          href={site.links.download}
+          class="btn btn-primary big"
+          data-track="download_clicked"
+          data-placement="download_section"
+        >
           Download Leyline SDR
         </a>
         <span class="mono fine">
@@ -34,16 +39,6 @@ import release from '@/updates/release.json';
     </div>
   </div>
 </section>
-
-<script is:inline>
-  document.querySelector('[data-download-link]')?.addEventListener('click', () => {
-    window.posthog?.capture('download_clicked', { placement: 'download_section' });
-    window.posthog?.logger?.info('download link opened', {
-      action: 'download_clicked',
-      placement: 'download_section',
-    });
-  });
-</script>
 
 <style>
   .main :global(.icon) {

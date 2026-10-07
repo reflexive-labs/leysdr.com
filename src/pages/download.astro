@@ -1,7 +1,6 @@
 ---
 // The download page. The DMG and sources are served from
 // /updates/, fetched from the pinned release at deploy (scripts/fetch-release.mjs).
-// No analytics here: nothing should sit between the button and the file.
 import Base from '@/layouts/Base.astro';
 import Mark from '@/components/Mark.astro';
 import { site } from '@/config/site';
@@ -37,7 +36,6 @@ const released = new Date(release.publishedAt).toLocaleDateString('en-US', {
 <Base
   title={`Download Leyline ${release.version}`}
   description={`Leyline ${release.version} for Apple silicon Macs.`}
-  analytics={false}
 >
   <main class="wrap page">
     <a href="/" class="brand">
@@ -49,7 +47,13 @@ const released = new Date(release.publishedAt).toLocaleDateString('en-US', {
       <span class="eyebrow mono">Released {released}</span>
       <h1>Leyline {release.version}</h1>
       <div class="actions">
-        <a href={`/updates/${dmg}`} class="btn btn-primary">
+        <a
+          href={`/updates/${dmg}`}
+          class="btn btn-primary"
+          data-track="app_downloaded"
+          data-placement="download_page"
+          data-version={release.version}
+        >
           Download Leyline {release.version}
         </a>
         <span class="fine mono">
@@ -74,7 +78,13 @@ const released = new Date(release.publishedAt).toLocaleDateString('en-US', {
       <ul>
         {sources.map((a) => (
           <li>
-            <a href={`/updates/${a.name}`} class="mono">
+            <a
+              href={`/updates/${a.name}`}
+              class="mono"
+              data-track="source_downloaded"
+              data-version={release.version}
+              data-file={a.name}
+            >
               {a.name}
             </a>
             <span class="mono size">{mb(a.size)}</span>

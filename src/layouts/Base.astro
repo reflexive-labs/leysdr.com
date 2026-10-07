@@ -6,11 +6,9 @@ import { site } from '@/config/site';
 interface Props {
   title?: string;
   description?: string;
-  /** Load PostHog. Off where no script should sit between a link and its file. */
-  analytics?: boolean;
 }
 
-const { title = site.title, description = site.description, analytics = true } = Astro.props;
+const { title = site.title, description = site.description } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const ogImage = new URL('/og.jpg', Astro.site);
 ---
@@ -36,7 +34,7 @@ const ogImage = new URL('/og.jpg', Astro.site);
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content={site.title} />
     <meta name="twitter:card" content="summary_large_image" />
-    {analytics && <PostHog />}
+    <PostHog />
   </head>
   <body>
     <slot />

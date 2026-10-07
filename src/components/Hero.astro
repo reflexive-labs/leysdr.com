@@ -25,7 +25,7 @@ const specs = [
       <a href="#ways">app · terminal · agents</a>
       <a href="#need">what you need</a>
       <a href={site.links.docs}>docs</a>
-      <a href="#download" class="cta">
+      <a href={site.links.download} class="cta" data-track="download_clicked" data-placement="nav">
         download
       </a>
     </div>
@@ -40,10 +40,20 @@ const specs = [
       <h1>Software defined radio, made for the Mac.</h1>
       <p>{site.intro}</p>
       <div class="actions">
-        <a href="#download" class="btn btn-primary">
+        <a
+          href={site.links.download}
+          class="btn btn-primary"
+          data-track="download_clicked"
+          data-placement="hero"
+        >
           Download for Mac
         </a>
-        <a href={site.links.repo} class="btn btn-ghost" data-source-repository-link>
+        <a
+          href={site.links.repo}
+          class="btn btn-ghost"
+          data-track="source_repository_opened"
+          data-placement="hero"
+        >
           View source ↗
         </a>
       </div>
@@ -59,16 +69,6 @@ const specs = [
     </dl>
   </div>
 </header>
-
-<script is:inline>
-  document.querySelector('[data-source-repository-link]')?.addEventListener('click', () => {
-    window.posthog?.capture('source_repository_opened', { placement: 'hero' });
-    window.posthog?.logger?.info('source repository link opened', {
-      action: 'source_repository_opened',
-      placement: 'hero',
-    });
-  });
-</script>
 
 <style>
   .hero {

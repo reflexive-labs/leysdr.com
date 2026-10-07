@@ -79,5 +79,19 @@ const environment = import.meta.env.MODE;
         capture_console_errors: false,
       },
     });
+
+    // Links with data-track="<event>" report their clicks, with data-placement,
+    // data-version and data-file as properties. The listener is passive and the
+    // event goes by sendBeacon, so the link (or download) proceeds untouched.
+    document.addEventListener('click', (event) => {
+      const link = event.target instanceof Element && event.target.closest('[data-track]');
+      if (!link) return;
+      const { track, placement, version, file } = link.dataset;
+      const props = Object.fromEntries(
+        Object.entries({ placement, version, file }).filter(([, v]) => v)
+      );
+      posthog.capture(track, props, { transport: 'sendBeacon' });
+      posthog.logger?.info(track, { action: track, ...props });
+    });
   }
 </script>
