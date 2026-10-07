@@ -26,19 +26,19 @@
           "version": "0.1.0"
         }
       },
-      "commit": "f0979f6",
-      "tag": "shots-2026-10-03",
-      "png_sha256": "7de96b3925c2252e4e0e40d7fb4ea4edbae49544c213ea93d7fde9b5c94caf2c"
+      "commit": "63a3298",
+      "tag": "shots-2026-10-05-2",
+      "png_sha256": "646259ccc0c883e111c62c94ebc38f94716d96863751954b4061193cd0cb1a01"
     },
     {
       "asset": "app-icon-1024.png",
       "width": 1024,
       "height": 1024,
       "scale": 2,
-      "alt": "The Leyline app icon. Simulated signals.",
+      "alt": "The Leyline app icon.",
       "scene": "app-icon-1024",
-      "commit": "f0979f6",
-      "tag": "shots-2026-10-03",
+      "commit": "63a3298",
+      "tag": "shots-2026-10-05-2",
       "png_sha256": "6598abb4ba150549efa9bb30d5bda470b6a5fff0c21f5f19026eb75bd5308106"
     },
     {
@@ -61,7 +61,10 @@
                 "sub_deviation_hz": 700,
                 "sub_tone_hz": 100,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 21
               },
               "segments": [
@@ -92,7 +95,10 @@
                 "sub_deviation_hz": 700,
                 "sub_tone_hz": 127.3,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 22
               },
               "segments": [
@@ -122,7 +128,10 @@
                 "low_pass_hz": 300,
                 "sub_deviation_hz": 550,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 23
               },
               "segments": [
@@ -155,7 +164,10 @@
                 "dbfs": -28,
                 "deviation_hz": 3000,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 24
               },
               "segments": [
@@ -184,7 +196,10 @@
                 "dbfs": -30,
                 "deviation_hz": 3000,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 25
               },
               "segments": [
@@ -213,7 +228,10 @@
                 "dbfs": -34,
                 "deviation_hz": 3000,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 26
               },
               "segments": [
@@ -246,7 +264,10 @@
                 "dbfs": -24,
                 "deviation_hz": 3000,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 27
               },
               "segments": [
@@ -276,7 +297,10 @@
                   "dbfs": -10,
                   "deviation_hz": 5000,
                   "type": "nfm_voice",
-                  "voice_band_hz": [300, 3000],
+                  "voice_band_hz": [
+                    300,
+                    3000
+                  ],
                   "voice_seed": 28
                 },
                 "carrier_hz": 150000,
@@ -311,7 +335,12 @@
               "carrier": {
                 "carrier_hz": 180000,
                 "dbfs": -20,
-                "deviations_hz": [-1800, -600, 600, 1800],
+                "deviations_hz": [
+                  -1800,
+                  -600,
+                  600,
+                  1800
+                ],
                 "seed": 29,
                 "shaping": "raised-cosine over the first half symbol",
                 "symbol_rate": 4800,
@@ -352,7 +381,10 @@
                 "sub_deviation_hz": 700,
                 "sub_tone_hz": 146.2,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 30
               },
               "segments": [
@@ -380,9 +412,9 @@
           "version": "0.1.0"
         }
       },
-      "commit": "f0979f6",
-      "tag": "shots-2026-10-03",
-      "png_sha256": "d28913fa8c4b445301b8619787c70308ba39a16d322f221f69d8b8b16feda935"
+      "commit": "63a3298",
+      "tag": "shots-2026-10-05-2",
+      "png_sha256": "d4a4cb375a9f422500bc9d26f166188a4b972417f4eb8f33cec138138fbe09ce"
     },
     {
       "asset": "aprs-track.png",
@@ -419,10 +451,10 @@
       "width": 2012,
       "height": 1106,
       "scale": 2,
-      "alt": "The first rows of a CHIRP CSV export: memories across 2 m, 70 cm, GMRS, NOAA weather, MURS and marine, with their offsets and tones. Simulated signals.",
+      "alt": "The first rows of a CHIRP CSV export: memories across 2 m, 70 cm, GMRS, NOAA weather, MURS and marine, with their offsets and tones.",
       "scene": "chirp-csv-before",
-      "commit": "f0979f6",
-      "tag": "shots-2026-10-03",
+      "commit": "b0724ee",
+      "tag": "shots-2026-10-05",
       "png_sha256": "713d6fd7e6d8f2c4988014b392cab3a060c711b2eaf6c4aa9a8980ddb3806a34"
     },
     {
@@ -445,7 +477,10 @@
                 "sub_deviation_hz": 700,
                 "sub_tone_hz": 100,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 21
               },
               "segments": [
@@ -476,7 +511,10 @@
                 "sub_deviation_hz": 700,
                 "sub_tone_hz": 127.3,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 22
               },
               "segments": [
@@ -506,7 +544,10 @@
                 "low_pass_hz": 300,
                 "sub_deviation_hz": 550,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 23
               },
               "segments": [
@@ -539,7 +580,10 @@
                 "dbfs": -28,
                 "deviation_hz": 3000,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 24
               },
               "segments": [
@@ -568,7 +612,10 @@
                 "dbfs": -30,
                 "deviation_hz": 3000,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 25
               },
               "segments": [
@@ -597,7 +644,10 @@
                 "dbfs": -34,
                 "deviation_hz": 3000,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 26
               },
               "segments": [
@@ -630,7 +680,10 @@
                 "dbfs": -24,
                 "deviation_hz": 3000,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 27
               },
               "segments": [
@@ -660,7 +713,10 @@
                   "dbfs": -10,
                   "deviation_hz": 5000,
                   "type": "nfm_voice",
-                  "voice_band_hz": [300, 3000],
+                  "voice_band_hz": [
+                    300,
+                    3000
+                  ],
                   "voice_seed": 28
                 },
                 "carrier_hz": 150000,
@@ -695,7 +751,12 @@
               "carrier": {
                 "carrier_hz": 180000,
                 "dbfs": -20,
-                "deviations_hz": [-1800, -600, 600, 1800],
+                "deviations_hz": [
+                  -1800,
+                  -600,
+                  600,
+                  1800
+                ],
                 "seed": 29,
                 "shaping": "raised-cosine over the first half symbol",
                 "symbol_rate": 4800,
@@ -736,7 +797,10 @@
                 "sub_deviation_hz": 700,
                 "sub_tone_hz": 146.2,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 30
               },
               "segments": [
@@ -764,9 +828,9 @@
           "version": "0.1.0"
         }
       },
-      "commit": "f0979f6",
-      "tag": "shots-2026-10-03",
-      "png_sha256": "801e90c0ded3448a86ae5d55120cc9c4c6a64093dba4db5b7752f06c4e0de764"
+      "commit": "63a3298",
+      "tag": "shots-2026-10-05-2",
+      "png_sha256": "4834ae1a8ad6e07bbe9f02d95992dc7bef01b2e14b59e6b951dcc88dbb0f0367"
     },
     {
       "asset": "inspector-tone.png",
@@ -788,7 +852,10 @@
                 "sub_deviation_hz": 700,
                 "sub_tone_hz": 100,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 21
               },
               "segments": [
@@ -819,7 +886,10 @@
                 "sub_deviation_hz": 700,
                 "sub_tone_hz": 127.3,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 22
               },
               "segments": [
@@ -849,7 +919,10 @@
                 "low_pass_hz": 300,
                 "sub_deviation_hz": 550,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 23
               },
               "segments": [
@@ -882,7 +955,10 @@
                 "dbfs": -28,
                 "deviation_hz": 3000,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 24
               },
               "segments": [
@@ -911,7 +987,10 @@
                 "dbfs": -30,
                 "deviation_hz": 3000,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 25
               },
               "segments": [
@@ -940,7 +1019,10 @@
                 "dbfs": -34,
                 "deviation_hz": 3000,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 26
               },
               "segments": [
@@ -973,7 +1055,10 @@
                 "dbfs": -24,
                 "deviation_hz": 3000,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 27
               },
               "segments": [
@@ -1003,7 +1088,10 @@
                   "dbfs": -10,
                   "deviation_hz": 5000,
                   "type": "nfm_voice",
-                  "voice_band_hz": [300, 3000],
+                  "voice_band_hz": [
+                    300,
+                    3000
+                  ],
                   "voice_seed": 28
                 },
                 "carrier_hz": 150000,
@@ -1038,7 +1126,12 @@
               "carrier": {
                 "carrier_hz": 180000,
                 "dbfs": -20,
-                "deviations_hz": [-1800, -600, 600, 1800],
+                "deviations_hz": [
+                  -1800,
+                  -600,
+                  600,
+                  1800
+                ],
                 "seed": 29,
                 "shaping": "raised-cosine over the first half symbol",
                 "symbol_rate": 4800,
@@ -1079,7 +1172,10 @@
                 "sub_deviation_hz": 700,
                 "sub_tone_hz": 146.2,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 30
               },
               "segments": [
@@ -1107,9 +1203,9 @@
           "version": "0.1.0"
         }
       },
-      "commit": "f0979f6",
-      "tag": "shots-2026-10-03",
-      "png_sha256": "ee4f73092060655cd33763faeeb28bff5eb7c66254df7d23d2447fba60ca7011"
+      "commit": "63a3298",
+      "tag": "shots-2026-10-05-2",
+      "png_sha256": "8dd09e954d472a76bfbe0a61c31c135351c7bf2b54282841f363a6eec328e495"
     },
     {
       "asset": "library-net.png",
@@ -1134,7 +1230,10 @@
                 "low_pass_hz": 300,
                 "sub_deviation_hz": 550,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 31
               },
               "segments": [
@@ -1178,9 +1277,9 @@
           "version": "0.1.0"
         }
       },
-      "commit": "f0979f6",
-      "tag": "shots-2026-10-03",
-      "png_sha256": "7ebef17d4ddff3e55b9e0fb7fd5cba7cbc757929fc24734de8d9d1de11a8bb1e"
+      "commit": "63a3298",
+      "tag": "shots-2026-10-05-2",
+      "png_sha256": "1a4021b395766993f40a5fef38b9c2ccf7439750408cc42c50f0bf6f70d930d7"
     },
     {
       "asset": "scan-2m.png",
@@ -1201,7 +1300,10 @@
               "sub_deviation_hz": 700,
               "sub_tone_hz": 100,
               "type": "nfm_voice",
-              "voice_band_hz": [300, 3000],
+              "voice_band_hz": [
+                300,
+                3000
+              ],
               "voice_seed": 41
             },
             {
@@ -1211,7 +1313,10 @@
               "sub_deviation_hz": 700,
               "sub_tone_hz": 127.3,
               "type": "nfm_voice",
-              "voice_band_hz": [300, 3000],
+              "voice_band_hz": [
+                300,
+                3000
+              ],
               "voice_seed": 42
             },
             {
@@ -1224,7 +1329,10 @@
               "low_pass_hz": 300,
               "sub_deviation_hz": 550,
               "type": "nfm_voice",
-              "voice_band_hz": [300, 3000],
+              "voice_band_hz": [
+                300,
+                3000
+              ],
               "voice_seed": 43
             },
             {
@@ -1232,7 +1340,10 @@
               "dbfs": -30,
               "deviation_hz": 3000,
               "type": "nfm_voice",
-              "voice_band_hz": [300, 3000],
+              "voice_band_hz": [
+                300,
+                3000
+              ],
               "voice_seed": 44
             },
             {
@@ -1241,7 +1352,10 @@
                 "dbfs": -20,
                 "deviation_hz": 3000,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 45
               },
               "period_s": 0.21,
@@ -1276,7 +1390,10 @@
               "sub_deviation_hz": 700,
               "sub_tone_hz": 100,
               "type": "nfm_voice",
-              "voice_band_hz": [300, 3000],
+              "voice_band_hz": [
+                300,
+                3000
+              ],
               "voice_seed": 41
             },
             {
@@ -1286,7 +1403,10 @@
               "sub_deviation_hz": 700,
               "sub_tone_hz": 127.3,
               "type": "nfm_voice",
-              "voice_band_hz": [300, 3000],
+              "voice_band_hz": [
+                300,
+                3000
+              ],
               "voice_seed": 42
             },
             {
@@ -1299,7 +1419,10 @@
               "low_pass_hz": 300,
               "sub_deviation_hz": 550,
               "type": "nfm_voice",
-              "voice_band_hz": [300, 3000],
+              "voice_band_hz": [
+                300,
+                3000
+              ],
               "voice_seed": 43
             },
             {
@@ -1307,7 +1430,10 @@
               "dbfs": -30,
               "deviation_hz": 3000,
               "type": "nfm_voice",
-              "voice_band_hz": [300, 3000],
+              "voice_band_hz": [
+                300,
+                3000
+              ],
               "voice_seed": 44
             },
             {
@@ -1316,7 +1442,10 @@
                 "dbfs": -20,
                 "deviation_hz": 3000,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 45
               },
               "period_s": 0.21,
@@ -1328,9 +1457,9 @@
           "version": "0.1.0"
         }
       },
-      "commit": "f0979f6",
-      "tag": "shots-2026-10-03",
-      "png_sha256": "9da05574ec9f0126485ee4d0f75be9925439e94a556d6ff8d25107b9e83efabf"
+      "commit": "63a3298",
+      "tag": "shots-2026-10-05-2",
+      "png_sha256": "848553b3955fac4cad3e015a27b54ffe2e0353ee173d2985e8574de2c5ef9ea4"
     },
     {
       "asset": "sidebar-chirp-import.png",
@@ -1352,7 +1481,10 @@
                 "sub_deviation_hz": 700,
                 "sub_tone_hz": 100,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 21
               },
               "segments": [
@@ -1383,7 +1515,10 @@
                 "sub_deviation_hz": 700,
                 "sub_tone_hz": 127.3,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 22
               },
               "segments": [
@@ -1413,7 +1548,10 @@
                 "low_pass_hz": 300,
                 "sub_deviation_hz": 550,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 23
               },
               "segments": [
@@ -1446,7 +1584,10 @@
                 "dbfs": -28,
                 "deviation_hz": 3000,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 24
               },
               "segments": [
@@ -1475,7 +1616,10 @@
                 "dbfs": -30,
                 "deviation_hz": 3000,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 25
               },
               "segments": [
@@ -1504,7 +1648,10 @@
                 "dbfs": -34,
                 "deviation_hz": 3000,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 26
               },
               "segments": [
@@ -1537,7 +1684,10 @@
                 "dbfs": -24,
                 "deviation_hz": 3000,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 27
               },
               "segments": [
@@ -1567,7 +1717,10 @@
                   "dbfs": -10,
                   "deviation_hz": 5000,
                   "type": "nfm_voice",
-                  "voice_band_hz": [300, 3000],
+                  "voice_band_hz": [
+                    300,
+                    3000
+                  ],
                   "voice_seed": 28
                 },
                 "carrier_hz": 150000,
@@ -1602,7 +1755,12 @@
               "carrier": {
                 "carrier_hz": 180000,
                 "dbfs": -20,
-                "deviations_hz": [-1800, -600, 600, 1800],
+                "deviations_hz": [
+                  -1800,
+                  -600,
+                  600,
+                  1800
+                ],
                 "seed": 29,
                 "shaping": "raised-cosine over the first half symbol",
                 "symbol_rate": 4800,
@@ -1643,7 +1801,10 @@
                 "sub_deviation_hz": 700,
                 "sub_tone_hz": 146.2,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 30
               },
               "segments": [
@@ -1671,9 +1832,9 @@
           "version": "0.1.0"
         }
       },
-      "commit": "f0979f6",
-      "tag": "shots-2026-10-03",
-      "png_sha256": "35c906b3174c8f7a7ea5dfe07dc707def1a891b76462836a92914e079a90dc28"
+      "commit": "63a3298",
+      "tag": "shots-2026-10-05-2",
+      "png_sha256": "4499c88f0da19e54aac6c86a2c6ddfc8b0294348d38739050b926738a9e90c28"
     },
     {
       "asset": "ways-app.png",
@@ -1695,7 +1856,10 @@
                 "sub_deviation_hz": 700,
                 "sub_tone_hz": 100,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 21
               },
               "segments": [
@@ -1726,7 +1890,10 @@
                 "sub_deviation_hz": 700,
                 "sub_tone_hz": 127.3,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 22
               },
               "segments": [
@@ -1756,7 +1923,10 @@
                 "low_pass_hz": 300,
                 "sub_deviation_hz": 550,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 23
               },
               "segments": [
@@ -1789,7 +1959,10 @@
                 "dbfs": -28,
                 "deviation_hz": 3000,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 24
               },
               "segments": [
@@ -1818,7 +1991,10 @@
                 "dbfs": -30,
                 "deviation_hz": 3000,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 25
               },
               "segments": [
@@ -1847,7 +2023,10 @@
                 "dbfs": -34,
                 "deviation_hz": 3000,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 26
               },
               "segments": [
@@ -1880,7 +2059,10 @@
                 "dbfs": -24,
                 "deviation_hz": 3000,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 27
               },
               "segments": [
@@ -1910,7 +2092,10 @@
                   "dbfs": -10,
                   "deviation_hz": 5000,
                   "type": "nfm_voice",
-                  "voice_band_hz": [300, 3000],
+                  "voice_band_hz": [
+                    300,
+                    3000
+                  ],
                   "voice_seed": 28
                 },
                 "carrier_hz": 150000,
@@ -1945,7 +2130,12 @@
               "carrier": {
                 "carrier_hz": 180000,
                 "dbfs": -20,
-                "deviations_hz": [-1800, -600, 600, 1800],
+                "deviations_hz": [
+                  -1800,
+                  -600,
+                  600,
+                  1800
+                ],
                 "seed": 29,
                 "shaping": "raised-cosine over the first half symbol",
                 "symbol_rate": 4800,
@@ -1986,7 +2176,10 @@
                 "sub_deviation_hz": 700,
                 "sub_tone_hz": 146.2,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 30
               },
               "segments": [
@@ -2014,9 +2207,9 @@
           "version": "0.1.0"
         }
       },
-      "commit": "f0979f6",
-      "tag": "shots-2026-10-03",
-      "png_sha256": "e7b08424695109d8d55d8a662d4c1d2735b551b6a94821296a2e9abde1d358d0"
+      "commit": "63a3298",
+      "tag": "shots-2026-10-05-2",
+      "png_sha256": "573a6e5411287c2962677e337de1b941058cfa4ad83ee8c2f33f301cb1025f53"
     },
     {
       "asset": "ways-sync.png",
@@ -2038,7 +2231,10 @@
                 "sub_deviation_hz": 700,
                 "sub_tone_hz": 100,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 21
               },
               "segments": [
@@ -2069,7 +2265,10 @@
                 "sub_deviation_hz": 700,
                 "sub_tone_hz": 127.3,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 22
               },
               "segments": [
@@ -2099,7 +2298,10 @@
                 "low_pass_hz": 300,
                 "sub_deviation_hz": 550,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 23
               },
               "segments": [
@@ -2132,7 +2334,10 @@
                 "dbfs": -28,
                 "deviation_hz": 3000,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 24
               },
               "segments": [
@@ -2161,7 +2366,10 @@
                 "dbfs": -30,
                 "deviation_hz": 3000,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 25
               },
               "segments": [
@@ -2190,7 +2398,10 @@
                 "dbfs": -34,
                 "deviation_hz": 3000,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 26
               },
               "segments": [
@@ -2223,7 +2434,10 @@
                 "dbfs": -24,
                 "deviation_hz": 3000,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 27
               },
               "segments": [
@@ -2253,7 +2467,10 @@
                   "dbfs": -10,
                   "deviation_hz": 5000,
                   "type": "nfm_voice",
-                  "voice_band_hz": [300, 3000],
+                  "voice_band_hz": [
+                    300,
+                    3000
+                  ],
                   "voice_seed": 28
                 },
                 "carrier_hz": 150000,
@@ -2288,7 +2505,12 @@
               "carrier": {
                 "carrier_hz": 180000,
                 "dbfs": -20,
-                "deviations_hz": [-1800, -600, 600, 1800],
+                "deviations_hz": [
+                  -1800,
+                  -600,
+                  600,
+                  1800
+                ],
                 "seed": 29,
                 "shaping": "raised-cosine over the first half symbol",
                 "symbol_rate": 4800,
@@ -2329,7 +2551,10 @@
                 "sub_deviation_hz": 700,
                 "sub_tone_hz": 146.2,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 30
               },
               "segments": [
@@ -2357,9 +2582,9 @@
           "version": "0.1.0"
         }
       },
-      "commit": "f0979f6",
-      "tag": "shots-2026-10-03",
-      "png_sha256": "2017f9e4628b10bca141d285b07ed8a3b9ee1f5e4261967fb4d9ea9276af8aea"
+      "commit": "63a3298",
+      "tag": "shots-2026-10-05-2",
+      "png_sha256": "6557849020bc3ad8d4e7be6987bcaf2f95e61a18745870c53ae48b9f28cd7d83"
     },
     {
       "asset": "ways-terminal.png",
@@ -2381,7 +2606,10 @@
                 "sub_deviation_hz": 700,
                 "sub_tone_hz": 100,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 21
               },
               "segments": [
@@ -2412,7 +2640,10 @@
                 "sub_deviation_hz": 700,
                 "sub_tone_hz": 127.3,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 22
               },
               "segments": [
@@ -2442,7 +2673,10 @@
                 "low_pass_hz": 300,
                 "sub_deviation_hz": 550,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 23
               },
               "segments": [
@@ -2475,7 +2709,10 @@
                 "dbfs": -28,
                 "deviation_hz": 3000,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 24
               },
               "segments": [
@@ -2504,7 +2741,10 @@
                 "dbfs": -30,
                 "deviation_hz": 3000,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 25
               },
               "segments": [
@@ -2533,7 +2773,10 @@
                 "dbfs": -34,
                 "deviation_hz": 3000,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 26
               },
               "segments": [
@@ -2566,7 +2809,10 @@
                 "dbfs": -24,
                 "deviation_hz": 3000,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 27
               },
               "segments": [
@@ -2596,7 +2842,10 @@
                   "dbfs": -10,
                   "deviation_hz": 5000,
                   "type": "nfm_voice",
-                  "voice_band_hz": [300, 3000],
+                  "voice_band_hz": [
+                    300,
+                    3000
+                  ],
                   "voice_seed": 28
                 },
                 "carrier_hz": 150000,
@@ -2631,7 +2880,12 @@
               "carrier": {
                 "carrier_hz": 180000,
                 "dbfs": -20,
-                "deviations_hz": [-1800, -600, 600, 1800],
+                "deviations_hz": [
+                  -1800,
+                  -600,
+                  600,
+                  1800
+                ],
                 "seed": 29,
                 "shaping": "raised-cosine over the first half symbol",
                 "symbol_rate": 4800,
@@ -2672,7 +2926,10 @@
                 "sub_deviation_hz": 700,
                 "sub_tone_hz": 146.2,
                 "type": "nfm_voice",
-                "voice_band_hz": [300, 3000],
+                "voice_band_hz": [
+                  300,
+                  3000
+                ],
                 "voice_seed": 30
               },
               "segments": [
@@ -2700,9 +2957,9 @@
           "version": "0.1.0"
         }
       },
-      "commit": "f0979f6",
-      "tag": "shots-2026-10-03",
-      "png_sha256": "9d99c80672940c257b38e2fd4abc66586c1e5be17682b8f1b8a00e42098702c3"
+      "commit": "63a3298",
+      "tag": "shots-2026-10-05-2",
+      "png_sha256": "f4eb993e6d392833190937688bb3578dd00e2e72fb1a6daea56cef0bf6245919"
     }
   ]
 }
