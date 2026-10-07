@@ -3,6 +3,18 @@
     <channel>
         <title>Leyline</title>
         <item>
+            <title>0.1.1</title>
+            <pubDate>Tue, 06 Oct 2026 19:35:43 -0700</pubDate>
+            <sparkle:version>652</sparkle:version>
+            <sparkle:shortVersionString>0.1.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description sparkle:format="markdown"><![CDATA[- **Install.** A first launch from the DMG now registers and starts the bundled engine on a Mac
+  that has never run Leyline before.
+]]></description>
+            <enclosure url="https://leysdr.com/updates/Leyline-0.1.1.dmg" length="76896015" type="application/octet-stream" sparkle:edSignature="b55u65HckFJtujwsRDNMeHSsp6g4LGmFheJQuW2jLH1Un5QlhuJQNW5VjF9mdHqTNugp9S5qEGQWlWTyYRT4BQ=="/>
+        </item>
+        <item>
             <title>0.1.0</title>
             <pubDate>Mon, 05 Oct 2026 17:56:49 -0700</pubDate>
             <sparkle:version>639</sparkle:version>
