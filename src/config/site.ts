@@ -9,7 +9,7 @@ export const site = {
   description:
     'Radio for the Mac, with an assistant and speech-to-text on your own AI key. Plug in an RTL-SDR or HackRF and listen.',
   intro:
-    'Plug in an RTL-SDR or HackRF, click a signal on the waterfall and listen. Leyline files your memories by band and records each transmission. Add your own AI key to run the radio in plain words and turn speech into searchable text.',
+    'Plug in an RTL-SDR or HackRF and listen. Record each transmission, organize memories by band, and add your own AI key for an assistant and speech-to-text.',
   minOS: 'macOS 26 or later',
   links: {
     repo: REPO,

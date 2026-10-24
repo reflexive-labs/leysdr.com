@@ -164,17 +164,15 @@ const specs = [
     position: relative;
     flex: 1;
     width: 100%;
-    padding-top: 96px;
-    padding-bottom: 84px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 56px 64px;
-    align-items: flex-end;
-    align-content: flex-end;
+    padding-top: 80px;
+    padding-bottom: 72px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 330px;
+    gap: 40px var(--layout-gap);
+    align-items: end;
   }
 
   .intro {
-    flex: 1 1 580px;
     min-width: 0;
     display: flex;
     flex-direction: column;
@@ -229,7 +227,6 @@ const specs = [
   }
 
   .specs {
-    flex: 0 1 330px;
     margin: 0;
     display: grid;
     grid-template-columns: auto 1fr;
@@ -251,6 +248,22 @@ const specs = [
     padding: 11px 0;
     border-bottom: 1px solid var(--line);
     color: var(--text-2);
+  }
+
+  @media (max-width: 899px) {
+    .body {
+      grid-template-columns: minmax(0, 1fr);
+      padding-top: 48px;
+      padding-bottom: 48px;
+    }
+
+    .specs {
+      width: 100%;
+    }
+
+    .intro {
+      gap: 24px;
+    }
   }
 
   @media (max-width: 640px) {
