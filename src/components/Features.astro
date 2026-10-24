@@ -5,6 +5,14 @@ import Shot from './Shot.astro';
 ---
 
 <section id="features" class="wrap features">
+  <Feature eyebrow="The assistant · new in 0.2" title="Ask it to put on the weather radio." stacked>
+    An assistant beside the inspector tunes, scans, sets the squelch, records and keeps bookmarks
+    from plain requests. Open any step to see what it did. It asks before taking the radio from
+    another listener, deleting a recording or starting paid transcription, and Stop ends a turn.
+    Conversations stay with you across restarts.
+    <Shot slot="visual" name="app-assistant" frame="none" />
+  </Feature>
+
   <Feature
     eyebrow="Memories by band"
     title="Bring your CHIRP file. Every memory lands under its band."
@@ -13,7 +21,8 @@ import Shot from './Shot.astro';
     Export from CHIRP, import into Leyline, and your memories become named bookmarks with their
     tones, offsets and comments, filed under 2 m, 70 cm and GMRS instead of one long list. Channel
     plans for NOAA weather, GMRS, MURS and marine VHF are built in, so WX3 or GMRS 17 is one click
-    with nothing to program.
+    with nothing to program. Memories on the same frequency share a row, keeping each tone and note
+    in the inspector. Sort them by frequency or name.
     <div slot="visual" class="chirp">
       <Shot name="chirp-csv-before" frame="terminal" class="csv" />
       <Shot name="sidebar-chirp-import" class="after" />
@@ -42,11 +51,35 @@ import Shot from './Shot.astro';
     </div>
   </Feature>
 
-  <Feature eyebrow="Auto-recording" title="Every over, its own clip." flip visualBasis={560}>
+  <Feature
+    eyebrow="Recording and speech"
+    title="Every over, its own clip. Now with the words."
+    stacked
+  >
     With the squelch as the gate, Leyline records only while someone is on the air, and keeps half a
-    second before each transmission so no clip starts mid-word. Leave a net running and come back to
-    a list of transmissions instead of an hour of hiss.
-    <Shot slot="visual" name="library-net" />
+    second before each transmission so no clip starts mid-word. Add speech-to-text to read and
+    search each over in the Library, play the matching audio, or export the words as text or SRT. On
+    a live channel, watch for phrases such as “net control” as they arrive. Speech uses your OpenAI
+    or OpenAI-compatible key and sends each over’s audio to that provider; it doesn’t run on the
+    Mac.
+    <div slot="visual" class="stack">
+      <Shot name="library-speech" />
+      <Shot name="ley-watch-speech" frame="terminal" />
+    </div>
+  </Feature>
+
+  <Feature
+    eyebrow="AI on your own key"
+    title="Choose the provider. See what it uses."
+    flip
+    visualBasis={520}
+  >
+    Add an Anthropic, OpenAI or OpenAI-compatible key in Settings → AI. Choose the assistant’s
+    provider and model, and a speech model from a provider that supports transcription. Your key
+    stays in the Mac’s login keychain. Settings shows what each feature sends and where, with
+    requests and tokens by day or month. The assistant receives the conversation and tool results;
+    speech receives the audio. Listening and recording work without an AI key.
+    <Shot slot="visual" name="settings-ai" />
   </Feature>
 
   <Feature eyebrow="Decoding" title="APRS, weather alerts and AIS, decoded." stacked>

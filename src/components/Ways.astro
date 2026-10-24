@@ -11,12 +11,13 @@ import { site } from '@/config/site';
     <p class="lede">
       A background engine runs the radio, and decoders and watches keep going after the window
       closes. The Mac app, the <span class="mono ley">ley</span> command and MCP clients all talk to
-      it, so a squelch change in the terminal shows up in the window, and an assistant can sweep a
-      band and tell you what’s on it.
+      it. Tune from the terminal or the assistant and the window follows: the readout, inspector,
+      transmissions and audio move to the new channel. If the old channel is still recording, the
+      inspector keeps its Stop control in reach.
     </p>
   </div>
 
-  <Shot name="ways-sync" />
+  <Shot name="app-follow-terminal" />
 
   <div class="cards">
     <div class="card">
@@ -35,30 +36,25 @@ import { site } from '@/config/site';
           reports something has <span class="mono code">--json</span>.
         </span>
       </div>
+      <!-- Excerpts from ways-terminal, kept as text so they remain readable in a card. -->
       <pre class="term shell"><span class="cmd">$ ley tune 146.52</span>
 using NFM: 2 m amateur band default
 Listening to 146.520 MHz (NFM, 2 m amateur)
-<span class="hi">146.520 MHz NFM  signal -12 dBFS  <span class="teal">on air 2 s</span></span>
+<span class="hi">146.520 MHz NFM  signal −12 dBFS  <span class="teal">on air 4 s</span></span>
 <span class="cmd">$ ley set squelch -45</span>
-squelch -53 dBFS → -45 dBFS on 146.520 MHz NFM (channel 1)</pre>
+squelch −53 dBFS (auto) → −45 dBFS on 146.520 MHz NFM (channel 1)</pre>
     </div>
 
     <div class="card">
       <div class="card-head">
-        <span class="label mono">An assistant</span>
+        <span class="label mono">The assistant</span>
         <span class="desc">
-          <span class="mono code">ley mcp</span> lets an AI assistant tune, scan, decode and record,
-          over MCP.
+          Built into the app, with each step visible. Connect an external assistant through
+          <span class="mono code">ley mcp</span> to tune, scan, record, manage bookmarks and set
+          watches.
         </span>
       </div>
-      <div class="chat">
-        <div class="bubble me">Scan 2 m and tell me what’s active.</div>
-        <div class="tool mono">scan 144M..148M</div>
-        <div class="bubble them">
-          Five carriers. 146.520 (calling), 146.940, 147.180 and 145.230 were up for the whole
-          sweep; 144.390 (APRS) showed once.
-        </div>
-      </div>
+      <Shot name="app-assistant-ask" class="card-shot" />
     </div>
   </div>
 
@@ -142,47 +138,6 @@ squelch -53 dBFS → -45 dBFS on 146.520 MHz NFM (channel 1)</pre>
     padding: 14px;
     font-size: 11px;
     line-height: 1.8;
-  }
-
-  .chat {
-    flex: 1;
-    margin: 0 22px 22px;
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
-    font-size: 13px;
-    line-height: 1.5;
-    font-family: var(--font-mac);
-  }
-
-  .bubble {
-    padding: 9px 12px;
-    text-wrap: pretty;
-  }
-
-  .me {
-    align-self: flex-end;
-    max-width: 86%;
-    border-radius: 12px 12px 3px;
-    background: var(--surface-sel);
-    color: var(--text-bright);
-  }
-
-  .them {
-    align-self: flex-start;
-    max-width: 92%;
-    border-radius: 12px 12px 12px 3px;
-    background: var(--surface-3);
-    color: var(--text-2);
-  }
-
-  .tool {
-    align-self: flex-start;
-    padding: 5px 9px;
-    border-radius: 6px;
-    border: 1px solid var(--teal-deep);
-    font-size: 10.5px;
-    color: var(--teal);
   }
 
   .docs {

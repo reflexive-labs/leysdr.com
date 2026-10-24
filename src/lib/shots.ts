@@ -7,9 +7,6 @@ const files = import.meta.glob<{ default: ImageMetadata }>('/src/assets/shots/*.
   eager: true,
 });
 
-// shots-2026-10-03 marks these as simulated by mistake; fixed in the next release.
-const notSimulated = new Set(['app-icon-1024.png', 'chirp-csv-before.png']);
-
 export interface Shot {
   src: ImageMetadata;
   alt: string;
@@ -23,10 +20,9 @@ export function shot(name: string): Shot {
   const entry = manifest.shots.find((s) => s.asset === asset);
   const file = files[`/src/assets/shots/${asset}`];
   if (!entry || !file) throw new Error(`No screenshot ${asset} in src/assets/shots`);
-  const alt = notSimulated.has(asset) ? entry.alt.replace(/ Simulated signals\.$/, '') : entry.alt;
   return {
     src: file.default,
-    alt,
+    alt: entry.alt,
     width: entry.width / entry.scale,
     height: entry.height / entry.scale,
   };
