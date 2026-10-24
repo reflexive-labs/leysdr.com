@@ -44,7 +44,9 @@
   --font-mac-mono: 'SF Mono', ui-monospace, Menlo, monospace;
 
   --wrap: 1200px;
-  --gutter: 32px;
+  --gutter: clamp(20px, 4vw, 32px);
+  --section-space: clamp(64px, 8vw, 112px);
+  --layout-gap: clamp(28px, 5vw, 64px);
 
   color-scheme: dark;
 }
@@ -158,18 +160,17 @@ a:hover {
 }
 
 .section-head {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px 64px;
-  align-items: flex-end;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: var(--layout-gap);
+  align-items: start;
 }
 
-.section-head .h2 {
-  flex: 1 1 420px;
-}
-
-.section-head .lede {
-  flex: 1 1 440px;
+@media (max-width: 899px) {
+  .section-head {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
 }
 
 /* Terminal blocks */

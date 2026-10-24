@@ -1,91 +1,124 @@
 ---
-// One feature row: copy on one side, an illustration on the other.
-// `flip` puts the illustration first on wide screens; on narrow screens the
-// copy always comes first. `stacked` puts the illustration full width under the
-// copy, for terminal captures that are unreadable at half width.
+// Feature rows share one grid. Wide screenshots sit below a two-column heading;
+// smaller details sit beside their copy. All rows stack copy first on mobile.
 interface Props {
   eyebrow: string;
   title: string;
   flip?: boolean;
   stacked?: boolean;
-  visualBasis?: number;
 }
 
-const { eyebrow, title, flip = false, stacked = false, visualBasis = 440 } = Astro.props;
+const { eyebrow, title, flip = false, stacked = false } = Astro.props;
 ---
 
-<div class:list={['feature', { flip, stacked }]}>
+<section class:list={['feature', { flip, stacked }]}>
   <div class="copy">
-    <span class="eyebrow mono">{eyebrow}</span>
-    <h3>{title}</h3>
+    <div class="heading">
+      <span class="eyebrow mono">{eyebrow}</span>
+      <h2>{title}</h2>
+    </div>
     <p>
       <slot />
     </p>
   </div>
-  <div class="visual" style={stacked ? undefined : `flex-basis:${visualBasis}px`}>
+  <div class="visual">
     <slot name="visual" />
   </div>
-</div>
+</section>
 
 <style>
   .feature {
-    min-width: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px 72px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    gap: var(--layout-gap);
     align-items: center;
+    padding-top: 36px;
+    border-top: 1px solid var(--line);
   }
 
-  .feature.flip {
-    flex-direction: row-reverse;
-  }
-
-  .feature.stacked {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: stretch;
-  }
-
-  .stacked .copy,
-  .stacked .visual {
-    flex: none;
-  }
-
-  .copy {
-    flex: 1 1 380px;
+  .copy,
+  .heading {
+    display: grid;
+    gap: 20px;
     min-width: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+  }
+
+  .heading {
+    gap: 16px;
   }
 
   .visual {
-    flex: 1 1 440px;
     min-width: 0;
   }
 
   .eyebrow {
     font-size: 11px;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--teal);
   }
 
-  h3 {
+  h2 {
     margin: 0;
+    max-width: 22ch;
     font-size: clamp(26px, 3vw, 38px);
     font-weight: 500;
     letter-spacing: -0.03em;
-    line-height: 1.1;
+    line-height: 1.12;
     text-wrap: balance;
   }
 
   p {
     margin: 0;
-    max-width: 50ch;
+    max-width: 56ch;
     font-size: 16px;
     line-height: 1.65;
     color: var(--muted);
     text-wrap: pretty;
+  }
+
+  @media (min-width: 900px) {
+    .flip {
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    }
+
+    .flip .copy {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    .flip .visual {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .stacked {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 36px;
+    }
+
+    .stacked .copy {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+      gap: var(--layout-gap);
+      align-items: start;
+    }
+  }
+
+  @media (max-width: 899px) {
+    .feature {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 28px;
+      padding-top: 28px;
+    }
+
+    .feature:not(.stacked) .visual {
+      width: 100%;
+      max-width: 580px;
+      justify-self: center;
+    }
+
+    p {
+      max-width: none;
+    }
   }
 </style>

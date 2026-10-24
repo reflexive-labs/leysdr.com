@@ -13,23 +13,31 @@ import Shot from './Shot.astro';
     <Shot slot="visual" name="app-assistant" frame="none" />
   </Feature>
 
-  <Feature
-    eyebrow="Memories by band"
-    title="Bring your CHIRP file. Every memory lands under its band."
-    visualBasis={560}
-  >
-    Export from CHIRP, import into Leyline, and your memories become named bookmarks with their
-    tones, offsets and comments, filed under 2 m, 70 cm and GMRS instead of one long list. Channel
-    plans for NOAA weather, GMRS, MURS and marine VHF are built in, so WX3 or GMRS 17 is one click
-    with nothing to program. Memories on the same frequency share a row, keeping each tone and note
-    in the inspector. Sort them by frequency or name.
-    <div slot="visual" class="chirp">
-      <Shot name="chirp-csv-before" frame="terminal" class="csv" />
-      <Shot name="sidebar-chirp-import" class="after" />
-    </div>
+  <Feature eyebrow="Recording and speech" title="Every over, its own clip. Now with the words.">
+    Record each transmission with half a second of audio before it starts. Add speech-to-text to
+    search the words, play the matching clip, or export text and SRT. Watch a live channel for
+    phrases such as “net control”. Speech sends each over’s audio to your OpenAI or
+    OpenAI-compatible provider; it doesn’t run on the Mac.
+    <Shot slot="visual" name="library-speech" />
   </Feature>
 
-  <Feature eyebrow="Tone discovery" title="Hear a repeater, learn its tone." flip visualBasis={480}>
+  <Feature eyebrow="AI on your own key" title="Choose the provider. See what it uses." flip>
+    Add an Anthropic, OpenAI or OpenAI-compatible key in Settings → AI. Choose a model for the
+    assistant and a supported provider for speech. Keys stay in the Mac’s login keychain. Settings
+    shows what each feature sends, where it goes, and your usage: conversation and tool results for
+    the assistant, audio for speech. Listening and recording need no AI key.
+    <Shot slot="visual" name="settings-ai" />
+  </Feature>
+
+  <Feature eyebrow="Memories by band" title="Your CHIRP memories, organized by band.">
+    Import a CHIRP export and your memories become bookmarks with their tones, offsets and notes,
+    filed by band. Memories on the same frequency share a row and keep their own details. Sort by
+    frequency or name, or tune straight to the built-in NOAA weather, GMRS, MURS and marine
+    channels.
+    <Shot slot="visual" name="sidebar-chirp-import" />
+  </Feature>
+
+  <Feature eyebrow="Tone discovery" title="Hear a repeater, learn its tone." flip>
     On an NFM channel Leyline listens under the voice for a CTCSS tone or a DCS code and shows it
     beside the bookmark’s tone, the way your radio’s menu would: PL 127.3, or DCS 023 in octal. Add
     it to the bookmark, then program your handheld.
@@ -40,46 +48,13 @@ import Shot from './Shot.astro';
   </Feature>
 
   <Feature eyebrow="Scanning" title="Sweep a band and see what’s on it." stacked>
-    A scan lists each carrier with its frequency, width, signal-to-noise and how often it was seen,
-    so a single burst reads differently from a repeater that is always up. It reports what it
-    measured and doesn’t guess the mode. In the app, Scan band lists the hits under the band and
-    marks them on the band rail. If someone is already listening on the radio, it says so instead of
-    taking over.
+    Scan band lists carriers with their frequency, width, signal-to-noise and how often they were
+    seen, then marks them on the band rail. A single burst reads differently from a repeater that is
+    always up. A scan reports when the radio is already in use.
     <div slot="visual" class="stack">
       <Shot name="scan-2m" frame="terminal" />
       <Shot name="scan-app" />
     </div>
-  </Feature>
-
-  <Feature
-    eyebrow="Recording and speech"
-    title="Every over, its own clip. Now with the words."
-    stacked
-  >
-    With the squelch as the gate, Leyline records only while someone is on the air, and keeps half a
-    second before each transmission so no clip starts mid-word. Add speech-to-text to read and
-    search each over in the Library, play the matching audio, or export the words as text or SRT. On
-    a live channel, watch for phrases such as “net control” as they arrive. Speech uses your OpenAI
-    or OpenAI-compatible key and sends each over’s audio to that provider; it doesn’t run on the
-    Mac.
-    <div slot="visual" class="stack">
-      <Shot name="library-speech" />
-      <Shot name="ley-watch-speech" frame="terminal" />
-    </div>
-  </Feature>
-
-  <Feature
-    eyebrow="AI on your own key"
-    title="Choose the provider. See what it uses."
-    flip
-    visualBasis={520}
-  >
-    Add an Anthropic, OpenAI or OpenAI-compatible key in Settings → AI. Choose the assistant’s
-    provider and model, and a speech model from a provider that supports transcription. Your key
-    stays in the Mac’s login keychain. Settings shows what each feature sends and where, with
-    requests and tokens by day or month. The assistant receives the conversation and tool results;
-    speech receives the audio. Listening and recording work without an AI key.
-    <Shot slot="visual" name="settings-ai" />
   </Feature>
 
   <Feature eyebrow="Decoding" title="APRS, weather alerts and AIS, decoded." stacked>
@@ -109,10 +84,10 @@ import Shot from './Shot.astro';
 
 <style>
   .features {
-    padding-top: 140px;
+    padding-top: var(--section-space);
     display: flex;
     flex-direction: column;
-    gap: 120px;
+    gap: var(--section-space);
   }
 
   .mac {
@@ -121,30 +96,20 @@ import Shot from './Shot.astro';
 
   .stack {
     width: 100%;
-    max-width: 1000px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 14px;
   }
 
-  /* The CHIRP export, then the sidebar it became, overlapping it. */
-  .chirp {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .chirp :global(.csv) {
-    width: 90%;
-  }
-
-  .chirp :global(.after) {
-    width: 72%;
-    margin: -96px 0 0 auto;
-    box-shadow: 0 30px 60px -20px rgb(0 0 0 / 90%);
+  .stack :global(.shot) {
+    max-width: none;
   }
 
   .pair {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 14px;

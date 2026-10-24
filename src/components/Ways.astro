@@ -6,7 +6,7 @@ import { site } from '@/config/site';
 <section id="ways" class="wrap ways">
   <div class="section-head">
     <h2 class="h2" style="max-width:18ch">
-      One engine. Drive it from the app, the terminal or an assistant.
+      One radio. Three ways to use it.
     </h2>
     <p class="lede">
       A background engine runs the radio, and decoders and watches keep going after the window
@@ -17,15 +17,14 @@ import { site } from '@/config/site';
     </p>
   </div>
 
-  <Shot name="app-follow-terminal" />
-
   <div class="cards">
     <div class="card">
       <div class="card-head">
         <span class="label mono">The app</span>
-        <span class="desc">Waterfall, bands, inspector and Library. For listening.</span>
+        <span class="desc">
+          Click the waterfall to tune. Bands, bookmarks and the Library keep everything in reach.
+        </span>
       </div>
-      <Shot name="ways-app" class="card-shot" />
     </div>
 
     <div class="card">
@@ -36,27 +35,20 @@ import { site } from '@/config/site';
           reports something has <span class="mono code">--json</span>.
         </span>
       </div>
-      <!-- Excerpts from ways-terminal, kept as text so they remain readable in a card. -->
-      <pre class="term shell"><span class="cmd">$ ley tune 146.52</span>
-using NFM: 2 m amateur band default
-Listening to 146.520 MHz (NFM, 2 m amateur)
-<span class="hi">146.520 MHz NFM  signal −12 dBFS  <span class="teal">on air 4 s</span></span>
-<span class="cmd">$ ley set squelch -45</span>
-squelch −53 dBFS (auto) → −45 dBFS on 146.520 MHz NFM (channel 1)</pre>
     </div>
 
     <div class="card">
       <div class="card-head">
         <span class="label mono">The assistant</span>
         <span class="desc">
-          Built into the app, with each step visible. Connect an external assistant through
-          <span class="mono code">ley mcp</span> to tune, scan, record, manage bookmarks and set
-          watches.
+          Ask in the app, or connect an external assistant with{' '}
+          <span class="mono code">ley mcp</span>. Each step stays visible.
         </span>
       </div>
-      <Shot name="app-assistant-ask" class="card-shot" />
     </div>
   </div>
+
+  <Shot name="app-follow-terminal" />
 
   <a
     href={site.links.docs}
@@ -70,10 +62,10 @@ squelch −53 dBFS (auto) → −45 dBFS on 146.520 MHz NFM (channel 1)</pre>
 
 <style>
   .ways {
-    padding-top: 160px;
+    padding-top: var(--section-space);
     display: flex;
     flex-direction: column;
-    gap: 44px;
+    gap: 32px;
   }
 
   .ley {
@@ -83,7 +75,7 @@ squelch −53 dBFS (auto) → −45 dBFS on 146.520 MHz NFM (channel 1)</pre>
 
   .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 16px;
   }
 
@@ -97,10 +89,10 @@ squelch −53 dBFS (auto) → −45 dBFS on 146.520 MHz NFM (channel 1)</pre>
   }
 
   .card-head {
-    padding: 20px 22px 16px;
+    padding: 24px;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 12px;
   }
 
   .label {
@@ -122,26 +114,13 @@ squelch −53 dBFS (auto) → −45 dBFS on 146.520 MHz NFM (channel 1)</pre>
     white-space: nowrap;
   }
 
-  .card :global(.card-shot) {
-    margin: 0 22px 22px;
-    width: auto;
-    border-color: var(--line-2);
-    border-radius: 8px;
-  }
-
-  .shell {
-    flex: 1;
-    margin: 0 22px 22px;
-    border: 1px solid var(--line-2);
-    border-radius: 8px;
-    background: var(--bg-deep);
-    padding: 14px;
-    font-size: 11px;
-    line-height: 1.8;
-  }
-
   .docs {
     align-self: flex-start;
     font-size: 12px;
+  }
+  @media (max-width: 899px) {
+    .cards {
+      grid-template-columns: minmax(0, 1fr);
+    }
   }
 </style>
