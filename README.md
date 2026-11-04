@@ -27,6 +27,12 @@ The design source is the "Leyline Site v3" file in the Leyline project on claude
 Fonts (Space Grotesk, Space Mono) are self-hosted via Fontsource. The animation draws a single
 still frame under `prefers-reduced-motion`.
 
+## Positioning and copy
+
+[The positioning framework](docs/positioning.md) defines the audience, lasting product promises,
+website narrative and release review process. Use it before changing copy or choosing images.
+Releases update the evidence for those promises; the homepage explains the whole product.
+
 ## Screenshots
 
 The screenshots are real captures published as `shots-YYYY-MM-DD` releases on

@@ -7,9 +7,9 @@ export const site = {
   title: 'Leyline SDR — software defined radio, made for the Mac',
   // Meta and social preview copy; keep under ~125 characters.
   description:
-    'Radio for the Mac, with an assistant and speech-to-text on your own AI key. Plug in an RTL-SDR or HackRF and listen.',
+    'Software defined radio for the Mac. Tune, listen, decode and record from the app, terminal or an assistant.',
   intro:
-    'Plug in an RTL-SDR or HackRF and listen. Record each transmission, organize memories by band, and add your own AI key for an assistant and speech-to-text.',
+    'Tune, listen, decode and record with an RTL-SDR or HackRF. Keep your memories and recordings together, and work from the Mac app, the terminal or an assistant.',
   minOS: 'macOS 26 or later',
   links: {
     repo: REPO,
