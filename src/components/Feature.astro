@@ -17,9 +17,12 @@ const { eyebrow, title, flip = false, stacked = false } = Astro.props;
       <span class="eyebrow mono">{eyebrow}</span>
       <h2>{title}</h2>
     </div>
-    <p>
-      <slot />
-    </p>
+    <div class="description">
+      <p>
+        <slot />
+      </p>
+      <slot name="details" />
+    </div>
   </div>
   <div class="visual">
     <slot name="visual" />
@@ -37,7 +40,8 @@ const { eyebrow, title, flip = false, stacked = false } = Astro.props;
   }
 
   .copy,
-  .heading {
+  .heading,
+  .description {
     display: grid;
     gap: 20px;
     min-width: 0;
@@ -68,7 +72,7 @@ const { eyebrow, title, flip = false, stacked = false } = Astro.props;
     text-wrap: balance;
   }
 
-  p {
+  .description :global(p) {
     margin: 0;
     max-width: 56ch;
     font-size: 16px;
@@ -117,7 +121,7 @@ const { eyebrow, title, flip = false, stacked = false } = Astro.props;
       justify-self: center;
     }
 
-    p {
+    .description :global(p) {
       max-width: none;
     }
   }

@@ -1,0 +1,44 @@
+---
+import Shot from './Shot.astro';
+
+interface Props {
+  label: string;
+  name: string;
+  caption: string;
+}
+
+const { label, name, caption } = Astro.props;
+---
+
+<details class="shot-disclosure">
+  <summary>{label}</summary>
+  <div class="views">
+    <Shot name={name} frame="none" caption={caption} />
+    <slot />
+  </div>
+</details>
+
+<style>
+  .shot-disclosure {
+    width: 100%;
+    border-top: 1px solid var(--line-3);
+  }
+
+  summary {
+    padding: 16px 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text-2);
+    cursor: pointer;
+  }
+
+  summary:hover {
+    color: var(--accent);
+  }
+
+  .views {
+    display: grid;
+    gap: 24px;
+    padding: 8px 0 16px;
+  }
+</style>

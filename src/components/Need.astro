@@ -34,6 +34,10 @@ const needs = [
       </div>
     ))}
   </div>
+  <p class="optional">
+    Optional: your own API key for the assistant and speech-to-text. Choose a supported provider in
+    Settings → AI. Listening, decoding and recording work without one.
+  </p>
 </section>
 
 <style>
@@ -72,6 +76,15 @@ const needs = [
 
   .body {
     font-size: 14px;
+    line-height: 1.6;
+    color: var(--muted);
+    text-wrap: pretty;
+  }
+
+  .optional {
+    margin: 0;
+    max-width: 70ch;
+    font-size: 15px;
     line-height: 1.6;
     color: var(--muted);
     text-wrap: pretty;

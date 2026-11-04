@@ -1,46 +1,20 @@
 ---
 import Feature from './Feature.astro';
-import Mark from './Mark.astro';
 import Shot from './Shot.astro';
+import ShotDisclosure from './ShotDisclosure.astro';
 ---
 
 <section id="features" class="wrap features">
-  <Feature eyebrow="The assistant · new in 0.2" title="Ask it to put on the weather radio." stacked>
-    An assistant beside the inspector tunes, scans, sets the squelch, records and keeps bookmarks
-    from plain requests. Open any step to see what it did. It asks before taking the radio from
-    another listener, deleting a recording or starting paid transcription, and Stop ends a turn.
-    Conversations stay with you across restarts.
-    <Shot slot="visual" name="app-assistant" frame="none" />
-  </Feature>
-
-  <Feature eyebrow="Recording and speech" title="Every over, its own clip. Now with the words.">
-    Record each transmission with half a second of audio before it starts. Add speech-to-text to
-    search the words, play the matching clip, or export text and SRT. Watch a live channel for
-    phrases such as “net control”. Speech sends each over’s audio to your OpenAI or
-    OpenAI-compatible provider; it doesn’t run on the Mac.
-    <Shot slot="visual" name="library-speech" />
-  </Feature>
-
-  <Feature eyebrow="AI on your own key" title="Choose the provider. See what it uses." flip>
-    Add an Anthropic, OpenAI or OpenAI-compatible key in Settings → AI. Choose a model for the
-    assistant and a supported provider for speech. Keys stay in the Mac’s login keychain. Settings
-    shows what each feature sends, where it goes, and your usage: conversation and tool results for
-    the assistant, audio for speech. Listening and recording need no AI key.
-    <Shot slot="visual" name="settings-ai" />
-  </Feature>
-
   <Feature eyebrow="Memories by band" title="Your CHIRP memories, organized by band.">
-    Import a CHIRP export and your memories become bookmarks with their tones, offsets and notes,
-    filed by band. Memories on the same frequency share a row and keep their own details. Sort by
-    frequency or name, or tune straight to the built-in NOAA weather, GMRS, MURS and marine
-    channels.
+    Import a CHIRP CSV export and your memories become bookmarks with their tones, offsets and
+    notes, filed by band. Memories on the same frequency share a row and keep their own details.
+    Sort by frequency or name, or tune to the built-in NOAA weather, GMRS, MURS and marine channels.
     <Shot slot="visual" name="sidebar-chirp-import" />
   </Feature>
 
   <Feature eyebrow="Tone discovery" title="Hear a repeater, learn its tone." flip>
-    On an NFM channel Leyline listens under the voice for a CTCSS tone or a DCS code and shows it
-    beside the bookmark’s tone, the way your radio’s menu would: PL 127.3, or DCS 023 in octal. Add
-    it to the bookmark, then program your handheld.
+    On an NFM channel Leyline shows the CTCSS tone or DCS code it hears beside the bookmark’s tone:
+    PL 127.3, or DCS 023. Save it with the bookmark to use when programming your handheld.
     <div slot="visual" class="pair">
       <Shot name="inspector-tone" />
       <Shot name="inspector-dcs" />
@@ -48,37 +22,84 @@ import Shot from './Shot.astro';
   </Feature>
 
   <Feature eyebrow="Scanning" title="Sweep a band and see what’s on it." stacked>
-    Scan band lists carriers with their frequency, width, signal-to-noise and how often they were
-    seen, then marks them on the band rail. A single burst reads differently from a repeater that is
-    always up. A scan reports when the radio is already in use.
+    Scan a band for carriers, then inspect their frequency, width, signal-to-noise and how often
+    they were seen. Results appear under the band and on the band rail. A brief burst reads
+    differently from a repeater that is always up. Leyline tells you when the radio is already in
+    use.
     <div slot="visual" class="stack">
       <Shot name="scan-2m" frame="terminal" />
       <Shot name="scan-app" />
     </div>
   </Feature>
 
-  <Feature eyebrow="Decoding" title="APRS, weather alerts and AIS, decoded." stacked>
-    Decoders share the radio with you when their channel is in range, or run on a second radio.
-    Follow APRS stations as they beacon, see vessels on AIS, and set a watch that sends a macOS
-    notification when a SAME alert names your county. Alerts can also go to a webhook or a shell
-    command.
+  <Feature eyebrow="Decoding" title="Read what the signals carry." stacked>
+    Decode ADS-B aircraft, APRS stations, AIS vessels and NOAA weather alerts (SAME). In Decoders,
+    follow a message log and a table of transmitters heard, with a map when they report a position.
+    Open a message to inspect every field it carried. Name transmitters to recognize them in the app
+    and terminal. While a decoder runs, its callsigns appear on the waterfall where they were heard.
+    <Fragment slot="details">
+      <p>
+        Build a watch from a decoder’s fields, such as a callsign, a county, or a place and radius.
+        Decoders keep running and watches send macOS notifications with the app closed.
+      </p>
+      <p>
+        Decoding runs on your Mac. Records, labels and watches stay in your Library folder. Maps
+        load tiles from Apple.
+      </p>
+    </Fragment>
     <div slot="visual" class="stack">
-      <div class="notif mac">
-        <span class="notif-icon">
-          <Mark size={20} />
-        </span>
-        <div class="notif-body">
-          <div class="notif-top">
-            <span class="notif-title">Severe Thunderstorm Warning</span>
-            <span class="when">now</span>
-          </div>
-          <span class="where">Fairfax County, VA, until 21:45</span>
-          <span class="src">SAME on NOAA WX2 · 162.400 MHz</span>
-        </div>
-      </div>
-      <Shot name="aprs-track" frame="terminal" />
-      <Shot name="ais-track" frame="terminal" />
+      <Shot
+        name="app-decoders-map"
+        frame="none"
+        caption="Aircraft by transmitted callsign, with the selected message’s fields beside the map. Simulated signals."
+      />
+      <ShotDisclosure
+        label="See the aircraft table"
+        name="app-decoders-table"
+        caption="Altitude, speed, track and squawk, grouped by callsign. Simulated signals."
+      />
+      <ShotDisclosure
+        label="See decoded callsigns on the waterfall"
+        name="app-waterfall-names"
+        caption="Decoded APRS callsigns, on the waterfall rows where they were heard. Simulated signals."
+      />
     </div>
+  </Feature>
+
+  <Feature eyebrow="Recording and speech" title="Every over, its own clip.">
+    Record each transmission with half a second of audio before it starts. The Library keeps the
+    clips for playback, and a recording can be run through a compatible decoder later.
+    <Fragment slot="details">
+      <p>
+        Add speech-to-text to search the words, play the matching clip, or export text and SRT.
+        Watch a live channel for phrases such as “net control”. Speech sends each over’s audio to
+        your OpenAI or OpenAI-compatible provider.
+      </p>
+    </Fragment>
+    <Shot slot="visual" name="library-speech" />
+  </Feature>
+
+  <Feature eyebrow="The assistant" title="Ask it to put on the weather radio." stacked>
+    Ask the assistant beside the inspector to tune, scan, set the squelch, record or keep a
+    bookmark. Open any step to see what it called and what came back. It asks before taking the
+    radio from another listener, deleting a recording or starting paid transcription. Stop ends a
+    turn. The assistant works from measurements and decoded records, and conversations stay with you
+    across restarts.
+    <Shot slot="visual" name="app-assistant" frame="none" />
+  </Feature>
+
+  <Feature eyebrow="Your API key" title="Choose the provider. See what it uses." flip>
+    Add an Anthropic, OpenAI or OpenAI-compatible API key in Settings → AI. Choose a model for the
+    assistant and a supported provider for speech. Keys are kept in the Mac’s login keychain and
+    sent only to the provider or endpoint you chose.
+    <Fragment slot="details">
+      <p>
+        Settings shows your usage and what each feature sends: the conversation and tool results,
+        including decoded records, for the assistant; each over’s audio for speech. Listening,
+        decoding and recording need no API key.
+      </p>
+    </Fragment>
+    <Shot slot="visual" name="settings-ai" />
   </Feature>
 </section>
 
@@ -88,10 +109,6 @@ import Shot from './Shot.astro';
     display: flex;
     flex-direction: column;
     gap: var(--section-space);
-  }
-
-  .mac {
-    font-family: var(--font-mac);
   }
 
   .stack {
@@ -113,64 +130,5 @@ import Shot from './Shot.astro';
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 14px;
-  }
-
-  /* Decoding */
-  .notif {
-    align-self: flex-end;
-    width: min(100%, 370px);
-    display: flex;
-    gap: 12px;
-    padding: 14px;
-    border-radius: 16px;
-    background: rgb(40 44 48 / 92%);
-    border: 1px solid #33393d;
-    box-shadow: 0 24px 50px -20px rgb(0 0 0 / 90%);
-  }
-
-  .notif-icon {
-    width: 36px;
-    height: 36px;
-    flex: none;
-    border-radius: 9px;
-    background: var(--bg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--accent);
-  }
-
-  .notif-body {
-    flex: 1;
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    font-size: 13px;
-  }
-
-  .notif-top {
-    display: flex;
-    justify-content: space-between;
-    gap: 8px;
-  }
-
-  .notif-title {
-    font-weight: 600;
-    color: var(--text-bright);
-  }
-
-  .when {
-    font-size: 11.5px;
-    color: var(--muted-2);
-  }
-
-  .where {
-    color: #d5d8da;
-  }
-
-  .src {
-    color: var(--muted-2);
-    font-size: 12px;
   }
 </style>
