@@ -26,10 +26,10 @@
           "version": "0.1.0"
         }
       },
-      "commit": "v0.1.2-517-g1c110ef",
-      "tag": "shots-2026-10-23",
-      "png_sha256": "24cbbfd4f13bc8aa7a23dc10142ffe440b8846337dae404f7129955bcccd8fb8",
-      "source_sha256": "353a299a8350459b7033ae255a4f13ba4b84566f9914c95e4a7285d3cc277a8b"
+      "commit": "v0.3.0-1-gf1bbe40",
+      "tag": "shots-2026-11-03",
+      "png_sha256": "8a4681f11b4aa6ebf3badabe5c7a2d88795fa65f178fb8f08155a3195d760582",
+      "source_sha256": "a1fae349f06ea077fd0e0fef6a04582d935fe4ee6376709018e0687241f54bd6"
     },
     {
       "asset": "app-assistant-ask.png",
@@ -402,10 +402,10 @@
           "version": "0.1.0"
         }
       },
-      "commit": "v0.1.2-517-g1c110ef",
-      "tag": "shots-2026-10-23",
-      "png_sha256": "07b462acced72a71918966730a8dc5514ba5e486a82749a9a847ccb084015559",
-      "source_sha256": "b8a7733c12789f3c1ada4eff65e81ed877f811c7c60bea368d61ee28ebf9cbbe"
+      "commit": "v0.3.0-1-gf1bbe40",
+      "tag": "shots-2026-11-03",
+      "png_sha256": "5f3535eb9dc275cd9eecc13b7951aa47fca45f6f459669353c9390bd2f16df1b",
+      "source_sha256": "22998a4e04b5ad58be55bbca608f9210161ad6e4b812be8ffbaa014d2c9766cd"
     },
     {
       "asset": "app-assistant.png",
@@ -446,10 +446,68 @@
           "version": "0.1.0"
         }
       },
-      "commit": "v0.2.0",
-      "tag": "shots-2026-10-23-2",
-      "png_sha256": "e1cbbe7a2f13834c47140f8118101d41c55db9e2f53220023896aa82beecc410",
-      "source_sha256": "ed405f0956a6aeb6d17399f4f12f05eed15f687998628beb0e6d54491cc3528b"
+      "commit": "v0.3.0-1-gf1bbe40",
+      "tag": "shots-2026-11-03",
+      "png_sha256": "c33884fc1a8f9a827d44a84a34c3dbbb2404894d844a9f183be8c03c10f456e4",
+      "source_sha256": "ee97850c7c141e38536a91df4941ae338d4045be98e872b8d7e454ba35bc694e"
+    },
+    {
+      "asset": "app-decoders-map.png",
+      "width": 2880,
+      "height": 1640,
+      "scale": 2,
+      "alt": "The Leyline Decoders place on Aircraft: five aircraft by callsign on a map of the San Francisco Bay Area, each turned to its track, and LEY303 selected, its position, altitude and every field it sent in the inspector with their units. Simulated signals.",
+      "scene": "app-decoders-map",
+      "fixtures": {
+        "scene_adsb": {
+          "noise_dbfs": -40,
+          "seed": 1,
+          "signals": [
+            {
+              "aircraft": "A1F001,A1F002,A1F003,A1F004,A1F005",
+              "callsigns": "LEY101,LEY202,LEY303,LEY404,N0CALL",
+              "dbfs": -15,
+              "duration_s": 30,
+              "type": "adsb_traffic"
+            }
+          ],
+          "tool": "leyfix",
+          "version": "0.1.0"
+        }
+      },
+      "commit": "v0.3.0-2-g90eb209-dirty",
+      "tag": "shots-2026-11-03",
+      "png_sha256": "8e09a48bd40be1d19a214b6fe78740c626abdcde7d829e9be0fc995f35196112",
+      "source_sha256": "e8d5e28877f4cb50d7b085b79a5e5740b1f58054ebb7713a0352419ef857e94c"
+    },
+    {
+      "asset": "app-decoders-table.png",
+      "width": 2880,
+      "height": 1640,
+      "scale": 2,
+      "alt": "The Leyline Decoders place on Aircraft as a table: the five aircraft by callsign, with their altitude, ground speed, track and squawk, and when each was last heard. Simulated signals.",
+      "scene": "app-decoders-table",
+      "fixtures": {
+        "scene_adsb": {
+          "noise_dbfs": -40,
+          "seed": 1,
+          "signals": [
+            {
+              "aircraft": "A1F001,A1F002,A1F003,A1F004,A1F005",
+              "callsigns": "LEY101,LEY202,LEY303,LEY404,N0CALL",
+              "dbfs": -15,
+              "duration_s": 30,
+              "type": "adsb_traffic"
+            }
+          ],
+          "tool": "leyfix",
+          "version": "0.1.0"
+        }
+      },
+      "commit": "v0.3.0-2-g90eb209-dirty",
+      "tag": "shots-2026-11-03",
+      "png_sha256": "3234dbdac14be65bc7e4732fe28e92604f90e11238b2067bcbdd57153b047ffb",
+      "source_sha256": "a0a8a8dd4948eb9ff613876bf2ef9a2868d5485cc6c73b65e229df93885b509e"
     },
     {
       "asset": "app-follow-terminal.png",
@@ -822,10 +880,10 @@
           "version": "0.1.0"
         }
       },
-      "commit": "v0.1.2-517-g1c110ef",
-      "tag": "shots-2026-10-23",
-      "png_sha256": "954e1d89df00cb0fa837433b303c3b73299fd83243852019632c9df8ba0b6b7a",
-      "source_sha256": "b631a9e66386c7241e71326ad123868deebf119ceebfc1f8ec0d5dd20b730d7f"
+      "commit": "v0.3.0-1-gf1bbe40",
+      "tag": "shots-2026-11-03",
+      "png_sha256": "54585e566685c0064dd90a299d07c3cd15265aacc4761a589e394ef108e4b4ef",
+      "source_sha256": "9428b732e3d4c2109b39c264e2dbcb76846c9b255b584537f19319e1870e5feb"
     },
     {
       "asset": "app-icon-1024.png",
@@ -838,6 +896,37 @@
       "tag": "shots-2026-10-05-2",
       "png_sha256": "3d509ac0f02893a7b3cba2823e136f8dff92a262835f566a268eab5a4ca63890",
       "source_sha256": "6598abb4ba150549efa9bb30d5bda470b6a5fff0c21f5f19026eb75bd5308106"
+    },
+    {
+      "asset": "app-move-radio.png",
+      "width": 2880,
+      "height": 1640,
+      "scale": 2,
+      "alt": "The Leyline window asking \"Move the radio?\" before Scan band on 2 m, because the sweep pauses the APRS decoder on 144.390 MHz, with Sweep anyway and Cancel. Simulated signals.",
+      "scene": "app-move-radio",
+      "fixtures": {
+        "scene_aprs": {
+          "noise_dbfs": -40,
+          "seed": 1,
+          "signals": [
+            {
+              "baud": 1200,
+              "carrier_hz": 0,
+              "dbfs": -20,
+              "deviation_hz": 3500,
+              "period_s": 21,
+              "stations": "N0CALL-1,N0CALL-2,N0CALL-3,N0CALL-4,N0CALL-5,N0CALL-6,N0CALL-7",
+              "type": "afsk_packet"
+            }
+          ],
+          "tool": "leyfix",
+          "version": "0.1.0"
+        }
+      },
+      "commit": "v0.3.0-2-g90eb209-dirty",
+      "tag": "shots-2026-11-03",
+      "png_sha256": "2b40cab42d3aa41365a9b8941411e1f0ccbade835e237e210f11dac9b0fc2fa9",
+      "source_sha256": "61db4f8f4fea7e85dbda85541d5916db1652e0cf49bbe5f3e3b699ac5c1c3bcf"
     },
     {
       "asset": "app-radio-2m.png",
@@ -1210,10 +1299,41 @@
           "version": "0.1.0"
         }
       },
-      "commit": "v0.1.2-516-g12217aa",
-      "tag": "shots-2026-10-23",
-      "png_sha256": "1fe95647081c59fb6b5c434fb96f25a46b2cf5ed94151b4e1f80fc04cc3766f1",
-      "source_sha256": "71fc186e93b9318bcc5536cc58910bcb5e375aafce53512018f2025408621e5d"
+      "commit": "v0.3.0-1-gf1bbe40",
+      "tag": "shots-2026-11-03",
+      "png_sha256": "066db54efe17cdba9e0243131f514977acca32af7b735a9f9de63f27825f5b0a",
+      "source_sha256": "1e78fc2f058c68d69d483434f2a16eee4fe7f7254899c09c383c3a54c022a5cc"
+    },
+    {
+      "asset": "app-waterfall-names.png",
+      "width": 2880,
+      "height": 1640,
+      "scale": 2,
+      "alt": "The Leyline window on 144.390 MHz with the APRS decoder running: the callsigns of the stations it decoded on the waterfall rows they were heard in, and APRS's row at the top of the sidebar. Simulated signals.",
+      "scene": "app-waterfall-names",
+      "fixtures": {
+        "scene_aprs": {
+          "noise_dbfs": -40,
+          "seed": 1,
+          "signals": [
+            {
+              "baud": 1200,
+              "carrier_hz": 0,
+              "dbfs": -20,
+              "deviation_hz": 3500,
+              "period_s": 21,
+              "stations": "N0CALL-1,N0CALL-2,N0CALL-3,N0CALL-4,N0CALL-5,N0CALL-6,N0CALL-7",
+              "type": "afsk_packet"
+            }
+          ],
+          "tool": "leyfix",
+          "version": "0.1.0"
+        }
+      },
+      "commit": "v0.3.0-2-g90eb209-dirty",
+      "tag": "shots-2026-11-03",
+      "png_sha256": "6cdad98503b3a5f680dd8396c0a105b3186cebe720ab6374ed1904800f19bc25",
+      "source_sha256": "596bab0b4b1e2d2b16c70fad770fcd3b9be2801cdcc3a52107e89babc23ccde6"
     },
     {
       "asset": "aprs-track.png",
@@ -1241,10 +1361,10 @@
           "version": "0.1.0"
         }
       },
-      "commit": "v0.1.2-517-g1c110ef",
-      "tag": "shots-2026-10-23",
-      "png_sha256": "07331cbf09adfc781620dadf1de414773aadfb7f62637c780a6eff2e67a13ca3",
-      "source_sha256": "327a09034317eb946d48e3e4461ab84b4e92b8c1d2033b67af5e82e967806e1b"
+      "commit": "v0.3.0-1-gf1bbe40",
+      "tag": "shots-2026-11-03",
+      "png_sha256": "4a90c7238f99fe7480014adcf0cf0791bb2b5693d7fd601b731a9a3bc786f421",
+      "source_sha256": "a76670714a1a9fd198bf6f33d36657279f686d039ca39a0fbd0b54e051c9170e"
     },
     {
       "asset": "chirp-csv-before.png",
@@ -1629,10 +1749,10 @@
           "version": "0.1.0"
         }
       },
-      "commit": "v0.1.2-517-g1c110ef",
-      "tag": "shots-2026-10-23",
-      "png_sha256": "44e4d5d596d7dff056ed6572e25fa979b7827c9b5d35b36cf53b8c4279deda84",
-      "source_sha256": "eb1f07b6e8fda31863c8b59f39c93d0b06a47be673e31955af8706ba51648de4"
+      "commit": "v0.3.0-1-gf1bbe40",
+      "tag": "shots-2026-11-03",
+      "png_sha256": "64ee91fb04674c18d53e95e4adf4745c0aff1b435ede0e80d43cbacdd5035575",
+      "source_sha256": "5206f649d22884a87414cd6e7970f7449114202e8ff647d1c33c990e8a3e4136"
     },
     {
       "asset": "inspector-tone.png",
@@ -2005,10 +2125,10 @@
           "version": "0.1.0"
         }
       },
-      "commit": "v0.1.2-517-g1c110ef-dirty",
-      "tag": "shots-2026-10-23",
-      "png_sha256": "132b79ddd7e05c000269189eb3b6cd44e6d741cb50577cd4f8a9f926170cd54f",
-      "source_sha256": "5204b4b8916edca3ff39bf45d3080743a120cad267f9aa6ba521ddcfdf8a792a"
+      "commit": "v0.3.0-1-gf1bbe40",
+      "tag": "shots-2026-11-03",
+      "png_sha256": "b797ff1111c61a07aad974d2d99bdc26e88d014876ec7f77393de0e6ba2c0f8e",
+      "source_sha256": "407bd6d5f707d6d94c5eda963ce3e23547770cfb757622f8c2652b277e3854fa"
     },
     {
       "asset": "ley-ai.png",
@@ -2387,6 +2507,37 @@
       "source_sha256": "349544b55c10502d932bafc0b84c8817f1526d53f038945f0c75730b57f56bd6"
     },
     {
+      "asset": "ley-dry-run.png",
+      "width": 1510,
+      "height": 200,
+      "scale": 2,
+      "alt": "ley decode aprs --dry-run in a terminal with the APRS decoder already running: it would share the capture at 144.390 MHz and retune nothing. Simulated signals.",
+      "scene": "ley-dry-run",
+      "fixtures": {
+        "scene_aprs": {
+          "noise_dbfs": -40,
+          "seed": 1,
+          "signals": [
+            {
+              "baud": 1200,
+              "carrier_hz": 0,
+              "dbfs": -20,
+              "deviation_hz": 3500,
+              "period_s": 21,
+              "stations": "N0CALL-1,N0CALL-2,N0CALL-3,N0CALL-4,N0CALL-5,N0CALL-6,N0CALL-7",
+              "type": "afsk_packet"
+            }
+          ],
+          "tool": "leyfix",
+          "version": "0.1.0"
+        }
+      },
+      "commit": "v0.3.0-3-g6da9f9c-dirty",
+      "tag": "shots-2026-11-03",
+      "png_sha256": "435eb057fe08aaffb8ea06a7dc81d3bf4f031f0ae1d85cbecd97fee78869ed65",
+      "source_sha256": "279d8d9dc21b6c2de6517fcbe3125af71f756f7373e9945f245d0556ec3f685c"
+    },
+    {
       "asset": "ley-watch-speech.png",
       "width": 1832,
       "height": 352,
@@ -2456,10 +2607,10 @@
           "version": "0.1.0"
         }
       },
-      "commit": "v0.1.2-517-g1c110ef",
-      "tag": "shots-2026-10-23",
-      "png_sha256": "014459831b4a4280055cb5ff8ae70192d77a5ec92b36fedd417797c1113670d7",
-      "source_sha256": "61489f2f9a2c5e365c9386b4b667f7f66553a9a241dd9707056f81c3819f48b5"
+      "commit": "v0.3.0-1-gf1bbe40",
+      "tag": "shots-2026-11-03",
+      "png_sha256": "6dbf80fde8610cd63e3a8925ec94b3a93a0642d7a5626b86f7c4f5519e2dcb2d",
+      "source_sha256": "fb0876c7fcc51f0c936efb8d5e18f614826f078d19ca1e85e3da029d5886b79b"
     },
     {
       "asset": "library-net.png",
@@ -2531,10 +2682,10 @@
           "version": "0.1.0"
         }
       },
-      "commit": "v0.1.2-517-g1c110ef",
-      "tag": "shots-2026-10-23",
-      "png_sha256": "e3a35b6b71232bfe0a87dcb4fdc0f928f63e10e0af899f0f9e2df03833bae83a",
-      "source_sha256": "11e24ccc6f12254e2f3df3d0b036d6d34c5f1cfef560e9bf042ca8a70b7e5d15"
+      "commit": "v0.3.0-1-gf1bbe40",
+      "tag": "shots-2026-11-03",
+      "png_sha256": "9e4dbeca14272eeb03defaad5cffb15d2340c100e83c6bf129215dc3ec4e03a5",
+      "source_sha256": "bcbdb220999be44036637f0d77a67ad18c4cc2ebb0b9ca0c85c4f21a169bc985"
     },
     {
       "asset": "library-speech.png",
@@ -2606,15 +2757,15 @@
           "version": "0.1.0"
         }
       },
-      "commit": "v0.1.2-517-g1c110ef",
-      "tag": "shots-2026-10-23",
-      "png_sha256": "3814ac073af2fb34e0534a549bb523d5c841cb4fa7ba83fb8bab71f7fed2adf0",
-      "source_sha256": "918e7dd0c25d76cba6a772600d197aeaa3c13848e5d56fdc7afa8fdccfeab76f"
+      "commit": "v0.3.0-1-gf1bbe40",
+      "tag": "shots-2026-11-03",
+      "png_sha256": "ddd70a7f58fe3c7d6cbcb91b01bcdf18279276fc3316ed92d796a1a340569d25",
+      "source_sha256": "43bc24124bbdedd2e3f7c421bc6fa5239a4e4074a0e2e82b9d92ac2bd9937e9b"
     },
     {
       "asset": "scan-2m.png",
       "width": 1992,
-      "height": 384,
+      "height": 448,
       "scale": 2,
       "alt": "ley scan 144M..148M in a terminal: a table of the carriers found on the 2 m band with their frequency, width, level over the floor, and how many looks saw each one. Simulated signals.",
       "scene": "scan-2m",
@@ -2697,10 +2848,10 @@
           "version": "0.1.0"
         }
       },
-      "commit": "v0.1.2-517-g1c110ef",
-      "tag": "shots-2026-10-23",
-      "png_sha256": "0a2961fd67db0a405784a3b80af587e4bb8956294f9382ff97b66e88e01b010c",
-      "source_sha256": "ff794e80e7ba847de1c9f10be612a5918d1f4131dbcd9e975c403aa8f38605a1"
+      "commit": "v0.3.0-1-gf1bbe40",
+      "tag": "shots-2026-11-03",
+      "png_sha256": "821fe86363307f19a3951ac397d218a339dcdca45a1ebbd1f0ed167d8925a85c",
+      "source_sha256": "d05df0b13cb76dac61125f2c12985056faa2746488542f1b9d7fad0ae435ec7c"
     },
     {
       "asset": "scan-app.png",
@@ -2788,10 +2939,10 @@
           "version": "0.1.0"
         }
       },
-      "commit": "v0.1.2-517-g1c110ef",
-      "tag": "shots-2026-10-23",
-      "png_sha256": "b417a146202d1e7a74584029378cd076ba201206612b26a726c2cf2177d51f73",
-      "source_sha256": "c3f51976a411ddcb94bc7966493a4faffaea5d119a010c0b523ede4c7fcb11e5"
+      "commit": "v0.3.0-1-gf1bbe40",
+      "tag": "shots-2026-11-03",
+      "png_sha256": "4990432551fd61a05dc2a5141ce5d7c51848dae5a9951ece0d7498a4494105b6",
+      "source_sha256": "d3ef8c1ba15e788641d47ad7e9becbb2a09caeb3e7e38f7c207d08b1f846ac56"
     },
     {
       "asset": "settings-ai.png",
@@ -3164,10 +3315,10 @@
           "version": "0.1.0"
         }
       },
-      "commit": "v0.1.2-517-g1c110ef",
-      "tag": "shots-2026-10-23",
-      "png_sha256": "caee5ffc0ddf0132865dd5bd057bc2f7c997ecb9981cf1e86b8c0a2f8f118c3f",
-      "source_sha256": "bbf57de6145c11c948ec88436991517c0068b1bca076e3c42936f0c360669e54"
+      "commit": "v0.3.0-1-gf1bbe40",
+      "tag": "shots-2026-11-03",
+      "png_sha256": "71cf988dc808cf52d0c208831325c69006c3cbaf00a709087e86389f5269b5b2",
+      "source_sha256": "86eea3be618cc019522072f4f68cd75a8400e82dfdbba727e559354fb819ff4d"
     },
     {
       "asset": "sidebar-chirp-import.png",
@@ -3540,10 +3691,10 @@
           "version": "0.1.0"
         }
       },
-      "commit": "v0.1.2-517-g1c110ef",
-      "tag": "shots-2026-10-23",
-      "png_sha256": "29316364bab7da45ce03ded1d6c0ff6719ca4c90beb29536ca1c6664994f0c92",
-      "source_sha256": "84366cee41c0b9e40577a21afaf97bd8611f3d8c2ca3f133b964b1125a76ef36"
+      "commit": "v0.3.0-1-gf1bbe40",
+      "tag": "shots-2026-11-03",
+      "png_sha256": "a41db578c9f215280364dc9e9842d10c1cec3b929cb4cc382410d23023625a6e",
+      "source_sha256": "d8fa0a5400768f1ec7270c882de62a000d777cb50b555dd01d43b6c852aa8559"
     },
     {
       "asset": "ways-app.png",
@@ -3916,10 +4067,10 @@
           "version": "0.1.0"
         }
       },
-      "commit": "v0.1.2-517-g1c110ef-dirty",
-      "tag": "shots-2026-10-23",
-      "png_sha256": "bfc585d0227f0e5093b321d8bf4b75755d087453ac3f30387c3a4bf2146cc2ab",
-      "source_sha256": "2163b5c32992a14672b3edce9802a01778044800bf1842b6ccb6abd17836e09d"
+      "commit": "v0.3.0-1-gf1bbe40",
+      "tag": "shots-2026-11-03",
+      "png_sha256": "dc4b1a70d282437f0c9865ed0903ed414e1ba7a38249b5eb6f6608f80b17ed5e",
+      "source_sha256": "ba6e5030c6a2c9c193290b693c50ba91ef151137ec559da8f8ad197c13d19786"
     },
     {
       "asset": "ways-sync.png",
@@ -4292,10 +4443,10 @@
           "version": "0.1.0"
         }
       },
-      "commit": "v0.1.2-517-g1c110ef",
-      "tag": "shots-2026-10-23",
-      "png_sha256": "de8c833c78bf96d68871bdb0d640897f9b9c37207cffcceb3a8d0239f5cb0c42",
-      "source_sha256": "d131a99b768fe647394e420ecbb95bccdf11d795747edbd0e8c160ed0a5c8d5f"
+      "commit": "v0.3.0-1-gf1bbe40",
+      "tag": "shots-2026-11-03",
+      "png_sha256": "30b9f8ff0cdcd372f77aa0fe0ba54250078cb76ac33cdf44a890f1d008c6714e",
+      "source_sha256": "cc6f6d12d75a832861c16bd3dfb29f64b007dea6b023b1ea025998358d3cb566"
     },
     {
       "asset": "ways-terminal.png",
@@ -4668,10 +4819,10 @@
           "version": "0.1.0"
         }
       },
-      "commit": "v0.1.2-517-g1c110ef",
-      "tag": "shots-2026-10-23",
-      "png_sha256": "2416d119fca123078172f21c8db1f213cf97d3fff57819b712a32332670688a6",
-      "source_sha256": "b11c889d564b306beb1aeda57a484ca677d5e253c6d1f8a68ed2ee1d012fd0df"
+      "commit": "v0.3.0-1-gf1bbe40",
+      "tag": "shots-2026-11-03",
+      "png_sha256": "6df954da4c2436cc4a9e8e56ee58978f00792a134c2cfea80c59d1e6d7338b28",
+      "source_sha256": "d8f41bf2b84ced7603a2718f1e401598dd6fcd142b18b8feb5364898b22d6f18"
     }
   ]
 }
