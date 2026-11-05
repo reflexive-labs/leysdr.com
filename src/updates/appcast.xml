@@ -3,6 +3,29 @@
     <channel>
         <title>Leyline</title>
         <item>
+            <title>0.3.1</title>
+            <pubDate>Wed, 04 Nov 2026 12:06:48 -0800</pubDate>
+            <sparkle:version>1314</sparkle:version>
+            <sparkle:shortVersionString>0.3.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description sparkle:format="markdown"><![CDATA[- **Fixed: the Decoders map jumped around.** It re-fitted itself to every aircraft several times a
+  second, so it zoomed as aircraft appeared, moved and aged out. It now frames once, afterwards
+  only zooms out when an aircraft would leave the view, and never moves when one disappears. Once
+  you pan or zoom it stays where you put it; **Fit All** in its corner frames everything again.
+  An aircraft not heard for half its silence window draws dimmed before it goes.
+- **Fixed: decoded transmitters vanished and came back.** Leaving the Decoders place, switching
+  decoder or a reconnect rebuilt the table from only the last 1000 records, so a transmitter whose
+  records had scrolled out disappeared until it was heard again. The table now lasts the session
+  and new history merges into it.
+- **Fixed: `--for` recordings ran long or short.** On a busy Mac a `ley record --for 1s` could
+  hold 1.1 s of audio, or stop a few milliseconds early by the clock, and a gated part could hold
+  a few milliseconds more audio than its span. A duration is now cut at exactly its sample count,
+  and audio is dated where its samples belong.
+]]></description>
+            <enclosure url="https://leysdr.com/updates/Leyline-0.3.1.dmg" length="101137059" type="application/octet-stream" sparkle:edSignature="c6pyUffLyf5Ff/RC7khrCc/Ii+BJGzRLT4XjN+/4QbOWv0qAYeWkYHjHmJkmWZMGpJN3botSN4FUpfhxSvweCg=="/>
+        </item>
+        <item>
             <title>0.3.0</title>
             <pubDate>Tue, 03 Nov 2026 20:27:12 -0800</pubDate>
             <sparkle:version>1305</sparkle:version>
@@ -173,17 +196,6 @@ plain requests, and speech-to-text for each over on a recording or a live channe
   file`, which keeps AI keys in a file under `--data`.
 ]]></description>
             <enclosure url="https://leysdr.com/updates/Leyline-0.2.0.dmg" length="90877726" type="application/octet-stream" sparkle:edSignature="sQZGHGorstfRC1cnQRKChLVVX86T3z5sJgxdUxAGhqk9LR+0vVTuerCr5AiE+NPCtCpgfF3NJGV3Z0aBS2YEAQ=="/>
-        </item>
-        <item>
-            <title>0.1.2</title>
-            <pubDate>Wed, 07 Oct 2026 09:18:18 -0700</pubDate>
-            <sparkle:version>654</sparkle:version>
-            <sparkle:shortVersionString>0.1.2</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
-            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <description sparkle:format="markdown"><![CDATA[- **Install.** Install CLI Tools… in the app menu puts `ley` on the Terminal path.
-]]></description>
-            <enclosure url="https://leysdr.com/updates/Leyline-0.1.2.dmg" length="76903807" type="application/octet-stream" sparkle:edSignature="LROiuLyFCdcGS5F0TTsnfg3bdEUCs0OSFjfSmFTCTcbHB0ebMYtBagMq1zNonfxxMV/So2eS7kPv8wo2qM0eDg=="/>
         </item>
     </channel>
 </rss>
